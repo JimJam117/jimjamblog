@@ -28,7 +28,7 @@ class PostController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'body' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:posts',
             'category_id' => 'nullable',
             'image' => 'nullable|image',
 

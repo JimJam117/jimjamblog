@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.frontend')
 @section('content')
 <h1>Create Category:</h1>
 <form action="/category" method="post" enctype="multipart/form-data">

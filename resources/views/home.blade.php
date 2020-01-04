@@ -12,11 +12,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    @auth
                     You are logged in!
-                
+                    @endauth
             </div>
-        
+        <h1>Homepage</h1>
     
 </div>
 @endsection

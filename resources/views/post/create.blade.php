@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.frontend')
 @section('content')
 <h1>Create Post:</h1>
 <form action="/post" method="post" enctype="multipart/form-data">
