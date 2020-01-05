@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Search
+Route::post('/search', 'SearchController@fetch');
+Route::get('/search/{search}', 'SearchController@show')->name('search');
+
 // Post
 Route::get('/post/create', 'PostController@create')->middleware('auth');
 Route::get('/posts', 'PostController@index');

@@ -24,7 +24,7 @@ body {
 
     color: dimgrey;
     text-align: justify;
-    background-image: linear-gradient(rgba(235, 145, 43, 0.799), rgba(232, 141, 131, 0.899)), url("../img/James Background.jpeg");
+    
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -462,7 +462,9 @@ footer {
 }
 
 .post_thumbnail {
-
+    min-height: 20vw;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     object-fit: contain;
     background-image: linear-gradient(rgba(235, 145, 43, 0.799), rgba(232, 141, 131, 0.899));
@@ -492,9 +494,7 @@ footer {
         width: 90%
     }
 
-    .post_thumbnail {
-        height: auto;
-    }
+    
 
     .banner {
         border-left: 1px solid rgb(194, 194, 194);
@@ -517,9 +517,7 @@ footer {
 
 @media only screen and (max-width: 985px) {
 
-    .post_thumbnail {
-        height: auto;
-    }
+    
 
     .banner {
         font-size: 1.8vw;
@@ -554,9 +552,7 @@ footer {
 }
 
 @media only screen and (max-width: 830px) {
-    .post_thumbnail {
-        height: auto;
-    }
+
 
     .navbar a {
         font-size: 80%;

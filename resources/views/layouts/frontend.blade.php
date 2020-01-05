@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/1c9721711e.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         .ProfilePic {
@@ -24,7 +29,8 @@
             float: right;
         }
 
-        .control-nav a, .control-nav button {
+        .control-nav a,
+        .control-nav button {
             border: none;
             text-decoration: none;
             padding: 10px;
@@ -44,11 +50,12 @@
     </style>
 </head>
 
-<body>
+<body
+    style="background-image: linear-gradient(rgba(235, 145, 43, 0.799), rgba(232, 141, 131, 0.899)), url('/img/background.jpeg');">
 
 
     <div class="topbar">
-        <div> <img class="ProfilePic" src="https://www.jsparrow.uk/legacy/img/jamesold.png" alt="James"></div>
+        <div> <img class="ProfilePic" src="/img/pic.jpeg" alt="James"></div>
         <div class="title">
             <h1>James Sparrow</h1>
             <h3>The coolest chap around</h3>
@@ -82,9 +89,23 @@
 
     </div>
     <div class="main">
-        @yield('content')
-    </div>
+        
+        <div class="form-group search">
+            <form method="POST" action="/search">
+                @csrf
+                <button type="submit" class="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input type="text" name="query" class="form-control searchInput" id="exampleInputName2"
+                    placeholder="Search...">
+            </form>
+        </div>
 
+        @yield('content')
+        <br>
+        <hr>
+        <br>
+        <footer>jamessparrow101@googlemail.com</footer>
+    </div>
 </body>
+
 
 </html>
