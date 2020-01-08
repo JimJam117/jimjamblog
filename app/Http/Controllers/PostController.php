@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = \App\Post::where("user_id", 1)->get();
+        $posts = \App\Post::all()->sortByDesc('created_at');
         return view('post.index', compact('posts'));
     }
     public function show($post = null) {

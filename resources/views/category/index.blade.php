@@ -13,10 +13,15 @@
     <div class="section post">
     <div class="post_thumbnail" style="background-image: url('{{$category->image}}');" alt="{{$category->title}}"></div>
         <div class="post_container">
-            <br>
-        <p class="timestamp">{{$category->created_at}}</p>
-            
+
+            <div class="timestamp">{{$category->created_at}}</div>
+       
             <h1>{{$category->title}}</h1>
+            
+            
+            
+       
+        
             
             <em>{{strip_tags(Str::limit($category->body, 100))}}</em>
             <br>

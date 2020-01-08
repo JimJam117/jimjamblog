@@ -22,7 +22,7 @@ body {
     font-weight: 300;
     margin: 10px;
 
-    color: dimgrey;
+    color: #595959;
     text-align: justify;
     
     background-attachment: fixed;
@@ -356,7 +356,8 @@ body {
     line-height: 1.8;
     border-bottom: 1px solid dimgray;
     border-top: 1px solid dimgray;
-    box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.4) clear: both;
+    box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.4); 
+    clear: both;
 }
 
 .banner h3 {
