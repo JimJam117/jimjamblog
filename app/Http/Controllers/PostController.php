@@ -21,7 +21,9 @@ class PostController extends Controller
     }
 
     public function create() {
-        return view('post.create');
+        $categories = \App\Category::all();
+
+        return view('post.create', compact('categories'));
     }
 
     public function store(){
@@ -45,7 +47,7 @@ class PostController extends Controller
                 'title' => $data['title'],
                 'body' => Purifier::clean($data['body']),
                 'slug' => $data['slug'],
-                'category_id' => 1,
+                'category_id' => $data['category_id'],
     
                 'image' => $imgPathWithStorage,
             ]);
@@ -57,7 +59,7 @@ class PostController extends Controller
             'title' => $data['title'],
             'body' => Purifier::clean($data['body']),
             'slug' => $data['slug'],
-            'category_id' => 1,
+            'category_id' => $data['category_id'],
 
             'image' => null,
         ]);

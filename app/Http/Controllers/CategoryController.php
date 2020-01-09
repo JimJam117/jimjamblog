@@ -25,7 +25,7 @@ class CategoryController extends Controller
         return view('category.create');
     }
 
-    public function store() {
+    public function store(){
         $data = request()->validate([
             'title' => 'required|unique:categories',
             'body' => 'required',
@@ -47,10 +47,7 @@ class CategoryController extends Controller
                 'image' => $imgPathWithStorage,
             ]);
         }
-        
-
-        
-        
+        else{
         // create post assoc with auth'd user
         // uses validated $data var items and also the image path
         \App\Category::create([
@@ -59,6 +56,13 @@ class CategoryController extends Controller
 
             'image' => null,
         ]);
+
+        }
+        
+
+        
+        
+        
 
 
         return redirect("/categories");

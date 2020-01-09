@@ -27,6 +27,23 @@
         @enderror
     </div>
 
+    <div class="form-group row">
+        <label for="category_id">Project</label>
+        <select id="category_id" type="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id"
+        value="{{ old('category_id') }}" >
+            <option value="0">None</option>
+            @foreach ($categories as $category)
+            <option value="{{$category->id}}">{{$category->title}}</option>
+            @endforeach
+          </select>
+
+        @error('category_id')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+
     <div class=" form-group row">
         <label for="body">Body</label>
         <textarea class="form-control @error('body') is-invalid @enderror" type="text"
