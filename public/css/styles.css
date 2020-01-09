@@ -432,13 +432,16 @@ footer {
 
 .post {
     background-color: #fff;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+    width: 75%;
+    min-height: 200px;
+}
 
+.post_link{
+    background-color: #fff;
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
     width: 100%;
-
     min-height: 200px;
-    transform: translateY(-20px);
-
 }
 
 .post_container img {
@@ -465,7 +468,7 @@ footer {
 }
 
 .section {
-    margin-top: 20px;
+    margin-bottom: 2em;
     color: inherit;
     background-color: #fff;
     transition: color 0.2s, background-color 0.2s;

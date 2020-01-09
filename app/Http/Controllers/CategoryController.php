@@ -9,10 +9,12 @@ class CategoryController extends Controller
 {
     //
     public function index() {
-        $categories = \App\Category::all()->sortByDesc('updated_at');
         $posts = \App\Post::all()->sortByDesc('updated_at');
         $recent_post = $posts->first();
-        return view('category.index', compact('categories', 'recent_post'));
+
+        $categories = \App\Category::all()->sortByDesc('updated_at');
+        $recent_category = $categories->first();
+        return view('category.index', compact('categories', 'recent_post', 'recent_category'));
     }
 
     public function show($category = null) {

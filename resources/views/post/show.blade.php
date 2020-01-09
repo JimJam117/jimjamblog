@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
 <div class="container">
-    <div class="post_container">
+    
         <div class="post">
 
             <img class="post_thumbnail" src="{{$post->image}}" alt="{{$post->title}}">
@@ -20,7 +20,7 @@
             </div>
             <br>
         </div>
-    </div>
+    
 
 
     <div class="sidebar_container">
@@ -33,7 +33,7 @@
             <hr>
 
             @isset($category)
-            <small><em>Project:</em></small>
+            <p>This post is a part of this Project:</p>
             <br><br>
             <a class="sidebar_post" href="/category/{{$category->title}}">
                 <img class="sidebar_post_image" src="{{$category->image}}" />
@@ -42,9 +42,8 @@
                     <em>{{strip_tags(Str::limit($category->body, 50))}}</em>
                 </div>
             </a>
-            <hr>
-            @endisset
-
+            <hr>   
+            @else
             <small><em>Recent Post:</em></small>
             <br><br>
             <a class="sidebar_post" href="/post/{{$recent_post->slug}}">
@@ -53,7 +52,10 @@
                     <h4>{{$recent_post->title}}</h4>
                     <em>{{strip_tags(Str::limit($recent_post->body, 50))}}</em>
                 </div>
-            </a>
+            </a> 
+            @endisset
+
+            
         </div>
     </div>
 

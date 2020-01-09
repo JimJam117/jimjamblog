@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+<div class="container">
+    <div class="posts_container">
+        
 <h1>Search Results for "{{$search}}"</h1>
 <br>
     @if(!$results_posts->isEmpty())
@@ -60,5 +63,10 @@
     @if($results_posts->isEmpty() && $results_categories->isEmpty())
     <p>No results found ;(</p>
     @endif
+
+    </div>
+</div>
+
+
 
 @endsection

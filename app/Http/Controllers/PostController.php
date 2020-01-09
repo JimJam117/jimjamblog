@@ -14,7 +14,7 @@ class PostController extends Controller
 
         $categories = \App\Category::all()->sortByDesc('updated_at');
         $recent_category = $categories->first();
-        return view('post.index', compact('posts', 'recent_category'));
+        return view('post.index', compact('posts', 'recent_category', 'recent_post'));
     }
 
 

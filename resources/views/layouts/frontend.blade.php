@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>Jsparrow | @yield('title')</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/fa/css/fa.css">
     <script defer src="/fa/js/all.js"></script> <!--load all styles -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -65,8 +64,8 @@
         <nav class="navbar">
             <a href="/home">Home</a>
             <a href="/posts">Blog</a>
-            <a href="/categories">Projects</a>
-            <a style="background-color: darkgray; border-color: darkgray" href="#">CV</a>
+            <a href="#">Portfolio</a>
+            <a href="#">CV</a>
         </nav>
 
 
