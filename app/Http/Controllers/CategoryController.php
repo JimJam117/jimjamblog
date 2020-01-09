@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     //
     public function index() {
-        $categories = \App\Category::all();
+        $categories = \App\Category::all()->sortByDesc('updated_at');
         return view('category.index', compact('categories'));
     }
 

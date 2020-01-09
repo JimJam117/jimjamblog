@@ -9,15 +9,38 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = \App\Post::all()->sortByDesc('created_at');
-        return view('post.index', compact('posts'));
+        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $recent_post = $posts->first();
+        return view('post.index', compact('posts', 'recent_post'));
     }
+
+
     public function show($post = null) {
+        // if the post is null return a redirect
         if ($post == null) {
             return redirect("/posts");
         }
+
+        //grab the post
         $post = \App\Post::where("slug", $post)->firstOrFail();
-        return view('post.show', compact('post'));
+
+        // grab the most recent post, if it is the same as the $post then find the next most recent one
+        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $recent_post = $posts->first();
+        foreach ($posts as $item) {
+            if($item->slug != $post->slug) {
+                $recent_post = $item;
+                break;
+            }
+        }
+
+
+        $category = null;
+        if($post->category != null) {
+            $category = $post->category;
+        }
+
+        return view('post.show', compact('post', 'recent_post', 'category'));
     }
 
     public function create() {
