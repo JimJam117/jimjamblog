@@ -13,12 +13,13 @@
  
     <br><hr><br>
     Posts:
+    <br>
     @foreach ($category->posts as $post)
           <a href="/post/{{$post->slug}}">{{$post->title}}</a>
     @endforeach
     <hr>
 <br>
-            <a href="/catrgories" class="btn readMore">Go Back</a>
+            <a href="/categories" class="btn readMore">Go Back</a>
 <br><br>
 
 
