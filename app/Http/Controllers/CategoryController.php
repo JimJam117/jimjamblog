@@ -10,7 +10,9 @@ class CategoryController extends Controller
     //
     public function index() {
         $categories = \App\Category::all()->sortByDesc('updated_at');
-        return view('category.index', compact('categories'));
+        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $recent_post = $posts->first();
+        return view('category.index', compact('categories', 'recent_post'));
     }
 
     public function show($category = null) {
@@ -18,7 +20,26 @@ class CategoryController extends Controller
             return redirect("/categories");
         }
         $category = \App\Category::where("title", $category)->firstOrFail();
-        return view('category.show', compact('category'));
+
+        
+        $recent_posts = \App\Post::where('category_id', $category->id)->get()->sortByDesc('updated_at');
+        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $recent_post = $posts->first();
+
+        // if recent posts is more than 3, cut it down to a max of 3
+        if(count($recent_posts) > 3) {
+            $newArray = [];
+            $i = 0;
+            foreach ($recent_posts as $item) {
+
+                if($i < 3) { $newArray[] = $item; $i++;}
+                else{ break;} 
+            }
+
+            $recent_posts = $newArray;
+        }
+
+        return view('category.show', compact('category', 'recent_posts', 'recent_post'));
     }
 
     public function create() {

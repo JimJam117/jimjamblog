@@ -11,7 +11,10 @@ class PostController extends Controller
     {
         $posts = \App\Post::all()->sortByDesc('updated_at');
         $recent_post = $posts->first();
-        return view('post.index', compact('posts', 'recent_post'));
+
+        $categories = \App\Category::all()->sortByDesc('updated_at');
+        $recent_category = $categories->first();
+        return view('post.index', compact('posts', 'recent_category'));
     }
 
 

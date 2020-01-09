@@ -26,6 +26,24 @@
         </a>
         @endforeach
     </div>
-    
+    <div class="sidebar_container">
+        <div class="sidebar">
+            <h3>Links</h3>
+            <ul style="list-style: none;">
+                <li><a class="sidebar_link" href="#"><i class="fab fa-github"></i> Github</a></li>
+                <li><a class="sidebar_link" href="#"><i class="fas fa-envelope-square"></i> Contact</a></li>
+            </ul>
+            <hr>
+            <small><em>Recent Project:</em></small>
+            <br><br>
+            <a class="sidebar_post" href="/post/{{$recent_category->slug}}">
+                <img class="sidebar_post_image" src="{{$recent_category->image}}"/>
+                <div class="sidebar_post_content">
+                    <h4>{{$recent_category->title}}</h4>
+                    <em>{{strip_tags(Str::limit($recent_category->body, 50))}}</em>
+                </div>
+            </a>    
+        </div>
+    </div>
 </div>
 @endsection
