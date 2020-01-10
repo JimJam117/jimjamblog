@@ -1,4 +1,9 @@
 @extends('layouts.frontend')
+
+@section('title')
+    {{$post->title}}
+@endsection
+
 @section('content')
 <div class="container">
     
@@ -33,8 +38,7 @@
             <hr>
 
             @isset($category)
-            <p>This post is a part of this Project:</p>
-            <br><br>
+            <h3>Part of Project:</h3>
             <a class="sidebar_post" href="/category/{{$category->title}}">
                 <img class="sidebar_post_image" src="{{$category->image}}" />
                 <div class="sidebar_post_content">
@@ -42,10 +46,12 @@
                     <em>{{strip_tags(Str::limit($category->body, 50))}}</em>
                 </div>
             </a>
-            <hr>   
+            <hr>
+            <a style="text-decoration: none" href="/categories"><strong>View All Projects</strong></a> 
+            <br> 
             @else
-            <small><em>Recent Post:</em></small>
-            <br><br>
+            <br>
+            <h3><i class="fas fa-pen"></i> Recent Post</h3>
             <a class="sidebar_post" href="/post/{{$recent_post->slug}}">
                 <img class="sidebar_post_image" src="{{$recent_post->image}}" />
                 <div class="sidebar_post_content">

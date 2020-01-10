@@ -58,7 +58,7 @@
         <div> <img class="ProfilePic" src="/img/pic.jpeg" alt="James"></div>
         <div class="title">
             <h1>James Sparrow</h1>
-            <h3>The coolest chap around</h3>
+            <h3>Web Developer</h3>
         </div>
 
         <nav class="navbar">

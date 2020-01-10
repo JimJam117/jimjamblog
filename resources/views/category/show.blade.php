@@ -1,4 +1,8 @@
 @extends('layouts.frontend')
+@section('title')
+    {{$category->title}}
+@endsection
+
 @section('content')
 <div class="container">
         <div class="post">
@@ -10,12 +14,14 @@
                 {!!$category->body!!}
                 <br>
                 <hr><br>
-                Posts:
-                <br>
-                @foreach ($category->posts as $post)
-                <a href="/post/{{$post->slug}}">{{$post->title}}</a>
-                @endforeach
-                <hr>
+                @if($category->posts->count() > 0)
+                  Posts:
+                  <br>
+                  <hr>
+                  @foreach ($category->posts as $post)
+                  <a href="/post/{{$post->slug}}">{{$post->title}}</a>
+                  @endforeach
+                @endif
                 <br>
                 <a href="/categories" class="btn readMore">Go Back</a>
                 <br><br>
@@ -31,9 +37,8 @@
                 <li><a class="sidebar_link" href="#"><i class="fas fa-envelope-square"></i> Contact</a></li>
             </ul>
             <hr>
-            
-            <small><em>Recent Post:</em></small>
-            <br><br>
+            <br>
+            <h3><i class="fas fa-pen"></i> Recent Post</h3>
             <a class="sidebar_post" href="/post/{{$recent_post->slug}}">
                 <img class="sidebar_post_image" src="{{$recent_post->image}}" />
                 <div class="sidebar_post_content">

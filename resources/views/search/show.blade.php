@@ -16,7 +16,7 @@
     <br>
     @foreach ($results_posts as $item)
         <a href="\post\{{$item->slug}}" class="unlinkStyle">
-            <div class="section post">
+            <div class="section post_link">
             <div class="post_thumbnail" style="background-image: url('{{$item->image}}');" alt="{{$item->title}}"></div>
                 <div class="post_container">
                     <br>
@@ -41,7 +41,7 @@
     <br>
     @foreach ($results_categories as $item)
     <a href="\post\{{$item->title}}" class="unlinkStyle">
-        <div class="section post">
+        <div class="section post_link">
         <div class="post_thumbnail" style="background-image: url('{{$item->image}}');" alt="{{$item->title}}"></div>
             <div class="post_container">
                 <br>
