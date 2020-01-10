@@ -1,7 +1,7 @@
 @extends('layouts.standard')
 
 @section('title')
-    Porjects
+    Projects
 @endsection
 
 @section('banner')

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jsparrow | @yield('title')</title>
+    <link rel="icon" href="/img/jimjam3.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
     <script defer src="/fa/js/all.js"></script> <!--load all styles -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -55,7 +56,7 @@
 
 
     <div class="topbar">
-        <div> <img class="ProfilePic" src="/img/pic.jpeg" alt="James"></div>
+        <div> <img class="ProfilePic" src="/img/jimjam3.png" alt="James"></div>
         <div class="title">
             <h1>James Sparrow</h1>
             <h3>Web Developer</h3>

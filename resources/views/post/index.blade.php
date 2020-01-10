@@ -4,11 +4,7 @@
     Blog
 @endsection
 
-@section('banner')
-<div class="banner">
-    <h2>Blog</h2>
-</div>
-@endsection
+
 
 @section('posts_content')
 @foreach($posts as $post)
