@@ -8,45 +8,16 @@
     <title>Jsparrow | @yield('title')</title>
     <link rel="icon" href="/img/jimjam3.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
+
     <script defer src="/fa/js/all.js"></script> <!--load all styles -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
     <link rel="stylesheet" href="/css/styles.css">
     <style>
-        .ProfilePic {
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 80px;
-            width: 80px;
-            border-radius: 100%;
-            margin-left: 30px;
-
-        }
-
-        .control-nav {
-            float: right;
-        }
-
-        .control-nav a,
-        .control-nav button {
-            border: none;
-            text-decoration: none;
-            padding: 10px;
-            margin: 0 2px;
-            font-size: 11px;
-            background-color: #fff;
-            color: rgb(177, 71, 92);
-            display: inline-block;
-            transition: background-color 0.15s, color 0.15s;
-        }
-
-        .control-nav a:hover {
-            background-color: rgb(177, 71, 92);
-            color: #fff;
-        }
+        
+        
 
     </style>
 </head>
@@ -56,21 +27,6 @@
 
 
     <div class="topbar">
-        <div> <img class="ProfilePic" src="/img/jimjam3.png" alt="James"></div>
-        <div class="title">
-            <h1>James Sparrow</h1>
-            <h3>Web Developer</h3>
-        </div>
-
-        <nav class="navbar">
-            <a href="/home">Home</a>
-            <a href="/posts">Blog</a>
-            <a href="#">Portfolio</a>
-            <a href="#">CV</a>
-        </nav>
-
-
-
         <div class="control-nav">
             @auth
             <a href="/post/create">Create Post</a>
@@ -87,6 +43,24 @@
             <button class="login" onclick="window.location.href=('/login')">Login</button>
             @endguest
         </div>
+        <!-- <div> <img class="ProfilePic" src="/img/jimjam3.png" alt="James"></div> -->
+        <div class="topbar-section">
+        <div class="title">
+            <h1>James Sparrow</h1>
+            <h3>Web Developer</h3>
+        </div>
+
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/posts">Blog</a>
+            <a href="#">Portfolio</a>
+            <a href="#">CV</a>
+        </nav>    
+    </div>
+
+
+
+        
 
     </div>
     <div class="main">
