@@ -40,7 +40,7 @@
     <hr>
     <br>
     @foreach ($results_categories as $item)
-    <a href="\post\{{$item->title}}" class="unlinkStyle">
+    <a href="\category\{{$item->title}}" class="unlinkStyle">
         <div class="section post_link">
         <div class="post_thumbnail" style="background-image: url('{{$item->image}}');" alt="{{$item->title}}"></div>
             <div class="post_container">

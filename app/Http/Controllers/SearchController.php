@@ -17,13 +17,14 @@ class SearchController extends Controller
             return redirect('/home');
         }
 
-        $results_posts = \App\Post::where("description", "like", $search)
-                                    ->orWhere('title', 'like', $search)
+        $results_posts = \App\Post::where('description', 'LIKE', "%{$search}%")
+                                    ->orWhere('title', 'LIKE', "%{$search}%")
                                     ->get();
-        $results_categories = \App\Category::where("description", "like", $search)
-                                    ->orWhere('title', 'like', $search)
+        $results_categories = \App\Category::where('description', 'LIKE', "%{$search}%")
+                                    ->orWhere('title', 'LIKE', "%{$search}%")
                                     ->get();
 
         return view('search.show', compact('search', 'results_posts', 'results_categories'));
     }
 }
+
