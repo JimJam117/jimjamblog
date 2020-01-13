@@ -10,10 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
 
-    <script defer src="/fa/js/all.js"></script> <!--load all styles -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         
@@ -27,22 +23,6 @@
 
 
     <div class="topbar">
-        <div class="control-nav">
-            @auth
-            <a href="/post/create">Create Post</a>
-            <a href="/category/create">Create Category</a>
-            <button class="login" onclick="document.getElementById('logout-form').submit();">{{Auth::user()->name}}:
-                logout</button>
-
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-            @endauth
-            @guest
-            <button class="login" onclick="window.location.href=('/login')">Login</button>
-            @endguest
-        </div>
         <!-- <div> <img class="ProfilePic" src="/img/jimjam3.png" alt="James"></div> -->
         <div class="topbar-section">
         <div class="title">
@@ -57,11 +37,23 @@
             <a href="#">CV</a>
         </nav>    
     </div>
+    </div>
+
+    <div class="control-nav">
+        @auth
+        <a href="/post/create">Create Post</a>
+        <a href="/category/create">Create Category</a>
+        <button class="login" onclick="document.getElementById('logout-form').submit();">{{Auth::user()->name}}:
+            logout</button>
 
 
-
-        
-
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        @endauth
+        @guest
+        <button class="login" onclick="window.location.href=('/login')">Login</button>
+        @endguest
     </div>
     <div class="main">
         
@@ -82,5 +74,8 @@
     </div>
 </body>
 
+<script defer src="/fa/js/all.js"></script> <!--load all styles -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 </html>

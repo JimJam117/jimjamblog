@@ -56,7 +56,7 @@ body {
     width: 75vw;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px;
+    padding: 1em;
     border-left: 1px solid rgb(141, 56, 73);
     border-right: 1px solid rgb(141, 56, 73);
     border-top: 1px solid rgb(141, 56, 73);
@@ -70,7 +70,14 @@ body {
 }
 
 .control-nav {
-    float: right;
+    background-color: #595959;
+    width: 75vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    color: #595959;
+
 }
 
 .control-nav a,
@@ -550,7 +557,7 @@ footer {
 .homepage-profile-pic{
     width: 30%;
     float: left;
-    padding: 1em 1.5em 1em 0;
+    padding: 1em;
     border-radius: 100%;
 }
 .homepage-quick-links{
