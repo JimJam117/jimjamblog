@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.blog')
 @section('title')
     {{$category->title}}
 @endsection

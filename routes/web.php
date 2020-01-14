@@ -37,3 +37,5 @@ Route::get('/category/', 'CategoryController@index');
 
 Route::get('/backend', 'BackendController@index')->name('backend');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
