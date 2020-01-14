@@ -12,7 +12,7 @@ class CategoryController extends Controller
         $posts = \App\Post::all()->sortByDesc('updated_at');
         $recent_post = $posts->first();
 
-        $categories = \App\Category::all()->sortByDesc('updated_at');
+        $categories = \App\Category::orderBy('updated_at', 'DESC')->paginate(3);
         $recent_category = $categories->first();
         return view('category.index', compact('categories', 'recent_post', 'recent_category'));
     }

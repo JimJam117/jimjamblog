@@ -22,7 +22,7 @@
         <div class="post_thumbnail" style="background-image: url('{{$category->image}}');"
             alt="{{$category->title}}"></div>
         <div class="post_container">
-
+            <br>
             <div class="timestamp">{{$category->created_at}}</div>
 
             <h1>{{$category->title}}</h1>
@@ -35,4 +35,6 @@
     </div>
 </a>
 @endforeach
+
+{{$categories->links()}}
 @endsection

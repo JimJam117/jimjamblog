@@ -9,11 +9,14 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $posts = \App\Post::orderBy('updated_at', 'DESC')->paginate(3);
         $recent_post = $posts->first();
 
         $categories = \App\Category::all()->sortByDesc('updated_at');
         $recent_category = $categories->first();
+
+
+
         return view('post.index', compact('posts', 'recent_category', 'recent_post'));
     }
 

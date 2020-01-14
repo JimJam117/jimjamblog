@@ -300,6 +300,25 @@ body {
     height: 10vw;
 }
 
+/*Pagination*/
+.pagination{
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.pagination li{
+    padding: 1em;
+    font-size: 1.5em;
+    font-family: "Open Sans";
+}
+.pagination a{
+    color: #595959;
+    text-decoration: none;
+}
+.page-item + .active{
+    font-weight: 800;
+}
 
 
 /*COLUMN AND OBJ*/
