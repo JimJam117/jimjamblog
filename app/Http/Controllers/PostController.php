@@ -7,12 +7,27 @@ use Purifier;
 
 class PostController extends Controller
 {
+    function paginatePosts($paginate) {
+        return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
+    }
+    function paginateCategories($paginate){
+        return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
+    }
+    private function allPosts(){
+        return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
+    } 
+    private function allCategories() {
+        return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
+    }
+    
+
+
     public function index()
     {
-        $posts = \App\Post::orderBy('updated_at', 'DESC')->paginate(3);
+        $posts = self::paginatePosts(3);
         $recent_post = $posts->first();
 
-        $categories = \App\Category::all()->sortByDesc('updated_at');
+        $categories = self::allCategories();
         $recent_category = $categories->first();
 
 
@@ -28,10 +43,10 @@ class PostController extends Controller
         }
 
         //grab the post
-        $post = \App\Post::where("slug", $post)->firstOrFail();
+        $post = \App\Post::where("slug", $post)->whereNull('deleted_at')->firstOrFail();
 
         // grab the most recent post, if it is the same as the $post then find the next most recent one
-        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $posts = self::allPosts();
         $recent_post = $posts->first();
         foreach ($posts as $item) {
             if($item->slug != $post->slug) {
@@ -50,7 +65,7 @@ class PostController extends Controller
     }
 
     public function create() {
-        $categories = \App\Category::all();
+        $categories = self::allCategories();
 
         return view('post.create', compact('categories'));
     }
@@ -105,14 +120,14 @@ class PostController extends Controller
         // get user and authorize
         $post = \App\Post::where('slug', $post)->firstOrFail();
 
-        $categories = \App\Category::all();
+        $categories = self::allCategories();
 
         return view('post.edit', compact('post', 'categories'));
     }
 
     public function update($post){
         // get user and authorize
-        $post = \App\Post::where('slug', $post)->firstOrFail();
+        $post = \App\Post::where('slug', $post)->whereNull('deleted_at')->firstOrFail();
 
        $data = request()->validate([
         'title' => 'required',
@@ -147,11 +162,12 @@ class PostController extends Controller
         'body' => Purifier::clean($data['body']),
         'slug' => $data['slug'],
         'category_id' => $data['category_id'],
+
        ]);
 
        }
        
-
+       
 
        return redirect("/post/$post->slug");
    }

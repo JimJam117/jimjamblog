@@ -7,13 +7,28 @@ use Purifier;
 
 class CategoryController extends Controller
 {
+    function paginatePosts($paginate) {
+        return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
+    }
+    function paginateCategories($paginate){
+        return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
+    }
+    private function allPosts(){
+        return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
+    } 
+    private function allCategories() {
+        return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
+    }
+
+
     //
     public function index() {
-        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $posts = self::allPosts();
         $recent_post = $posts->first();
 
-        $categories = \App\Category::orderBy('updated_at', 'DESC')->paginate(3);
+        $categories = self::paginateCategories(3);
         $recent_category = $categories->first();
+
         return view('category.index', compact('categories', 'recent_post', 'recent_category'));
     }
 
@@ -21,11 +36,11 @@ class CategoryController extends Controller
         if ($category == null) {
             return redirect("/categories");
         }
-        $category = \App\Category::where("title", $category)->firstOrFail();
+        $category = \App\Category::where("title", $category)->whereNull('deleted_at')->firstOrFail();
 
         
-        $recent_posts = \App\Post::where('category_id', $category->id)->get()->sortByDesc('updated_at');
-        $posts = \App\Post::all()->sortByDesc('updated_at');
+        $recent_posts = self::allPosts();
+        $posts = self::allPosts();
         $recent_post = $posts->first();
 
         // if recent posts is more than 3, cut it down to a max of 3
@@ -41,7 +56,7 @@ class CategoryController extends Controller
             $recent_posts = $newArray;
         }
 
-        $categories = \App\Category::orderBy('updated_at', 'DESC')->paginate(3);
+        $categories = self::paginateCategories(3);
         $recent_category = $categories->first();        
 
         return view('category.show', compact('category', 'recent_posts', 'recent_post', 'recent_category'));
@@ -92,13 +107,13 @@ class CategoryController extends Controller
 
     public function edit($category) {    
         // get user and authorize
-        $category = \App\Category::where('title', $category)->firstOrFail();
+        $category = \App\Category::where('title', $category)->whereNull('deleted_at')->firstOrFail();
         return view('category.edit', compact('category'));
     }
 
     public function update($category){
          // get user and authorize
-         $category = \App\Category::where('title', $category)->firstOrFail();
+         $category = \App\Category::where('title', $category)->whereNull('deleted_at')->firstOrFail();
 
         $data = request()->validate([
             'title' => 'required',
@@ -128,7 +143,6 @@ class CategoryController extends Controller
             'title' => $data['title'],
             'body' => Purifier::clean($data['body']),
 
-            'image' => null,
         ]);
 
         }

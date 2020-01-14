@@ -29,7 +29,7 @@
             <hr>
             <br>
             <h3><i class="fas fa-project-diagram"></i> Projects</h3>
-            <a class="sidebar_post" href="/post/{{$recent_category->slug}}">
+            <a class="sidebar_post" href="/category/{{$recent_category->title}}">
                 <img class="sidebar_post_image" src="{{$recent_category->image}}"/>
                 <div class="sidebar_post_content">
                     <h4>{{$recent_category->title}}</h4>
