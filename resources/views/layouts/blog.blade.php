@@ -23,8 +23,8 @@
         <div class="sidebar">
             <h3><i class="fas fa-link"></i> Links</h3>
             <ul style="list-style: none;">
-                <li><a class="sidebar_link" href="#"><i class="fab fa-github"></i> Github</a></li>
-                <li><a class="sidebar_link" href="#"><i class="fas fa-envelope-square"></i> Contact</a></li>
+                <li><a class="btn sidebar-btn" href="/github"><i class="fab fa-github"></i> Github</a></li>
+                <li><a class="btn sidebar-btn" href="/contact"><i class="fas fa-envelope-square"></i> Contact</a></li>
             </ul>
             <hr>
             <br>

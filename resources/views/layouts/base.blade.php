@@ -52,7 +52,7 @@
         </form>
     </div>
     @endauth
-    
+
     <div class="main">
         
         @yield('search')
@@ -60,6 +60,15 @@
         @yield('content')
         <br>
         <hr>
+        <div class="endSection"> 
+           
+            <button onclick="location.href='/github';" type="button" class="social-button social-button-github">
+                <i class="fab fa-github"></i>
+            </button>
+            <button onclick="location.href='/contact';" type="button" class="social-button" name="button">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </div>
         <br>
         <footer>jamessparrow101@googlemail.com</footer>
     </div>

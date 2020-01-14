@@ -282,8 +282,11 @@ body {
 .sidebar_post_content{
     padding: 1em;
 }
-.sidebar_link{
-    text-decoration: none;
+
+.sidebar-btn{
+    width: 100%;
+    text-align: center;
+    border: none;
     color: #595959;
 }
 
@@ -617,6 +620,32 @@ footer {
     
 }
 
+.endSection{
+    display: flex;
+    margin: 2em auto 1em auto;
+    justify-content: center;
+}
+
+.social-button {
+    display: block;
+    font-size: 2em;
+    opacity: 0.90;
+    margin: 0 15px;
+    border-radius: 100%;
+    border: none;
+    width: 70px;
+    height: 70px;
+    transition: background-color 0.4s, height 0.4s, width 0.4s, color 0.4s, opacity 0.4s;
+    color: white;
+    background-color: rgb(177, 71, 92);
+    box-shadow: 0 3px 7px 0px black;
+}
+
+.social-button:hover {
+    background-color: lightgrey;
+    color: black;
+    box-shadow: inset 0px 1px 3px 0px black;
+}
 
 /*TESTING*/
 

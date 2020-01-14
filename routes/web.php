@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return redirect('/posts');
+    return redirect('/home');
+});
+
+Route::get('/github', function () {
+    return redirect('https://github.com/jimjam117');
 });
 
 Auth::routes();
