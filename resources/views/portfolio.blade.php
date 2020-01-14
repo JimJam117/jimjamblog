@@ -1,29 +1,31 @@
 @extends('layouts.base')
 
-@section('content')
-<h1 class="portfolio-title">Portfolio</h1>
+@section('title')
+    Portfolio
+@endsection
 
-<h2 class="portfolio-title">Websites and Webapps<hr></h2>
+@section('content')
+<h1 class="portfolio-title" style="font-size: 3em;">Portfolio</h1>
+
+<h1 class="portfolio-title">Websites and Webapps<hr></h1>
 
 <!-- Instajam -->
-<a class="portfolio-link" href="#hanzibase">
+<a class="portfolio-link unfinished" href="#/hanzibase">
     <img src="/img/hanzibase.png" alt="hanzibase">
     <div class="portfolio-link-text">
         <h3>Hanzibase</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>Webapp for looking up Chinese Characters, built in Laravel and Vue using public APIs</p>
     </div>
 
 </a>
 <!-- expand -->
 <div class="expandable" id="hanzibase">
     <div class="expandable-top">
-        <img src="https://s3.amazonaws.com/ladder-blog/2017/11/Step1---GIPHY-GIF-MAKER.gif" alt="">
+        <img src="/img/hanzibase.png" alt="">
         <div class="expandable-text">
             <h3>Hanzibase</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
-                aliquid
-                doloribus veniam fuga cupiditate.</p>
+            <p>Work in Progress</p>
         </div>
     </div>
     <div class="expandable-bottom">
@@ -32,19 +34,19 @@
 </div>
 
 <!-- Astralondon.me -->
-<a class="portfolio-link" href="#astralondon">
+<a class="portfolio-link unfinished" href="#/astralondon">
     <img src="/img/astralondon.png" alt="">
     <div class="portfolio-link-text">
         <h3>Astralondon.me</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>Portfolio gallery webapp in pure PHP, complete with backend user interface</p>
     </div>
 
 </a>
 <!-- expand -->
 <div class="expandable" id="astralondon">
     <div class="expandable-top">
-        <img src="https://s3.amazonaws.com/ladder-blog/2017/11/Step1---GIPHY-GIF-MAKER.gif" alt="">
+        <img src="/img/screenshots/astragal-screenshot.png" alt="">
         <div class="expandable-text">
             <h3>Astralondon.me</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
@@ -63,14 +65,14 @@
     <div class="portfolio-link-text">
         <h3>Chiltern School Of Motoring</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>A website I made for my driving instructor, with a custom Wordpress theme</p>
     </div>
 
 </a>
 <!-- expand -->
 <div class="expandable" id="csom">
     <div class="expandable-top">
-        <img src="https://s3.amazonaws.com/ladder-blog/2017/11/Step1---GIPHY-GIF-MAKER.gif" alt="">
+        <img src="/img/screenshots/chiltern-screenshot.png" alt="">
         <div class="expandable-text">
             <h3>Chiltern School of Motoring</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
@@ -79,17 +81,17 @@
         </div>
     </div>
     <div class="expandable-bottom">
-        <a href="#">Live Demo</a> <a href="#">Source</a> <a href="#">Blog Page</a>
+        <a href="https://www.chilternsom.co.uk/">Live Site</a> <p style="color:#a1a1a1;">Source Private</p> <a href="#">Blog Page</a>
     </div>
 </div>
 
 <!-- Instajam -->
-<a class="portfolio-link" href="#instajam">
+<a class="portfolio-link unfinished" href="#/instajam">
     <img src="/img/jimjam4.png" alt="">
     <div class="portfolio-link-text">
         <h3>Instajam</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>An Instagram clone made in Laravel with Vue components</p>
     </div>
 
 </a>
@@ -110,19 +112,19 @@
 </div>
 
 <!-- London24Racing -->
-<a class="portfolio-link" href="#london24racing">
+<a class="portfolio-link unfinished" href="#/london24racing">
     <img src="/img/london24racing.png" alt="">
     <div class="portfolio-link-text">
         <h3>London24Racing</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>Website for an international powerboat racing team with a parralax design and a basic PHP blog</p>
     </div>
 
 </a>
 <!-- expand -->
 <div class="expandable" id="london24racing">
     <div class="expandable-top">
-        <img src="https://s3.amazonaws.com/ladder-blog/2017/11/Step1---GIPHY-GIF-MAKER.gif" alt="">
+        <img src="/img/screenshots/l24r-screenshot.png" alt="">
         <div class="expandable-text">
             <h3>London24Racing.com</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
@@ -135,23 +137,23 @@
     </div>
 </div>
 
-<br>
-<h2 class="portfolio-title">Unity<hr></h2>
+<br><br><br>
+<h1 class="portfolio-title">Unity<hr></h1>
 
 <!-- Hong Kong 47 -->
-<a class="portfolio-link" href="#hk47">
+<a class="portfolio-link unfinished" href="#/hk47">
     <img src="/img/hk47.png" alt="Hong Kong 47">
     <div class="portfolio-link-text">
         <h3>Hong Kong 47</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>Doom-style 2.5d FPS set in Hong Kong, with 4 weapons and 3 types of enemies, made in Unity</p>
     </div>
 
 </a>
 <!-- expand -->
 <div class="expandable" id="hk47">
     <div class="expandable-top">
-        <img src="https://s3.amazonaws.com/ladder-blog/2017/11/Step1---GIPHY-GIF-MAKER.gif" alt="">
+        <img src="/img/screenshots/hk47-screenshot.png" alt="">
         <div class="expandable-text">
             <h3>Hong Kong 47</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
@@ -165,12 +167,12 @@
 </div>
 
 <!-- Bloki -->
-<a class="portfolio-link" href="#bloki">
+<a class="portfolio-link unfinished" href="#/bloki">
     <img src="/img/bloki.png" alt="bloki">
     <div class="portfolio-link-text">
         <h3>Bloki</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>My first attempt at Unity Game Development, Arkanoid clone (in Russian)</p>
     </div>
 
 </a>
@@ -191,12 +193,12 @@
 </div>
 
 <!-- Connect 4 -->
-<a class="portfolio-link" href="#c4">
+<a class="portfolio-link unfinished" href="#/c4">
     <img src="/img/c4.png" alt="connect 4">
     <div class="portfolio-link-text">
         <h3>Connect 4</h3>
         <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, rem?</p>
+        <p>Very simple connect 4 made in Unity</p>
     </div>
 
 </a>
@@ -222,9 +224,15 @@
 @section('extra-scripts')
 
 <style>
+
+    
+
     html{
         scroll-behavior: smooth;
     }
+
+
+
     .expandable {
         background: #595959;
         overflow: hidden;
@@ -276,7 +284,7 @@
 
     .portfolio-title {
         text-align: center;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
     }
 
     .portfolio-link {
@@ -301,6 +309,8 @@
 
     .portfolio-link-text {
         padding: 1em;
+        font-weight: 400;
+        width: 80%;
     }
 
     .portfolio-link-text p {
@@ -310,7 +320,26 @@
     .portfolio-link-text h3 {
         font-size: 2em;
     }
+    
 
+    
 </style>
+
+@auth
+<style>
+    .unfinished, .unfinished:hover{
+        background-color: #595959;
+        color: grey;
+    }
+</style>
+@endauth
+
+@guest
+ <style>
+ .unfinished, .unfinished:hover{
+        display: none;
+    }
+ </style>   
+@endguest
 
 @endsection
