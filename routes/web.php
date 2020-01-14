@@ -36,7 +36,8 @@ Route::get('/post/{post}', 'PostController@show');
 Route::get('/post/{post}/edit', 'PostController@edit')->middleware('auth');
 Route::put('/post/{post}', 'PostController@update')->middleware('auth');
 
-Route::get('/post/{post}/delete-confirm', 'PostController@delete-confirm');
+Route::get('/post/{post}/delete-confirm', 'PostController@delete_confirm')->middleware('auth');
+Route::delete('/post/{post}', 'PostController@destroy')->middleware('auth');
 
 
 // Category
@@ -49,7 +50,8 @@ Route::get('/category/', 'CategoryController@index');
 Route::get('/category/{category}/edit', 'CategoryController@edit')->middleware('auth');
 Route::put('/category/{category}', 'CategoryController@update')->middleware('auth');
 
-Route::get('/category/{category}/delete-confirm', 'CategoryController@delete-confirm');
+Route::get('/category/{category}/delete-confirm', 'CategoryController@delete_confirm')->middleware('auth');
+Route::delete('/category/{category}', 'CategoryController@destroy')->middleware('auth');
 
 Route::get('/backend', 'BackendController@index')->name('backend')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

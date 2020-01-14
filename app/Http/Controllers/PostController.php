@@ -172,7 +172,16 @@ class PostController extends Controller
        return redirect("/post/$post->slug");
    }
 
-    public function destroy() {}
+   public function delete_confirm($post) {
+        $post = \App\Post::where('slug', $post)->whereNull('deleted_at')->firstOrFail();
+        return view('confirm-delete', compact('post'));
+   }
+
+    public function destroy($post) {
+        $post = \App\Post::where('slug', $post)->whereNull('deleted_at')->firstOrFail();
+        $post->delete();
+        return redirect('/blog');
+    }
 
 
 }

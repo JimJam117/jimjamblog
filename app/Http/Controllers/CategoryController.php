@@ -151,4 +151,16 @@ class CategoryController extends Controller
 
         return redirect("/category/$category->title");
     }
+
+
+    public function delete_confirm($category) {
+        $category = \App\Category::where('title', $category)->whereNull('deleted_at')->firstOrFail();
+        return view('confirm-delete', compact('category'));
+   }
+
+    public function destroy($category) {
+        $category = \App\Category::where('title', $category)->whereNull('deleted_at')->firstOrFail();
+        $category->delete();
+        return redirect('/blog');
+    }
 }
