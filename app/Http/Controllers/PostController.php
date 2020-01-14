@@ -101,6 +101,61 @@ class PostController extends Controller
         
     }
 
+    public function edit($post) {    
+        // get user and authorize
+        $post = \App\Post::where('slug', $post)->firstOrFail();
+
+        $categories = \App\Category::all();
+
+        return view('post.edit', compact('post', 'categories'));
+    }
+
+    public function update($post){
+        // get user and authorize
+        $post = \App\Post::where('slug', $post)->firstOrFail();
+
+       $data = request()->validate([
+        'title' => 'required',
+        'body' => 'required',
+        'slug' => 'required',
+        'category_id' => 'nullable',
+        'image' => 'nullable|image',
+
+       ]);
+
+       //$imgPath = request('image')->store('uploads', 'public');
+       if (request('image')) {
+           $imgPath = request('image')->store('uploads', 'public');
+
+           // adds the storage dir to the front of the path
+           $imgPathWithStorage = '/storage/' . $imgPath;
+
+           $post->update([
+               'title' => $data['title'],
+               'body' => Purifier::clean($data['body']),
+               'slug' => $data['slug'],
+               'category_id' => $data['category_id'],
+
+               'image' => $imgPathWithStorage,
+           ]);
+       }
+       else{
+       // create post assoc with auth'd user
+       // uses validated $data var items and also the image path
+       $post->update([
+        'title' => $data['title'],
+        'body' => Purifier::clean($data['body']),
+        'slug' => $data['slug'],
+        'category_id' => $data['category_id'],
+       ]);
+
+       }
+       
+
+
+       return redirect("/post/$post->slug");
+   }
+
     public function destroy() {}
 
 

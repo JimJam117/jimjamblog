@@ -5,6 +5,15 @@
 @endsection
 
 @section('content')
+
+@auth
+<div class="endSection">
+    <button onclick="location.href='/post/{{$post->slug}}/delete-confirm';" class="social-button">X</button>
+    <button onclick="location.href='/post/{{$post->slug}}/edit';" class="social-button"><i class="fas fa-pen"></i></button>
+</div>
+
+@endauth
+
 <div class="container">
     
         <div class="post">
@@ -32,8 +41,8 @@
         <div class="sidebar">
             <h3>Links</h3>
             <ul style="list-style: none;">
-                <li><a class="sidebar_link" href="#"><i class="fab fa-github"></i> Github</a></li>
-                <li><a class="sidebar_link" href="#"><i class="fas fa-envelope-square"></i> Contact</a></li>
+                <li><a class="btn sidebar-btn" href="/github"><i class="fab fa-github"></i> Github</a></li>
+                <li><a class="btn sidebar-btn" href="/contact"><i class="fas fa-envelope-square"></i> Contact</a></li>
             </ul>
             <hr>
 

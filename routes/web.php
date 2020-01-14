@@ -28,9 +28,16 @@ Route::get('/search/{search}', 'SearchController@show')->name('search');
 // Post
 Route::get('/post/create', 'PostController@create')->middleware('auth');
 Route::get('/posts', 'PostController@index');
+Route::get('/blog', 'PostController@index');
+Route::get('/post/', 'PostController@index');
 Route::post('/post', 'PostController@store')->middleware('auth');
 Route::get('/post/{post}', 'PostController@show');
-Route::get('/post/', 'PostController@index');
+
+Route::get('/post/{post}/edit', 'PostController@edit')->middleware('auth');
+Route::put('/post/{post}', 'PostController@update')->middleware('auth');
+
+Route::get('/post/{post}/delete-confirm', 'PostController@delete-confirm');
+
 
 // Category
 Route::get('/category/create', 'CategoryController@create')->middleware('auth');
@@ -39,7 +46,12 @@ Route::post('/category', 'CategoryController@store')->middleware('auth');
 Route::get('/category/{category}', 'CategoryController@show');
 Route::get('/category/', 'CategoryController@index');
 
-Route::get('/backend', 'BackendController@index')->name('backend');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/category/{category}/edit', 'CategoryController@edit')->middleware('auth');
+Route::put('/category/{category}', 'CategoryController@update')->middleware('auth');
+
+Route::get('/category/{category}/delete-confirm', 'CategoryController@delete-confirm');
+
+Route::get('/backend', 'BackendController@index')->name('backend')->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
