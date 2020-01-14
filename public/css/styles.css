@@ -110,7 +110,7 @@ body {
 
 }
 
-.navbar a {
+.navbar a, .btn {
     text-decoration: none;
     padding: 0.75em 2em;
     margin: 0 1em 0 0;
@@ -118,9 +118,10 @@ body {
     color: rgb(177, 71, 92);
     display: inline-block;
     transition: background-color 0.15s, color 0.15s;
+    border: rgb(177, 71, 92) 2px solid;;
 }
 
-.navbar a:hover {
+.navbar a:hover, .btn:hover {
     background-color: rgb(177, 71, 92);
     color: #fff;
 }
@@ -583,6 +584,37 @@ footer {
 }
 .homepage-gallery img{
     width: 100%;
+}
+
+
+
+/*BACKEND*/
+
+.row{
+    width: 100%;
+    padding: 1em;
+}
+
+.row input{
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+}
+.row textarea{
+    margin: 1em 0;
+}
+.row select {
+    margin:  1em 0;
+    padding: 1em;
+    background-color: #fff;
+    font-size: large;
+    
+}
+
+
+.row label{
+    font-size: 2em;
+    
 }
 
 
