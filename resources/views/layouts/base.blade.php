@@ -39,8 +39,8 @@
     </div>
     </div>
 
+    @auth
     <div class="control-nav">
-        @auth
         <a href="/post/create">Create Post</a>
         <a href="/category/create">Create Category</a>
         <button class="login" onclick="document.getElementById('logout-form').submit();">{{Auth::user()->name}}:
@@ -50,11 +50,9 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
-        @endauth
-        @guest
-        <button class="login" onclick="window.location.href=('/login')">Login</button>
-        @endguest
     </div>
+    @endauth
+    
     <div class="main">
         
         @yield('search')
