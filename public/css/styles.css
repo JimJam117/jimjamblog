@@ -18,6 +18,7 @@
 }
 
 body {
+    
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     margin: 10px;
@@ -38,7 +39,7 @@ body {
     margin: 0;
     background: rgba(255, 255, 255, 0.89);
     width: 75vw;
-    padding: 80px 40px 40px 40px;
+    padding: 4em 2em;
     position: relative;
     left: 50%;
     overflow-x: hidden;
@@ -56,7 +57,7 @@ body {
     width: 75vw;
     left: 50%;
     transform: translateX(-50%);
-    padding: 1em;
+    padding: 1vw;
     border-left: 1px solid rgb(141, 56, 73);
     border-right: 1px solid rgb(141, 56, 73);
     border-top: 1px solid rgb(141, 56, 73);
@@ -118,7 +119,10 @@ body {
     color: rgb(177, 71, 92);
     display: inline-block;
     transition: background-color 0.15s, color 0.15s;
-    border: rgb(177, 71, 92) 2px solid;;
+}
+
+.btn{
+    border: rgb(177, 71, 92) 2px solid;
 }
 
 .navbar a:hover, .btn:hover {
@@ -137,7 +141,6 @@ body {
     display: inline-block;
     color: #fff;
     font-weight: 300;
-    font-size: 80%;
     margin-bottom: 1em;
 }
 
@@ -151,49 +154,6 @@ body {
     display: inline;
     font-weight: 100;
 }
-
-/*LANG BUTTONS*/
-
-.langbtns {
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    height: 30px;
-}
-
-.langbutton {
-    display: inline-block;
-    height: 30px;
-    width: 50px;
-    padding: 5px;
-    border: #fff solid 1px;
-    opacity: 0.2;
-}
-
-.langbutton:hover {
-    opacity: 1;
-}
-
-.eng {
-    background-image: url("../img/eng.png");
-    background-size: cover;
-}
-
-.rus {
-    background-image: url("../img/ruse.png");
-    background-size: cover;
-}
-
-.rusrom {
-    background-image: url("../img/rusr.png");
-    background-size: cover;
-}
-
-.esp {
-    background-image: url("../img/esp.png");
-    background-size: cover;
-}
-
 
 /*SEARCHBAR*/
 
@@ -641,7 +601,7 @@ footer {
 
 .endSection{
     display: flex;
-    margin: 2em auto 1em auto;
+    margin: 2vw auto 1vw auto;
     justify-content: center;
 }
 
@@ -649,11 +609,11 @@ footer {
     display: block;
     font-size: 2em;
     opacity: 0.90;
-    margin: 0 15px;
+    margin: 0 0.5em;
     border-radius: 100%;
     border: none;
-    width: 70px;
-    height: 70px;
+    width: 2em;
+    height: 2em;
     transition: background-color 0.4s, height 0.4s, width 0.4s, color 0.4s, opacity 0.4s;
     color: white;
     background-color: rgb(177, 71, 92);
@@ -676,6 +636,38 @@ footer {
 
 /*TESTING*/
 
+@media only screen and (min-width: 1500px) {
+
+    body {
+        font-size: 1vw;
+    }
+    
+    .title {
+        font-size: 1vw;
+    }
+    .main{
+        padding: 4vw 2vw;
+    }
+    .row input{
+        width: 100%;
+        padding: 1em;
+        margin: 1em 0;
+        font-size: 1vw;
+    }
+    .row textarea{
+        margin: 1em 0;
+        font-size: 1vw;
+    }
+    .social-button {
+        margin: 0 1vw;
+        width: 4vw;
+        height: 4vw;
+    }
+
+
+
+
+}
 
 
 @media only screen and (max-width: 1185px) {
@@ -709,6 +701,9 @@ footer {
         width: 100%;
 
     }
+    .navbar{
+        width: 100%;
+    }
 
 }
 
@@ -733,8 +728,10 @@ footer {
     .navbar {
         overflow: hidden;
         left: 0;
-        text-align: center;
-        width: 100%;
+    }
+
+    .navbar a{
+        padding: 0.75em 1.5em;
     }
 
     .jamesPic {
@@ -748,39 +745,47 @@ footer {
 
 }
 
-@media only screen and (max-width: 830px) {
 
+@media only screen and (max-width: 650px) {
+    body{
+        margin: 0;
+        font-size: inherit;
+    }
 
+    .navbar{
+        text-align: center;
+        display: flex;
+        margin-bottom: 1em;
+
+    }
     .navbar a {
-        font-size: 80%;
-        padding: 10px 20px;
+        font-size: 90%;
+        width: 25%;
+        padding: 0.75em 0;
+        margin: 0 0.3em; 
+    }
+    .title { 
+        position: initial;
+        margin-bottom: 1em;
     }
 
-    .Column {
-        width: 100%;
-    }
-
-
-    .jamesPic {
-        top: 25%
-    }
-
-    .title {
-
-        left: 60px;
-        top: 17px;
-        position: relative;
-
+    .title h1{
+        display: inherit;
+        margin-right: 0;
+        font-size: 32px;
     }
 
     .title h3 {
         display: none;
     }
-
-
-}
-
-@media only screen and (max-width: 650px) {
+   
+    .row input{
+        font-size: 1em;
+    }
+    .row textarea{
+        font-size: 1em;
+    }
+   
     .post_container {
         margin: 0 15px;
     }
@@ -823,45 +828,18 @@ footer {
 
     }
 
-    .langbtns {
-        top: 26px;
-
+    .social-button{
+        width: 2em;
+        height: 2em;
     }
 
-    .langbutton {
-        display: inline-block;
-        height: 15px;
-        width: 25px;
-        padding: 5px;
-        border: #fff solid 1px;
-        opacity: 0.2;
-    }
-
-    .title {
-        top: 25px;
-        left: 65px;
-    }
-
-    .navbar a {
-        font-size: 90%;
-        padding: 5px;
-        margin: 2px;
-    }
+    
 }
 
 @media only screen and (max-width: 488px) {
     footer {
         font-size: 70%;
     }
-
-    body {
-        font-size: 70%;
-    }
-
-    .main {
-        padding: 80px 10px 20px 10px
-    }
-
 
     .banner {
         padding: 10px 10px;
@@ -872,6 +850,12 @@ footer {
     .banner h3 {
         font-size: 22px;
         padding-bottom: 20px
+    }
+    .title{
+        margin-bottom: 2em;
+    }
+    .topbar-section{
+        padding: 0 0.2em;
     }
 
 }

@@ -56,4 +56,6 @@ Route::delete('/category/{category}', 'CategoryController@destroy')->middleware(
 Route::get('/backend', 'BackendController@index')->name('backend')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/contact', 'ContactController@index')->name('contact');
+
 Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
