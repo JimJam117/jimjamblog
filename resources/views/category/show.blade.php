@@ -1,41 +1,43 @@
 @extends('layouts.blog')
 @section('title')
-    {{$category->title}}
+{{$category->title}}
 @endsection
 
 @section('content')
 
-@auth
-<div class="endSection">
-    <button onclick="location.href='/category/{{$category->title}}/delete-confirm';" class="social-button">X</button>
-    <button onclick="location.href='/category/{{$category->title}}/edit';" class="social-button"><i class="fas fa-pen"></i></button>
-</div>
-
-@endauth
 <div class="container">
-        <div class="post">
-            <img class="post_thumbnail" src="{{$category->image}}" alt="{{$category->title}}">
-            <div class="post_container">
-                <br>
-                <p class="timestamp">{{$category->created_at}}</p>
-                <h1>{{$category->title}}</h1>
-                {!!$category->body!!}
-                <br>
-                <hr><br>
-                @if($category->posts->count() > 0)
-                  Posts:
-                  <br>
-                  <hr>
-                  @foreach ($category->posts as $post)
-                  <a href="/post/{{$post->slug}}">{{$post->title}}</a>
-                  @endforeach
-                @endif
-                <br>
-                <a href="/categories" class="btn readMore">Go Back</a>
-                <br><br>
-            </div>
+    <div class="post">
+        <img class="post_thumbnail" src="{{$category->image}}" alt="{{$category->title}}">
+        <div class="post_container">
             <br>
+            <p class="timestamp">{{$category->created_at}}</p>
+            @auth
+            <div class="endSection">
+                <button onclick="location.href='/category/{{$category->title}}/delete-confirm';"
+                    class="social-button">X</button>
+                <button onclick="location.href='/category/{{$category->title}}/edit';" class="social-button"><i
+                        class="fas fa-pen"></i></button>
+            </div>
+
+            @endauth
+            <h1>{{$category->title}}</h1>
+            {!!$category->body!!}
+            <br>
+            <hr><br>
+            @if($category->posts->count() > 0)
+            Posts:
+            <br>
+            <hr>
+            @foreach ($category->posts as $post)
+            <a href="/post/{{$post->slug}}">{{$post->title}}</a>
+            @endforeach
+            @endif
+            <br>
+            <a href="/categories" class="btn readMore">Go Back</a>
+            <br><br>
         </div>
+        <br>
+    </div>
 
     <div class="sidebar_container">
         <div class="sidebar">
@@ -54,7 +56,7 @@
                     <em>{{strip_tags(Str::limit($recent_post->body, 50))}}</em>
                 </div>
             </a>
-            
+
             <!--<a href="/category/{{$category->title}}/all">All Posts within this project</a>-->
             <br>
 

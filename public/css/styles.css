@@ -659,7 +659,9 @@ footer {
     background-color: rgb(177, 71, 92);
     box-shadow: 0 3px 7px 0px black;
 }
-
+.social-button:focus{
+    outline: 0;
+}
 .social-button:hover {
     background-color: lightgrey;
     color: black;

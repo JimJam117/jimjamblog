@@ -1,40 +1,40 @@
 @extends('layouts.standard')
 
 @section('title')
-    {{$post->title}}
+{{$post->title}}
 @endsection
 
 @section('content')
 
-@auth
-<div class="endSection">
-    <button onclick="location.href='/post/{{$post->slug}}/delete-confirm';" class="social-button">X</button>
-    <button onclick="location.href='/post/{{$post->slug}}/edit';" class="social-button"><i class="fas fa-pen"></i></button>
-</div>
-
-@endauth
-
 <div class="container">
-    
-        <div class="post">
 
-            <img class="post_thumbnail" src="{{$post->image}}" alt="{{$post->title}}">
+    <div class="post">
 
-            <div class="post_container">
-                <br>
-                <p class="timestamp">{{$post->created_at}}</p>
-                <h1>{{$post->title}}</h1>
+        <img class="post_thumbnail" src="{{$post->image}}" alt="{{$post->title}}">
 
-                {!!$post->body!!}
-                <br>
-                <hr><br>
-                <br>
-                <a href="/posts" class="btn readMore">Go Back</a>
-                <br><br>
-            </div>
+        <div class="post_container">
             <br>
+            <p class="timestamp">{{$post->created_at}}</p>
+            @auth
+            <div class="endSection">
+                <button onclick="location.href='/post/{{$post->slug}}/delete-confirm';" class="social-button">X</button>
+                <button onclick="location.href='/post/{{$post->slug}}/edit';" class="social-button"><i
+                        class="fas fa-pen"></i></button>
+            </div>
+
+            @endauth
+            <h1>{{$post->title}}</h1>
+
+            {!!$post->body!!}
+            <br>
+            <hr><br>
+            <br>
+            <a href="/posts" class="btn readMore">Go Back</a>
+            <br><br>
         </div>
-    
+        <br>
+    </div>
+
 
 
     <div class="sidebar_container">
@@ -56,8 +56,8 @@
                 </div>
             </a>
             <hr>
-            <a style="text-decoration: none" href="/categories"><strong>View All Projects</strong></a> 
-            <br> 
+            <a style="text-decoration: none" href="/categories"><strong>View All Projects</strong></a>
+            <br>
             @else
             <br>
             <h3><i class="fas fa-pen"></i> Recent Post</h3>
@@ -67,10 +67,10 @@
                     <h4>{{$recent_post->title}}</h4>
                     <em>{{strip_tags(Str::limit($recent_post->body, 50))}}</em>
                 </div>
-            </a> 
+            </a>
             @endisset
 
-            
+
         </div>
     </div>
 

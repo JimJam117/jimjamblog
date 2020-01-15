@@ -15,7 +15,7 @@
     <div class="portfolio-link-text">
         <h3>Hanzibase</h3>
         <br>
-        <p>Webapp for looking up Chinese Characters, built in Laravel and Vue using public APIs</p>
+        <p>Webapp database for learning Chinese Characters, built in Laravel and Vue using public APIs</p>
     </div>
 
 </a>
@@ -65,7 +65,7 @@
     <div class="portfolio-link-text">
         <h3>Chiltern School Of Motoring</h3>
         <br>
-        <p>A website I made for my driving instructor, with a custom Wordpress theme</p>
+        <p>Wordpress website made for my driving instructor, with a custom Wordpress theme to the client's specification</p>
     </div>
 
 </a>
@@ -112,7 +112,7 @@
 </div>
 
 <!-- London24Racing -->
-<a class="portfolio-link unfinished" href="#/london24racing">
+<a class="portfolio-link" href="#london24racing">
     <img src="/img/london24racing.png" alt="">
     <div class="portfolio-link-text">
         <h3>London24Racing</h3>
@@ -133,12 +133,12 @@
         </div>
     </div>
     <div class="expandable-bottom">
-        <a href="#">Live Demo</a> <a href="#">Source</a> <a href="#">Blog Page</a>
+        <a href="https://london24racing.com" target="_blank">Live Site</a> <a href="#" target="_blank">Source</a> <a href="#">Blog Page</a>
     </div>
 </div>
 
 <br><br><br>
-<h1 class="portfolio-title">Unity<hr></h1>
+<h1 class="portfolio-title">Game Development<hr></h1>
 
 <!-- Hong Kong 47 -->
 <a class="portfolio-link unfinished" href="#/hk47">
