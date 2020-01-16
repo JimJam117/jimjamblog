@@ -17,10 +17,11 @@ Home
     <div class="homepage-container">
         <div class="homepage-content">
             <div>
-                
+                <img class="homepage-profile-pic-top" src="/img/jimjam3.png" alt="Me">
                 <p>
                     <img class="homepage-profile-pic" src="/img/jimjam3.png" alt="Me">
-                    My name's James Sparrow, I'm a 20 year old former software development student who's passionate about web development.
+                    My name's James Sparrow, I'm a 20 year old former software development student who's passionate
+                    about web development.
                     Check out my portfolio or blog to see what I've been up to!
                 </p>
                 <br>
@@ -55,4 +56,96 @@ Home
 
 </div>
 
+@endsection
+
+@section('extra-scripts')
+<style>
+    /*HOMEPAGE*/
+
+    .homepage-container {
+        width: 100%;
+    }
+
+    .homepage-content {
+        display: flex;
+        margin: 2em;
+        justify-content: space-between;
+        font-family: "Public Sans";
+        color: #151515;
+    }
+
+    .homepage-content div {
+        width: 45%;
+        text-align: initial;
+        font-size: 1.25em;
+            margin-top: 2em;
+    }
+
+    .homepage-profile-pic {
+        width: 30%;
+        float: left;
+        padding: 1em;
+        border-radius: 100%;
+    }
+
+    .homepage-profile-pic-top {
+        display: none;
+    }
+
+    .homepage-quick-links {
+        display: grid;
+        list-style: none;
+    }
+
+    .homepage-quick-links a {
+        text-decoration: none;
+        color: rgb(141, 56, 73);
+        transition: 0.2s;
+        font-size: 1.25em;
+    }
+
+    .homepage-quick-links li {
+        padding: 0.5em 0;
+    }
+
+    .homepage-quick-links a:hover {
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .homepage-gallery {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .homepage-gallery img {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 985px) {
+        .homepage-content{
+            flex-direction: column;
+        }
+
+        .homepage-profile-pic-top {
+            display: initial;
+            width: 10em;
+            padding: 1em;
+            border-radius: 100%;
+        }
+        .homepage-profile-pic{
+            display: none;
+        }
+
+        .homepage-content div{
+            width: 100%;
+            text-align: center;
+        }
+
+        .homepage-quick-links li {
+            padding: 1.5em 0em;
+            text-align: center;
+        }
+    }
+
+</style>
 @endsection

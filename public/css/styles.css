@@ -39,7 +39,7 @@ body {
     margin: 0;
     background: rgba(255, 255, 255, 0.89);
     width: 75vw;
-    padding: 4em 2em;
+    padding: 1em 2em;
     position: relative;
     left: 50%;
     overflow-x: hidden;
@@ -158,21 +158,13 @@ body {
 /*SEARCHBAR*/
 
 .search {
-    position: absolute;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
-    top: 10px;
-    right: 20px;
+    text-align: right;
     display: block;
     transition: all .2s;
 }
 
-.search:hover {
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-    border: #00000033 solid 1px;
-}
-
 .searchInput {
-    height: 35px;
+    height: 3em;
     background-color: #fff;
 
     color: black;
@@ -188,15 +180,12 @@ body {
 
 .searchButton {
     position: relative;
-
     background-color: rgb(177, 71, 92);
     border: solid 2px rgb(177, 71, 92);
-    padding: 7px 13px;
+    padding: 0px 13px;
     color: #fff;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    margin-right: -4px;
-    height: 35px;
+    height: 3em;
+    left: 10px;
     transition: color 0.3s, background-color 0.3s, border 0.1s;
 }
 
@@ -406,8 +395,7 @@ body {
     width: 75vw;
     padding: 30px 100px;
     left: 50%;
-    top: -20px;
-    font-size: 18px;
+    top: 1em;
     position: relative;
     text-align: center;
     transform: translateX(-50%);
@@ -520,55 +508,6 @@ footer {
 
 }
 
-/*HOMEPAGE*/
-
-.homepage-container{
-    width: 100%;
-}
-.homepage-content{
-    display: flex;
-    margin: 2em;
-    justify-content: space-between;
-    font-family: "Public Sans";
-    font-size: large;
-    color: #151515;
-}
-.homepage-content div{
-    width: 45%;
-    text-align: initial;
-}
-.homepage-profile-pic{
-    width: 30%;
-    float: left;
-    padding: 1em;
-    border-radius: 100%;
-}
-.homepage-quick-links{
-    display: grid;
-    list-style: none;
-}
-.homepage-quick-links a{
-    text-decoration: none;
-    color: rgb(141, 56, 73);
-    transition: 0.2s;
-    font-size: 1.25em;
-}
-.homepage-quick-links li{
-    padding: 0.5em 0;
-}
-.homepage-quick-links a:hover{
-    color: rgba(0, 0, 0, 0.4);
-}
-
-.homepage-gallery{
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-.homepage-gallery img{
-    width: 100%;
-}
-
-
 
 /*BACKEND*/
 
@@ -646,7 +585,7 @@ footer {
         font-size: 1vw;
     }
     .main{
-        padding: 4vw 2vw;
+        padding: 1vw 2vw;
     }
     .row input{
         width: 100%;
@@ -666,6 +605,18 @@ footer {
     .endSection{
         margin: 2vw auto 1vw auto;
     }
+    .banner{
+        padding: 3vw;
+    }
+    .searchButton{
+        height: 2vw;
+        padding: 0px 0.8vw;
+    }
+    .searchInput{
+        height: 2vw;
+        padding: 0px 0.8vw;
+    }
+
 
 
 
@@ -674,11 +625,7 @@ footer {
 
 
 @media only screen and (max-width: 1185px) {
-    .topbar {
-        width: 86vw;
-    }
-
-    .main {
+    .topbar, .main, .banner {
         width: 86vw;
     }
 
@@ -809,12 +756,8 @@ footer {
 
 
 
-
     .search {
-        right: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 220px;
+        text-align: center;
     }
 
     .searchInput {
@@ -846,7 +789,6 @@ footer {
     }
 
     .banner {
-        padding: 10px 10px;
         font-size: 12px;
         width: 100vw;
     }
@@ -861,11 +803,14 @@ footer {
     .topbar-section{
         padding: 0 0.2em;
     }
-
+    
 }
 
 @media only screen and (max-width: 300px) {
     .banner {
         width: 100%;
+    }
+    .main{
+        padding: 1em 0;
     }
 }
