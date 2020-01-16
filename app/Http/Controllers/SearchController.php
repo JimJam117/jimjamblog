@@ -18,9 +18,11 @@ class SearchController extends Controller
         }
 
         $results_posts = \App\Post::where('description', 'LIKE', "%{$search}%")
+                                    ->orWhere('body', 'LIKE', "%{$search}%")
                                     ->orWhere('title', 'LIKE', "%{$search}%")
                                     ->get();
         $results_categories = \App\Category::where('description', 'LIKE', "%{$search}%")
+                                    ->orWhere('body', 'LIKE', "%{$search}%")
                                     ->orWhere('title', 'LIKE', "%{$search}%")
                                     ->get();
 
