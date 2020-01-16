@@ -1,17 +1,22 @@
 @extends('layouts.base')
 
 @section('title')
-    Portfolio
+Portfolio
 @endsection
 
 @section('content')
 <h1 class="portfolio-title" style="font-size: 3em;">Portfolio</h1>
 
-<h1 class="portfolio-title">Websites and Webapps<hr></h1>
+<h1 class="portfolio-title">Websites and Webapps
+    <hr>
+</h1>
 
 <!-- Instajam -->
 <a class="portfolio-link unfinished" href="#/hanzibase">
-    <img src="/img/hanzibase.png" alt="hanzibase">
+    <div class="portfolio-link-image">
+        <img src="/img/hanzibase.png" alt="hanzibase">
+    </div>
+    
     <div class="portfolio-link-text">
         <h3>Hanzibase</h3>
         <br>
@@ -35,7 +40,10 @@
 
 <!-- Astralondon.me -->
 <a class="portfolio-link unfinished" href="#/astralondon">
-    <img src="/img/astralondon.png" alt="">
+    <div class="portfolio-link-image">
+        <img src="/img/astralondon.png" alt="">
+    </div>
+    
     <div class="portfolio-link-text">
         <h3>Astralondon.me</h3>
         <br>
@@ -61,18 +69,23 @@
 
 <!-- Chiltern School of Motoring -->
 <a class="portfolio-link" href="#csom">
-    <img src="/img/csom.png" alt="">
+    <div class="portfolio-link-image">
+        <img src="/img/csom.png" alt="">
+    </div>
     <div class="portfolio-link-text">
         <h3>Chiltern School Of Motoring</h3>
         <br>
-        <p>Wordpress website made for my driving instructor, with a custom Wordpress theme to the client's specification</p>
+        <p>Wordpress website made for my driving instructor, with a custom Wordpress theme to the client's specification
+        </p>
     </div>
 
 </a>
 <!-- expand -->
 <div class="expandable" id="csom">
     <div class="expandable-top">
-        <img src="/img/screenshots/chiltern-screenshot.png" alt="">
+        <div class="expandable-image">
+            <img src="/img/screenshots/chiltern-screenshot.png" alt="">
+        </div>
         <div class="expandable-text">
             <h3>Chiltern School of Motoring</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
@@ -80,14 +93,33 @@
                 doloribus veniam fuga cupiditate.</p>
         </div>
     </div>
+
+    <div class="expandable-middle">
+        <div><i class="fab fa-wordpress"></i> <small>Wordpress</small></div>
+        <div><i class="fab fa-html5"></i> <small>HTML5</small></div>
+        <div><i class="fab fa-css3-alt"></i></i> <small>CSS3</small></div>
+        <div><i class="fas fa-mobile-alt"></i></i> <small>Responsive Design</small></div>
+    </div>
+
     <div class="expandable-bottom">
-        <a href="https://www.chilternsom.co.uk/">Live Site</a> <p style="color:#a1a1a1;">Source Private</p> <a href="#">Blog Page</a>
+        <a class="btn" href="https://www.chilternsom.co.uk/" target="_blank">
+            <i class="far fa-window-maximize"></i> Live Site
+        </a>  
+        <p style="color:#a1a1a1; margin: auto 0;">
+            <i class="fas fa-lock"></i> Source Private
+        </p> 
+        <a class="btn" href="#">
+            <i class="fas fa-pen"></i> Blog Page
+        </a>
     </div>
 </div>
 
 <!-- Instajam -->
 <a class="portfolio-link unfinished" href="#/instajam">
-    <img src="/img/jimjam4.png" alt="">
+    <div class="portfolio-link-image">
+        <img src="/img/jimjam4.png" alt="">
+    </div>
+    
     <div class="portfolio-link-text">
         <h3>Instajam</h3>
         <br>
@@ -113,7 +145,10 @@
 
 <!-- London24Racing -->
 <a class="portfolio-link" href="#london24racing">
-    <img src="/img/london24racing.png" alt="">
+    <div class="portfolio-link-image">
+        <img src="/img/london24racing.png" alt="london24racing">
+    </div>
+    
     <div class="portfolio-link-text">
         <h3>London24Racing</h3>
         <br>
@@ -124,7 +159,9 @@
 <!-- expand -->
 <div class="expandable" id="london24racing">
     <div class="expandable-top">
-        <img src="/img/screenshots/l24r-screenshot.png" alt="">
+        <div class="expandable-image">
+            <img src="/img/screenshots/l24r-screenshot.png" alt="screenshot">
+        </div>
         <div class="expandable-text">
             <h3>London24Racing.com</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur blanditiis quis obcaecati iste. Ea aut
@@ -132,17 +169,37 @@
                 doloribus veniam fuga cupiditate.</p>
         </div>
     </div>
+    <div class="expandable-middle">
+        <div><i class="fab fa-html5"></i> <small>HTML5</small></div>
+        <div><i class="fab fa-css3-alt"></i></i> <small>CSS3</small></div>
+        <div><i class="fab fa-js"></i> <small>Javascript</small></div>
+        <div><i class="fab fa-php"></i> <small>PHP</small></div>
+        <div><i class="fas fa-mobile-alt"></i></i> <small>Responsive Design</small></div>
+    </div>
     <div class="expandable-bottom">
-        <a href="https://london24racing.com" target="_blank">Live Site</a> <a href="#" target="_blank">Source</a> <a href="#">Blog Page</a>
+        <a class="btn" href="https://london24racing.com" target="_blank">
+            <i class="far fa-window-maximize"></i> Live Site
+        </a>  
+        <a class="btn" href="#" target="_blank">
+            <i class="fas fa-code"></i> Source
+        </a> 
+        <a class="btn" href="#">
+            <i class="fas fa-pen"></i> Blog Page
+        </a>
     </div>
 </div>
 
 <br><br><br>
-<h1 class="portfolio-title">Game Development<hr></h1>
+<h1 class="portfolio-title">Game Development
+    <hr>
+</h1>
 
 <!-- Hong Kong 47 -->
 <a class="portfolio-link unfinished" href="#/hk47">
-    <img src="/img/hk47.png" alt="Hong Kong 47">
+    <div class="portfolio-link-image">
+        <img src="/img/hk47.png" alt="Hong Kong 47">
+    </div>
+
     <div class="portfolio-link-text">
         <h3>Hong Kong 47</h3>
         <br>
@@ -168,7 +225,10 @@
 
 <!-- Bloki -->
 <a class="portfolio-link unfinished" href="#/bloki">
-    <img src="/img/bloki.png" alt="bloki">
+    <div class="portfolio-link-image">
+        <img src="/img/bloki.png" alt="bloki">
+    </div>
+    
     <div class="portfolio-link-text">
         <h3>Bloki</h3>
         <br>
@@ -194,7 +254,9 @@
 
 <!-- Connect 4 -->
 <a class="portfolio-link unfinished" href="#/c4">
-    <img src="/img/c4.png" alt="connect 4">
+    <div class="portfolio-link-image">
+        <img src="/img/c4.png" alt="connect 4">
+    </div>
     <div class="portfolio-link-text">
         <h3>Connect 4</h3>
         <br>
@@ -224,14 +286,9 @@
 @section('extra-scripts')
 
 <style>
-
-    
-
-    html{
+    html {
         scroll-behavior: smooth;
     }
-
-
 
     .expandable {
         background: #595959;
@@ -251,31 +308,52 @@
         height: initial;
     }
 
-    .expandable:target img {
+    .expandable:target .expandable-image {
         display: block;
     }
 
-    .expandable img {
-        width: 50%;
+    .expandable-image {
         display: none;
+    }
+    .expandable-image img{
+        width: 100%;
     }
 
     .expandable-top {
         display: flex;
         margin-top: 1em;
     }
+    .expandable-top div{
+        width: 50%;
+    }
+
+    .expandable-middle{
+        text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    flex-wrap: wrap;
+    }
+    .expandable-middle div{
+        padding: 1em;
+        color: #dfdfdf;
+    }
+    
 
     .expandable-bottom {
         text-align: center;
         padding: 2em 1em 1em 1em;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
-    
+
     }
 
     .expandable-bottom a {
         text-decoration: none;
-        color: #fff;
+        border: none;
+        font-weight: 500;
+        margin: 1em;
     }
 
     .expandable-text {
@@ -301,10 +379,18 @@
         color: #fff;
     }
 
-    .portfolio-link img {
+    .portfolio-link-image {
         width: 20%;
-        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .portfolio-link img {
         border-radius: 100%;
+        padding: 1em;
+        width: 100%;
     }
 
     .portfolio-link-text {
@@ -320,26 +406,67 @@
     .portfolio-link-text h3 {
         font-size: 2em;
     }
-    
 
-    
+    @media only screen and (max-width: 985px) {
+        .portfolio-link-text {
+            font-size: 0.8em;
+            width: 65%;
+        }
+
+        .portfolio-link-image {
+            width: 35%;
+        }
+        .expandable-top{
+            flex-direction: column;
+        }
+        .expandable-top div{
+            width: 100%;
+        }
+        .expandable-image{
+            margin-bottom: 1em;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        .portfolio-link-text {
+            width: 60%;
+        }
+
+        .portfolio-link-image {
+            width: 40%;
+        }
+        .main{
+            padding: 1em 0;
+        }
+    }
+
+    @media only screen and (max-width: 488px) {
+        .portfolio-link-text {
+            font-size: 0.6em;
+        }
+    }
+
 </style>
 
 @auth
 <style>
-    .unfinished, .unfinished:hover{
+    .unfinished,
+    .unfinished:hover {
         background-color: #595959;
         color: grey;
     }
+
 </style>
 @endauth
 
 @guest
- <style>
- .unfinished, .unfinished:hover{
+<style>
+    .unfinished,
+    .unfinished:hover {
         display: none;
     }
- </style>   
+
+</style>
 @endguest
 
 @endsection

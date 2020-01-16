@@ -613,11 +613,11 @@ footer {
         padding: 3vw;
     }
     .searchButton{
-        height: 2vw;
+        height: 3vw;
         padding: 0px 0.8vw;
     }
     .searchInput{
-        height: 2vw;
+        height: 3vw;
         padding: 0px 0.8vw;
     }
     .searchInput, .searchButton{
