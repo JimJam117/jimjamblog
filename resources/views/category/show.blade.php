@@ -66,3 +66,13 @@
 
 
 @endsection
+
+@section('extra-scripts')
+    <style>
+    @media only screen and (max-width: 488px) {
+        .main {
+            padding: 1em 0;
+        }
+    }
+    </style>
+@endsection

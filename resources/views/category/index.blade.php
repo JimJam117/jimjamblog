@@ -5,8 +5,8 @@
 @endsection
 
 @section('banner')
-<div class="banner">
-    <h2>Projects</h2>
+<div class="banner" style="margin-bottom: 2em;">
+    <h1>Projects</h1>
     <p>
         Here are some of the categories that the blog posts are about. These can be either projects I am working on
         and have made multiple posts about or just topics in general which some undirectly related posts are grouped
@@ -27,7 +27,7 @@
 
             <h1>{{$category->title}}</h1>
 
-            <em>{{strip_tags(Str::limit($category->body, 100))}}</em>
+            <em>{{strip_tags(Str::limit($category->body, 200))}}</em>
             <br>
             <br>
         </div>
@@ -37,4 +37,12 @@
 @endforeach
 
 {{$categories->links()}}
+@endsection
+
+@section('extra-scripts')
+    <style>
+        .posts_container {
+            width: 100%;
+        }
+    </style>
 @endsection

@@ -82,7 +82,7 @@ Home
     }
 
     .homepage-profile-pic {
-        width: 30%;
+        width: 7em;
         float: left;
         padding: 1em;
         border-radius: 100%;
@@ -124,12 +124,13 @@ Home
     @media only screen and (max-width: 985px) {
         .homepage-content{
             flex-direction: column;
+            margin: 0em;
         }
 
         .homepage-profile-pic-top {
             display: initial;
             width: 10em;
-            padding: 1em;
+            padding: 0 1em 1em 1em;
             border-radius: 100%;
         }
         .homepage-profile-pic{

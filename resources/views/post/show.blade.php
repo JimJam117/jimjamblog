@@ -25,6 +25,11 @@
             @endauth
             <h1>{{$post->title}}</h1>
 
+            @isset($category)
+            <a class="part-of-project" href="/category/{{$post->category->title}}">This post is a part of:
+                {{$post->category->title}}</a>
+            @endisset
+
             {!!$post->body!!}
             <br>
             <hr><br>
@@ -76,4 +81,23 @@
 
 </div>
 
+@endsection
+
+@section('extra-scripts')
+<style>
+    .part-of-project {
+        text-decoration: none;
+        font-weight: 500;
+        font-style: italic;
+        margin: 1em 0 1.5em 0;
+        display: block;
+    }
+
+    @media only screen and (max-width: 488px) {
+        .main {
+            padding: 1em 0;
+        }
+    }
+
+</style>
 @endsection

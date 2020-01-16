@@ -199,6 +199,8 @@ body {
 .container{
     width: 100%;
     display: flex;
+    margin-top: 1em;
+    font-size: 1.1em;
 }
 
 .posts_container{
@@ -246,7 +248,7 @@ body {
 
 .sidebar_post_image{
     width: 100%;
-    height: 10vw;
+    height: 5vw;
 }
 
 /*Pagination*/
@@ -393,9 +395,10 @@ body {
 .banner {
     background-color: #fff;
     width: 75vw;
-    padding: 30px 100px;
+    padding: 30px 10px;
     left: 50%;
     top: 1em;
+    font-size: 1.2em;
     position: relative;
     text-align: center;
     transform: translateX(-50%);
@@ -448,7 +451,8 @@ footer {
 }
 
 .post_container {
-    margin: 0 45px;
+    margin: 0 2em;
+    font-size: 1.1em;
 }
 
 
@@ -616,6 +620,12 @@ footer {
         height: 2vw;
         padding: 0px 0.8vw;
     }
+    .searchInput, .searchButton{
+        font-size: 1vw;
+    }
+    .container{
+        margin-top: 1vw;
+    }
 
 
 
@@ -625,7 +635,7 @@ footer {
 
 
 @media only screen and (max-width: 1185px) {
-    .topbar, .main, .banner {
+    .topbar, .main, .banner, .control-nav {
         width: 86vw;
     }
 
@@ -641,11 +651,14 @@ footer {
 
     }
 
-    .sidebar {
-        float: none;
-        display: none;
-
+    .container{
+        display: flex;
+        flex-direction: column;
     }
+    .sidebar_container {
+        display: none;
+    }
+
 
     .post {
         width: 100%;
@@ -742,7 +755,8 @@ footer {
     }
 
     .main,
-    .topbar {
+    .topbar,
+    .control-nav {
         width: 100%;
     }
 
@@ -751,7 +765,8 @@ footer {
     }
 
     .banner {
-        width: 100vw
+        width: 100vw;
+        font-size: 1em;
     }
 
 
@@ -780,6 +795,7 @@ footer {
         height: 2em;
     }
 
+
     
 }
 
@@ -802,6 +818,9 @@ footer {
     }
     .topbar-section{
         padding: 0 0.2em;
+    }
+    .post_container{
+        font-size: 1em;
     }
     
 }

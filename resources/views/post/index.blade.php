@@ -18,7 +18,7 @@
 
             <h1>{{$post->title}}</h1>
 
-            <em>{{strip_tags(Str::limit($post->body, 100))}}</em>
+            <em>{{strip_tags(Str::limit($post->body, 200))}}</em>
             <br>
             <br>
         </div>
@@ -28,4 +28,12 @@
 @endforeach
 
 {{$posts->links()}}
+@endsection
+
+@section('extra-scripts')
+    <style>
+        .posts_container {
+            width: 100%;
+        }
+    </style>
 @endsection
