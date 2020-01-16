@@ -61,6 +61,9 @@ Home
 @section('extra-scripts')
 <style>
     /*HOMEPAGE*/
+    .container{
+        font-size: 1em;
+    }
 
     .homepage-container {
         width: 100%;

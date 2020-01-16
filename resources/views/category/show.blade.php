@@ -69,7 +69,7 @@
 
 @section('extra-scripts')
     <style>
-    @media only screen and (max-width: 488px) {
+    @media only screen and (max-width: 650px) {
         .main {
             padding: 1em 0;
         }
