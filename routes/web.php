@@ -43,6 +43,8 @@ Route::delete('/post/{post}', 'PostController@destroy')->middleware('auth');
 // Category
 Route::get('/category/create', 'CategoryController@create')->middleware('auth');
 Route::get('/categories', 'CategoryController@index');
+Route::get('/blog/projects', 'CategoryController@index');
+Route::get('/projects', 'CategoryController@index');
 Route::post('/category', 'CategoryController@store')->middleware('auth');
 Route::get('/category/{category}', 'CategoryController@show');
 Route::get('/category/', 'CategoryController@index');
@@ -57,5 +59,10 @@ Route::get('/backend', 'BackendController@index')->name('backend')->middleware('
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@send');
+Route::get('/email', function() {
+    return view('email');
+});
 
 Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
+

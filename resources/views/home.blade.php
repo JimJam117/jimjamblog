@@ -5,6 +5,8 @@ Home
 @endsection
 
 @section('content')
+
+
 <div class="banner">
 
     <h1>Welcome!</h1>
@@ -12,7 +14,6 @@ Home
 </div>
 
 <div class="container">
-
 
     <div class="homepage-container">
         <div class="homepage-content">
@@ -60,6 +61,17 @@ Home
 
 @section('extra-scripts')
 <style>
+    .mail-banner {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    background-color: rgba(190, 255, 190, 0.34);
+    font-family: "Open Sans";
+    font-weight: 500;
+    border: 1px solid #62b062;
+    border-radius: 1em;
+    }
+
     /*HOMEPAGE*/
     .container{
         font-size: 1em;

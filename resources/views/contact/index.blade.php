@@ -35,9 +35,9 @@ Contact
 
 
     <div class=" form-group row">
-        <textarea placeholder="Message" class="form-control @error('message') is-invalid @enderror" type="text"
-            name="message" rows="8">{{old('message')}}</textarea>
-        @error('message')
+        <textarea placeholder="Message" class="form-control @error('body') is-invalid @enderror" type="text"
+            name="body" rows="8">{{old('body')}}</textarea>
+        @error('body')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>

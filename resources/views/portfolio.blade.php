@@ -98,6 +98,7 @@ Portfolio
         <div><i class="fab fa-wordpress"></i> <small>Wordpress</small></div>
         <div><i class="fab fa-html5"></i> <small>HTML5</small></div>
         <div><i class="fab fa-css3-alt"></i></i> <small>CSS3</small></div>
+        <div><i class="fab fa-php"></i> <small>PHP</small></div>
         <div><i class="fas fa-mobile-alt"></i></i> <small>Responsive Design</small></div>
     </div>
 
@@ -190,9 +191,9 @@ Portfolio
 </div>
 
 <br><br><br>
-<h1 class="portfolio-title">Game Development
+<!--<h1 class="portfolio-title">Game Development
     <hr>
-</h1>
+</h1> -->
 
 <!-- Hong Kong 47 -->
 <a class="portfolio-link unfinished" href="#/hk47">
