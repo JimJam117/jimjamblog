@@ -21,7 +21,7 @@
                 </div>
                 <div class="post_container">
                     <br>
-                    <p class="timestamp">{{$item->created_at}} by {{$item->user->name}}</p>
+                    <p class="timestamp">{{$item->created_at}}</p>
 
                     <h1>{{$item->title}}</h1>
 

@@ -10,6 +10,7 @@
 
     <div class="post">
 
+        
         <img class="post_thumbnail" src="{{$post->image}}" alt="{{$post->title}}">
 
         <div class="post_container">
@@ -29,8 +30,11 @@
             <a class="part-of-project" href="/category/{{$post->category->title}}">This post is a part of:
                 {{$post->category->title}}</a>
             @endisset
-
-            {!!$post->body!!}
+            
+            <div class="post-body">
+                {!!$post->body!!}
+            </div>
+            
             <br>
             <hr><br>
             <br>
@@ -57,7 +61,7 @@
                 <img class="sidebar_post_image" src="{{$category->image}}" />
                 <div class="sidebar_post_content">
                     <h4>{{$category->title}}</h4>
-                    <em>{{strip_tags(Str::limit($category->body, 50))}}</em>
+                    <em>{{strip_tags(Str::limit($category->body, 150))}}</em>
                 </div>
             </a>
             <hr>
@@ -70,7 +74,7 @@
                 <img class="sidebar_post_image" src="{{$recent_post->image}}" />
                 <div class="sidebar_post_content">
                     <h4>{{$recent_post->title}}</h4>
-                    <em>{{strip_tags(Str::limit($recent_post->body, 50))}}</em>
+                    <em>{{strip_tags(Str::limit($recent_post->body, 150))}}</em>
                 </div>
             </a>
             @endisset

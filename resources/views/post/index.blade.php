@@ -10,11 +10,11 @@
 @foreach($posts as $post)
 <a href="\post\{{$post->slug}}" class="unlinkStyle">
     <div class="section post_link">
-        <div class="post_thumbnail" style="background-image: url('{{$post->image}}');" alt="{{$post->title}}">
-        </div>
+        <img class="post_thumbnail" src="{{$post->image}}" alt="{{$post->title}}">
+        
         <div class="post_container">
             <br>
-            <p class="timestamp">{{$post->created_at}} by {{$post->user->name}}</p>
+            <p class="timestamp">{{$post->created_at}}</p>
 
             <h1>{{$post->title}}</h1>
 

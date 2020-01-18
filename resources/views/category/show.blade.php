@@ -21,7 +21,10 @@
 
             @endauth
             <h1>{{$category->title}}</h1>
-            {!!$category->body!!}
+            <div class="post-body">
+                {!!$category->body!!}
+            </div>
+            
             <br>
             <hr><br>
             @if($category->posts->count() > 0)
@@ -53,7 +56,7 @@
                 <img class="sidebar_post_image" src="{{$recent_post->image}}" />
                 <div class="sidebar_post_content">
                     <h4>{{$recent_post->title}}</h4>
-                    <em>{{strip_tags(Str::limit($recent_post->body, 50))}}</em>
+                    <em>{{strip_tags(Str::limit($recent_post->body, 150))}}</em>
                 </div>
             </a>
 

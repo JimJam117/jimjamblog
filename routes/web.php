@@ -19,6 +19,10 @@ Route::get('/github', function () {
     return redirect('https://github.com/jimjam117');
 });
 
+Route::get('/register', function () {
+    return redirect('/home');
+});
+
 Auth::routes();
 
 // Search

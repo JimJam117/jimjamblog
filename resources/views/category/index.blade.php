@@ -19,8 +19,8 @@
 @foreach($categories as $category)
 <a href="\category\{{$category->title}}" class="unlinkStyle">
     <div class="section post_link">
-        <div class="post_thumbnail" style="background-image: url('{{$category->image}}');"
-            alt="{{$category->title}}"></div>
+        <img class="post_thumbnail" src="{{$category->image}}" alt="{{$category->title}}">
+        
         <div class="post_container">
             <br>
             <div class="timestamp">{{$category->created_at}}</div>

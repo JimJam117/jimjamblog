@@ -430,7 +430,7 @@ footer {
 .post {
     background-color: #fff;
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
-    width: 75%;
+    width: 100%;
     min-height: 200px;
 }
 
@@ -455,6 +455,9 @@ footer {
     font-size: 1.1em;
 }
 
+.post-body p, .post-body code{
+    padding: 0 0 1em 0;
+}
 
 .sidebar hr {
     margin: 10px 0;
@@ -503,7 +506,7 @@ footer {
 }
 
 .post_thumbnail {
-    min-height: 20vw;
+
     background-position: center;
     background-size: cover;
     width: 100%;
