@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jsparrow | @yield('title')</title>
     <link rel="icon" href="/img/jimjam3.png">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
 

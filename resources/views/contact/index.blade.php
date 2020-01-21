@@ -33,7 +33,6 @@ Contact
         @enderror
     </div>
 
-
     <div class=" form-group row">
         <textarea placeholder="Message" class="form-control @error('body') is-invalid @enderror" type="text"
             name="body" rows="8">{{old('body')}}</textarea>
@@ -44,15 +43,34 @@ Contact
         @enderror
     </div>
 
+    <div class="form-group row captchaStyle {{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+            {!! app('captcha')->display() !!}
+            @if ($errors->has('g-recaptcha-response'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                </span>
+            @endif
+    </div>
+    
+
     <div class="form-group row mb-0">
         <button class="submit-button" type="submit" name="button">Send</button>
     </div>
 </form>
 
+{!! NoCaptcha::renderJs() !!}
+
+
+
 @endsection
 
 @section('extra-scripts')
 <style>
+    .captchaStyle{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     textarea {
         width: 100%;
         padding: 1em;

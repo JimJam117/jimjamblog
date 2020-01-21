@@ -168,6 +168,7 @@ return [
         Mews\Purifier\PurifierServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */
