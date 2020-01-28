@@ -8,16 +8,16 @@ use Purifier;
 class PostController extends Controller
 {
     function paginatePosts($paginate) {
-        return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
+        return \App\Post::orderBy('created_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
     }
     function paginateCategories($paginate){
-        return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
+        return \App\Category::orderBy('created_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
     }
     private function allPosts(){
-        return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
+        return \App\Post::orderBy('created_at', 'DESC')->where("deleted_at", null)->get();
     } 
     private function allCategories() {
-        return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
+        return \App\Category::orderBy('created_at', 'DESC')->where("deleted_at", null)->get();
     }
     
 
