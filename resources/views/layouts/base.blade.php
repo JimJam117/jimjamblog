@@ -8,8 +8,8 @@
     <title>Jsparrow | @yield('title')</title>
     <link rel="icon" href="/img/jimjam3.png">
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:500S&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/styles.css">
     <style>
