@@ -26,15 +26,20 @@
             </div>
             
             <br>
-            <hr><br>
-            @if($category->posts->count() > 0)
-            Posts:
             <br>
-            <hr>
+            @if($category->posts->count() > 0)
+            <h3>Posts:</h3>
+            <br>
+         
             @foreach ($category->posts as $post)
-            <a href="/post/{{$post->slug}}">{{$post->title}}</a>
+            <ul class="category-posts-container">
+                <li>
+                    <a href="/post/{{$post->slug}}">{{$post->title}}</a>
+                </li>
+            </ul>
             @endforeach
             @endif
+            
             <br>
             <a href="/categories" class="btn readMore">Go Back</a>
             <br><br>
@@ -72,6 +77,13 @@
 
 @section('extra-scripts')
     <style>
+        .category-posts-container{
+            list-style: inside;
+        }
+        .category-posts-container li{
+            padding-bottom: 1em;
+        }
+    
     @media only screen and (max-width: 650px) {
         .main {
             padding: 1em 0;
