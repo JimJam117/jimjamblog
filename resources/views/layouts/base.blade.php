@@ -35,7 +35,7 @@
             <a href="/home">Home</a>
             <a href="/posts">Blog</a>
             <a href="/portfolio">Portfolio</a>
-            <a href="#">CV</a>
+            <!--<a href="#">CV</a>-->
         </nav>    
     </div>
     </div>
