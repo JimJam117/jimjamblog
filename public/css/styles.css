@@ -50,6 +50,11 @@ body {
 
 }
 
+.post_container a{
+    text-decoration: none;
+    color: darkcyan;
+}
+
 .topbar {
     display: inline-block;
     background-color: rgb(177, 71, 92);
@@ -201,7 +206,9 @@ body {
     display: flex;
     margin-top: 1em;
     font-size: 1.1em;
+
 }
+
 
 .posts_container{
     width: 75%;
@@ -345,7 +352,7 @@ body {
 }
 
 
-.readMore {
+a.readMore {
     margin: 15px 0;
     padding: 15px;
     background-color: rgb(177, 71, 92);
@@ -355,7 +362,7 @@ body {
     transition: color 0.2s, background-color 0.2s, border 0.2s;
 }
 
-.readMore:hover {
+a.readMore:hover {
     border: solid 5px rgb(177, 71, 92);
     color: rgb(177, 71, 92);
     text-decoration: none;
@@ -365,7 +372,7 @@ body {
 }
 
 
-.loadMore {
+a.loadMore {
     background-color: rgb(177, 71, 92);
     text-decoration: none;
     border: solid 5px rgb(177, 71, 92);
@@ -379,7 +386,7 @@ body {
 }
 
 
-.loadMore:hover {
+a.loadMore:hover {
     border: solid 5px rgb(177, 71, 92);
     color: rgb(177, 71, 92);
     text-decoration: none;
