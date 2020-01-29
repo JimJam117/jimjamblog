@@ -41,7 +41,7 @@ Home
                 <img src="/img/logos/php.png" alt="">
                 <img src="/img/logos/lamp.png" alt="">
                 <img src="/img/logos/laravel.png" alt="">
-                <img src="/img/logos/vue.js.png" alt="">
+                <img src="/img/logos/c-sharp.png" alt="">
                 <img src="/img/logos/unity.png" alt="">
 
             </div>
