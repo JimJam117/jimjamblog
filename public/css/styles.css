@@ -462,6 +462,10 @@ footer {
     font-size: 1.1em;
 }
 
+.post_container ul{
+    list-style: inside;
+}
+
 .post-body p, .post-body code{
     padding: 0 0 1em 0;
 }

@@ -74,14 +74,31 @@ class PostController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'body' => 'required',
+            'created_at_manual' => 'nullable|date',
             'slug' => 'required|unique:posts',
             'category_id' => 'nullable',
             'image' => 'nullable|image',
 
         ]);
 
+        // if image is provided and a created_at_manual
+        if ($data['image'] && $data['created_at_manual']) {
+            $imgPath = request('image')->store('uploads', 'public');
 
-        if ($data['image']) {
+            // adds the storage dir to the front of the path
+            $imgPathWithStorage = '/storage/' . $imgPath;
+
+            auth()->user()->posts()->create([
+                'title' => $data['title'],
+                'body' => Purifier::clean($data['body']),
+                'slug' => $data['slug'],
+                'category_id' => $data['category_id'],
+                'created_at' => $data['created_at_manual'],
+    
+                'image' => $imgPathWithStorage,
+            ]);
+        }
+        else if ($data['image']) {
             $imgPath = request('image')->store('uploads', 'public');
 
             // adds the storage dir to the front of the path
@@ -94,6 +111,19 @@ class PostController extends Controller
                 'category_id' => $data['category_id'],
     
                 'image' => $imgPathWithStorage,
+            ]);
+        }
+        // if the image is not added but manual date is
+        else if ($data['created_at_manual']) {
+
+            auth()->user()->posts()->create([
+                'title' => $data['title'],
+                'body' => Purifier::clean($data['body']),
+                'slug' => $data['slug'],
+                'category_id' => $data['category_id'],
+                'created_at' => $data['created_at_manual'],
+    
+                'image' => null,
             ]);
         }
         else{
@@ -133,13 +163,29 @@ class PostController extends Controller
         'title' => 'required',
         'body' => 'required',
         'slug' => 'required',
+        'created_at_manual' => 'nullable|date',
         'category_id' => 'nullable',
         'image' => 'nullable|image',
 
        ]);
 
-       //$imgPath = request('image')->store('uploads', 'public');
-       if (request('image')) {
+       if (request('image') && request('created_at_manual')) {
+        $imgPath = request('image')->store('uploads', 'public');
+
+        // adds the storage dir to the front of the path
+        $imgPathWithStorage = '/storage/' . $imgPath;
+        
+        $post->update([
+            'title' => $data['title'],
+            'body' => Purifier::clean($data['body']),
+            'slug' => $data['slug'],
+            'category_id' => $data['category_id'],
+            'created_at' => $data['created_at_manual'],
+            
+            'image' => $imgPathWithStorage,
+            ]);
+        }
+       else if (request('image')) {
            $imgPath = request('image')->store('uploads', 'public');
 
            // adds the storage dir to the front of the path
@@ -154,6 +200,18 @@ class PostController extends Controller
                'image' => $imgPathWithStorage,
            ]);
        }
+       else if (request('created_at_manual')) {
+
+
+        $post->update([
+            'title' => $data['title'],
+            'body' => Purifier::clean($data['body']),
+            'slug' => $data['slug'],
+            'category_id' => $data['category_id'],
+            'created_at' => $data['created_at_manual'],
+        ]);
+    }
+       
        else{
        // create post assoc with auth'd user
        // uses validated $data var items and also the image path

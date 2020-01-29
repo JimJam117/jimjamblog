@@ -45,6 +45,21 @@
         @enderror
     </div>
 
+    <div class="form-group row">
+      <label for="created_at_manual">Created At</label>
+      <p>Example</p>
+      <p>2020-01-27 15:30:49</p>
+      <br>
+      <input id="created_at_manual" type="created_at_manual" class="form-control @error('created_at_manual') is-invalid @enderror" name="created_at_manual"
+            value="{{ old('created_at_manual') }}" required>
+
+      @error('created_at_manual')
+      <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+      </span>
+      @enderror
+    </div>
+
     <div class=" form-group row">
         <label for="body">Body</label>
         <br><br>
