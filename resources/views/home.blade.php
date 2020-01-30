@@ -32,7 +32,7 @@ Home
                     <li><a href="/blog"><i class="fas fa-pen"></i> Blog</a></li>
                     <li><a href="/blog/projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                     <li><a href="/portfolio"><i class="far fa-gem"></i> Portfolio</a></li>
-                    <li><a href="/CurriculumVitae.pdf"><i class="fas fa-scroll"></i> CV</a></li>
+                    <!--<li><a href="/CurriculumVitae.pdf"><i class="fas fa-scroll"></i> CV</a></li>-->
                 </ul>
             </div>
             <div class="homepage-gallery">
