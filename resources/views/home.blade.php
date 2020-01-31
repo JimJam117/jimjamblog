@@ -33,7 +33,7 @@ Home
                     <li><a href="/blog/projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                     <li><a href="/portfolio"><i class="far fa-gem"></i> Portfolio</a></li>
                     <li><a href="/github"><i class="fab fa-github"></i> Github</a></li>
-                    <li><a href="/Contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
                     
                     <!--<li><a href="/CurriculumVitae.pdf"><i class="fas fa-scroll"></i> CV</a></li>-->
                 </ul>
