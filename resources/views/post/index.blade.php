@@ -29,11 +29,3 @@
 
 {{$posts->links()}}
 @endsection
-
-@section('extra-scripts')
-    <style>
-        .posts_container {
-            width: 100%;
-        }
-    </style>
-@endsection

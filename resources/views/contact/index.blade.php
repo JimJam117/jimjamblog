@@ -33,6 +33,7 @@ Contact
         @enderror
     </div>
 
+
     <div class=" form-group row">
         <textarea placeholder="Message" class="form-control @error('body') is-invalid @enderror" type="text"
             name="body" rows="8">{{old('body')}}</textarea>
@@ -42,7 +43,7 @@ Contact
         </span>
         @enderror
     </div>
-
+    
     <div class="form-group row captchaStyle {{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
             {!! app('captcha')->display() !!}
             @if ($errors->has('g-recaptcha-response'))
@@ -51,16 +52,14 @@ Contact
                 </span>
             @endif
     </div>
-    
+
 
     <div class="form-group row mb-0">
-        <button class="submit-button" type="submit" name="button">Send</button>
+        <button aria-label="Send" class="submit-button" type="submit" name="button">Send</button>
     </div>
 </form>
 
 {!! NoCaptcha::renderJs() !!}
-
-
 
 @endsection
 
@@ -91,19 +90,19 @@ Contact
     }
 
     .submit-button {
-        background-color: rgb(177, 71, 92);
+        background-color: #4771b1;
         color: #fff;
         padding: 1em 2em;
-        font-size: 1em;
-        border: 2px solid rgb(177, 71, 92);
+        font-size: 1rem;
+        border: 2px solid #4771b1;
         transition: 0.2s;
         margin: 3rem 0;
     }
 
     .submit-button:hover {
         background-color: #fff;
-        color: rgb(177, 71, 92);
-        border: 2px solid rgb(177, 71, 92);
+        color: #4771b1;
+        border: 2px solid #4771b1;
     }
 
     .row {

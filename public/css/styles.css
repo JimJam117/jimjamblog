@@ -22,10 +22,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     margin: 10px;
-    line-height: 1.5;
+
     color: #595959;
     text-align: left;
-    
+    line-height: 1.5;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -57,15 +57,14 @@ body {
 
 .topbar {
     display: inline-block;
-    background-color: rgb(177, 71, 92);
+    background-color: rgb(69, 77, 90);
     position: relative;
     width: 75vw;
     left: 50%;
     transform: translateX(-50%);
     padding: 1vw;
-    border-left: 1px solid rgb(141, 56, 73);
-    border-right: 1px solid rgb(141, 56, 73);
-    border-top: 1px solid rgb(141, 56, 73);
+    border: 1px solid #4b4b4b4b;
+
 
 }
 
@@ -94,13 +93,13 @@ body {
     margin: 0 2px;
     font-size: 11px;
     background-color: #fff;
-    color: rgb(177, 71, 92);
+    color: rgb(69, 77, 90);
     display: inline-block;
     transition: background-color 0.15s, color 0.15s;
 }
 
 .control-nav a:hover {
-    background-color: rgb(177, 71, 92);
+    background-color: #011627;
     color: #fff;
 }
 
@@ -121,17 +120,17 @@ body {
     padding: 0.75em 2em;
     margin: 0 1em 0 0;
     background-color: #fff;
-    color: rgb(177, 71, 92);
+    color: rgb(69, 77, 90);
     display: inline-block;
     transition: background-color 0.15s, color 0.15s;
 }
 
 .btn{
-    border: rgb(177, 71, 92) 2px solid;
+    border: rgb(69, 77, 90) 2px solid;
 }
 
 .navbar a:hover, .btn:hover {
-    background-color: rgb(177, 71, 92);
+    background-color: #011627;
     color: #fff;
 }
 
@@ -172,6 +171,8 @@ body {
     height: 3em;
     background-color: #fff;
 
+    border: 1px solid #80808080;
+    outline: none;
     color: black;
     padding: 0 10px;
     border-bottom-left-radius: 0;
@@ -185,8 +186,8 @@ body {
 
 .searchButton {
     position: relative;
-    background-color: rgb(177, 71, 92);
-    border: solid 2px rgb(177, 71, 92);
+    background-color: rgb(69, 77, 90);
+    border: solid 2px rgb(69, 77, 90);
     padding: 0px 13px;
     color: #fff;
     height: 3em;
@@ -205,17 +206,16 @@ body {
     width: 100%;
     display: flex;
     margin-top: 1em;
-    font-size: 1.1em;
-
+    font-size: 1rem;
+    justify-content: space-between;
 }
 
-
 .posts_container{
-    width: 75%;
+    max-width: 1000px;
 }
 
 .sidebar_container{
-    width: 33%;
+    width: 300px;
 }
 
 .sidebar{
@@ -249,13 +249,15 @@ body {
 }
 
 .sidebar_post:hover {
-    background-color: rgb(177, 71, 92);
+    background-color: rgb(69, 77, 90);
     color: #fff;
 }
 
 .sidebar_post_image{
     width: 100%;
-    height: 5vw;
+    height: 4em;
+    background-position: center;
+    background-size: cover;
 }
 
 /*Pagination*/
@@ -267,8 +269,8 @@ body {
 }
 .pagination li{
     padding: 1em;
-    font-size: 1.5em;
-    font-family: "Open Sans";
+    font-size: 1.5rem;
+    font-family: "Public Sans";
 }
 .pagination a{
     color: #595959;
@@ -340,7 +342,7 @@ body {
 .objoran:hover,
 .objred:hover,
 .objwhite:hover {
-    background: rgb(177, 71, 92);
+    background: rgb(69, 77, 90);
     color: #fff;
     transform: translateY(-5px);
     box-shadow: 0 7px 15px 6px rgba(0, 0, 0, 0.4)
@@ -355,7 +357,7 @@ body {
 a.readMore {
     margin: 15px 0;
     padding: 15px;
-    background-color: rgb(177, 71, 92);
+    background-color: rgb(69, 77, 90);
     text-decoration: none;
 
     color: white;
@@ -363,8 +365,8 @@ a.readMore {
 }
 
 a.readMore:hover {
-    border: solid 5px rgb(177, 71, 92);
-    color: rgb(177, 71, 92);
+    border: solid 5px rgb(69, 77, 90);
+    color: rgb(69, 77, 90);
     text-decoration: none;
 
     background-color: white;
@@ -373,9 +375,9 @@ a.readMore:hover {
 
 
 a.loadMore {
-    background-color: rgb(177, 71, 92);
+    background-color: rgb(69, 77, 90);
     text-decoration: none;
-    border: solid 5px rgb(177, 71, 92);
+    border: solid 5px rgb(69, 77, 90);
 
     color: white;
     border-style: solid;
@@ -387,8 +389,8 @@ a.loadMore {
 
 
 a.loadMore:hover {
-    border: solid 5px rgb(177, 71, 92);
-    color: rgb(177, 71, 92);
+    border: solid 5px rgb(69, 77, 90);
+    color: rgb(69, 77, 90);
     text-decoration: none;
 
     background-color: white;
@@ -405,7 +407,7 @@ a.loadMore:hover {
     padding: 30px 10px;
     left: 50%;
     top: 1em;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     position: relative;
     text-align: center;
     transform: translateX(-50%);
@@ -438,6 +440,7 @@ footer {
     background-color: #fff;
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
     width: 100%;
+    max-width: 1000px;
     min-height: 200px;
 }
 
@@ -459,9 +462,8 @@ footer {
 
 .post_container {
     margin: 0 2em;
-    font-size: 1.1em;
+    font-size: 1rem;
 }
-
 .post_container ul{
     list-style: inside;
 }
@@ -506,7 +508,7 @@ footer {
 
 .section:hover {
     color: white;
-    background-color: rgb(177, 71, 92);
+    background-color: rgb(69, 77, 90);
 
 }
 
@@ -552,7 +554,7 @@ footer {
 
 
 .row label{
-    font-size: 2em;
+    font-size: 2rem;
     
 }
 
@@ -564,7 +566,7 @@ footer {
 
 .social-button {
     display: block;
-    font-size: 2em;
+    font-size: 2rem;
     opacity: 0.90;
     margin: 0 0.5em;
     border-radius: 100%;
@@ -573,7 +575,7 @@ footer {
     height: 2em;
     transition: background-color 0.4s, height 0.4s, width 0.4s, color 0.4s, opacity 0.4s;
     color: white;
-    background-color: rgb(177, 71, 92);
+    background-color: rgb(71, 113, 177);
     box-shadow: 0 3px 7px 0px black;
 }
 .social-button:focus{
@@ -592,7 +594,7 @@ footer {
 
 
 /*TESTING*/
-
+/* 
 @media only screen and (min-width: 1500px) {
 
     body {
@@ -641,11 +643,7 @@ footer {
         margin-top: 1vw;
     }
 
-
-
-
-
-}
+} */
 
 
 @media only screen and (max-width: 1185px) {
@@ -728,11 +726,13 @@ footer {
         margin: 0;
         font-size: inherit;
     }
+    
 
     .navbar{
         text-align: center;
         display: flex;
         margin-bottom: 1em;
+        justify-content: center;
 
     }
     .navbar a {
@@ -758,10 +758,10 @@ footer {
     }
    
     .row input{
-        font-size: 1em;
+        font-size: 1rem;
     }
     .row textarea{
-        font-size: 1em;
+        font-size: 1rem;
     }
    
     .post_container {
@@ -773,6 +773,9 @@ footer {
     .control-nav {
         width: 100%;
     }
+    .main {
+        padding: 1em 0;
+    }
 
     body {
         margin: 0;
@@ -780,7 +783,7 @@ footer {
 
     .banner {
         width: 100vw;
-        font-size: 1em;
+        font-size: 1rem;
     }
 
 
@@ -834,7 +837,7 @@ footer {
         padding: 0 0.2em;
     }
     .post_container{
-        font-size: 1em;
+        font-size: 1rem;
     }
     
 }

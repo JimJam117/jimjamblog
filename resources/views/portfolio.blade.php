@@ -5,7 +5,7 @@ Portfolio
 @endsection
 
 @section('content')
-<h1 class="portfolio-title" style="font-size: 3em;">Portfolio</h1>
+<h1 class="portfolio-title" style="font-size: 3rem;">Portfolio</h1>
 
 <h1 class="portfolio-title">Websites and Webapps
     <hr>
@@ -376,7 +376,7 @@ Portfolio
     }
 
     .portfolio-link:hover {
-        background-color: rgb(177, 71, 92);
+        background-color: rgb(69, 77, 90);
         color: #fff;
     }
 
@@ -401,16 +401,16 @@ Portfolio
     }
 
     .portfolio-link-text p {
-        font-size: 1.25em;
+        font-size: 1.25rem;
     }
 
     .portfolio-link-text h3 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     @media only screen and (max-width: 985px) {
         .portfolio-link-text {
-            font-size: 0.8em;
+            font-size: 0.8rem;
             width: 65%;
         }
 
@@ -443,7 +443,7 @@ Portfolio
 
     @media only screen and (max-width: 488px) {
         .portfolio-link-text {
-            font-size: 0.6em;
+            font-size: 0.6rem;
         }
     }
 

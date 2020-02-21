@@ -34,7 +34,6 @@ Home
                     <li><a href="/portfolio"><i class="far fa-gem"></i> Portfolio</a></li>
                     <li><a href="/github"><i class="fab fa-github"></i> Github</a></li>
                     <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                    
                     <!--<li><a href="/CurriculumVitae.pdf"><i class="fas fa-scroll"></i> CV</a></li>-->
                 </ul>
             </div>
@@ -77,7 +76,7 @@ Home
 
     /*HOMEPAGE*/
     .container{
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     .homepage-container {
@@ -94,9 +93,9 @@ Home
 
     .homepage-content div {
         width: 45%;
+        max-width: 1000px;
         text-align: initial;
-        font-size: 1.25em;
-            margin-top: 2em;
+        margin-top: 2em;
     }
 
     .homepage-profile-pic {
@@ -117,9 +116,9 @@ Home
 
     .homepage-quick-links a {
         text-decoration: none;
-        color: rgb(141, 56, 73);
+        color: rgb(71, 113, 177);
         transition: 0.2s;
-        font-size: 1.25em;
+        font-size: 1.25rem;
     }
 
     .homepage-quick-links li {

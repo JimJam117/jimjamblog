@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="James Sparrow - Web Developer">
     <title>Jsparrow | @yield('title')</title>
-    <link rel="icon" href="/img/jimjam3.png">
+    <link rel="icon" href="/img/jimjam.ico">
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=cyrillic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Public+Sans:500S&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/styles.css">
     <style>
@@ -20,7 +21,7 @@
 </head>
 
 <body
-    style="background-image: linear-gradient(rgba(235, 145, 43, 0.799), rgba(232, 141, 131, 0.899)), url('/img/background.jpeg');">
+    style="background-image: linear-gradient(rgba(19, 19, 24, 0.81), rgba(37, 44, 71, 0.83)), url('/img/background.jpeg');">
 
 
     <div class="topbar">
@@ -63,10 +64,10 @@
         <hr>
         <div class="endSection"> 
            
-            <button onclick="location.href='/github';" type="button" class="social-button social-button-github">
+            <button aria-label="Github" onclick="location.href='/github';" type="button" class="social-button social-button-github">
                 <i class="fab fa-github"></i>
             </button>
-            <button onclick="location.href='/contact';" type="button" class="social-button" name="button">
+            <button aria-label="Contact" onclick="location.href='/contact';" type="button" class="social-button" name="button">
                 <i class="fas fa-envelope"></i>
             </button>
         </div>
@@ -76,7 +77,7 @@
     </div>
 </body>
 
-<script defer src="/fa/js/all.js"></script> <!--load all styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" media="all" rel="stylesheet" defer="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     @yield('extra-scripts')
