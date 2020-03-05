@@ -1,11 +1,11 @@
-@extends('layouts.standard')
+@extends('layouts.base')
 
 @section('title')
 {{$post->title}}
 @endsection
 
 @section('content')
-
+@include('partials.search')
 <div class="container">
 
     <div class="post">

@@ -12,7 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <style>
         
         
@@ -56,9 +59,7 @@
     @endauth
 
     <div class="main">
-        
-        @yield('search')
-
+        <!-- <div id="example"></div> example component -->
         @yield('content')
         <br>
         <hr>

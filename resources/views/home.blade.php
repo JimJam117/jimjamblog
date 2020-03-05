@@ -1,10 +1,24 @@
-@extends('layouts.standard')
+@extends('layouts.base')
 
 @section('title')
 Home
 @endsection
 
 @section('content')
+
+
+@php
+    $rq = request()->post();
+    if(isset($rq['mailSent'])){
+        $mailSent = $rq['mailSent'];
+    }
+    
+@endphp
+@isset($mailSent)
+    <div class="mail-banner">
+        Thank you {{$mailSent}}!
+    </div>
+@endisset
 
 
 <div class="banner">

@@ -1,21 +1,3 @@
-@extends('layouts.base')
-
-
-@section('search')
-
-@php
-    $rq = request()->post();
-    if(isset($rq['mailSent'])){
-        $mailSent = $rq['mailSent'];
-    }
-    
-@endphp
-@isset($mailSent)
-    <div class="mail-banner">
-        Thank you {{$mailSent}}!
-    </div>
-@endisset
-
 <div class="form-group search">
     <form method="POST" action="/search">
         @csrf
@@ -25,4 +7,3 @@
         <label style="display: none;" for="search">Search</label>
     </form>
 </div>
-@endsection
