@@ -7,6 +7,8 @@ use Purifier;
 
 class PostController extends Controller
 {
+    public $purifierAllowedElements = 'div,h1,h2,h3,h4,h5,h6,code,b,strong,i,em,u,a[href|title],ul,ol,li,p[style],br,span[style],img[width|height|alt|src]';
+
     function paginatePosts($paginate) {
         return \App\Post::orderBy('created_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
     }
@@ -24,7 +26,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = self::paginatePosts(3);
+        $posts = self::paginatePosts(5);
         $recent_post = $posts->first();
 
         $categories = self::allCategories();
@@ -81,6 +83,8 @@ class PostController extends Controller
 
         ]);
 
+        $purified_body = Purifier::clean($data['body'], array('HTML.Allowed' => $this->purifierAllowedElements));
+
         // if image is provided and a created_at_manual
         if ($data['image'] && $data['created_at_manual']) {
             $imgPath = request('image')->store('uploads', 'public');
@@ -90,7 +94,7 @@ class PostController extends Controller
 
             auth()->user()->posts()->create([
                 'title' => $data['title'],
-                'body' => Purifier::clean($data['body']),
+                'body' => $purified_body,
                 'slug' => $data['slug'],
                 'category_id' => $data['category_id'],
                 'created_at' => $data['created_at_manual'],
@@ -106,7 +110,7 @@ class PostController extends Controller
 
             auth()->user()->posts()->create([
                 'title' => $data['title'],
-                'body' => Purifier::clean($data['body']),
+                'body' => $purified_body,
                 'slug' => $data['slug'],
                 'category_id' => $data['category_id'],
     
@@ -118,7 +122,7 @@ class PostController extends Controller
 
             auth()->user()->posts()->create([
                 'title' => $data['title'],
-                'body' => Purifier::clean($data['body']),
+                'body' => $purified_body,
                 'slug' => $data['slug'],
                 'category_id' => $data['category_id'],
                 'created_at' => $data['created_at_manual'],
@@ -131,7 +135,7 @@ class PostController extends Controller
         // uses validated $data var items and also the image path
         auth()->user()->posts()->create([
             'title' => $data['title'],
-            'body' => Purifier::clean($data['body']),
+            'body' => $purified_body,
             'slug' => $data['slug'],
             'category_id' => $data['category_id'],
 
@@ -169,6 +173,8 @@ class PostController extends Controller
 
        ]);
 
+       $purified_body = Purifier::clean($data['body'], array('HTML.Allowed' => $this->purifierAllowedElements));
+
        if (request('image') && request('created_at_manual')) {
         $imgPath = request('image')->store('uploads', 'public');
 
@@ -177,7 +183,7 @@ class PostController extends Controller
         
         $post->update([
             'title' => $data['title'],
-            'body' => Purifier::clean($data['body']),
+            'body' => $purified_body,
             'slug' => $data['slug'],
             'category_id' => $data['category_id'],
             'created_at' => $data['created_at_manual'],
@@ -193,7 +199,7 @@ class PostController extends Controller
 
            $post->update([
                'title' => $data['title'],
-               'body' => Purifier::clean($data['body']),
+               'body' => $purified_body,
                'slug' => $data['slug'],
                'category_id' => $data['category_id'],
 
@@ -205,7 +211,7 @@ class PostController extends Controller
 
         $post->update([
             'title' => $data['title'],
-            'body' => Purifier::clean($data['body']),
+            'body' => $purified_body,
             'slug' => $data['slug'],
             'category_id' => $data['category_id'],
             'created_at' => $data['created_at_manual'],
@@ -217,7 +223,7 @@ class PostController extends Controller
        // uses validated $data var items and also the image path
        $post->update([
         'title' => $data['title'],
-        'body' => Purifier::clean($data['body']),
+        'body' => $purified_body,
         'slug' => $data['slug'],
         'category_id' => $data['category_id'],
 

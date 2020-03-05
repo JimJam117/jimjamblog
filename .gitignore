@@ -1,7 +1,8 @@
 /node_modules
+/public
+public
 /public/hot
 /public/storage
-/public/wp-content
 /storage/*.key
 /database/database.sqlite
 /vendor

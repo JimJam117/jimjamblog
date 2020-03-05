@@ -61,7 +61,7 @@
                 <img class="sidebar_post_image" src="{{$category->image}}" />
                 <div class="sidebar_post_content">
                     <h4>{{$category->title}}</h4>
-                    <em>{{strip_tags(Str::limit($category->body, 150))}}</em>
+                    <em>{{strip_tags(Str::limit($category->body, 50))}}</em>
                 </div>
             </a>
             <hr>
@@ -74,7 +74,7 @@
                 <img class="sidebar_post_image" src="{{$recent_post->image}}" />
                 <div class="sidebar_post_content">
                     <h4>{{$recent_post->title}}</h4>
-                    <em>{{strip_tags(Str::limit($recent_post->body, 150))}}</em>
+                    <em>{{strip_tags(Str::limit($recent_post->body, 50))}}</em>
                 </div>
             </a>
             @endisset

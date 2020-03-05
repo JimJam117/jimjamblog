@@ -12,8 +12,6 @@ class ContactController extends Controller
     }
 
     public function send() {
-        
-
         $data = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
