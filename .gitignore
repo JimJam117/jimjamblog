@@ -1,6 +1,9 @@
 /node_modules
-/public
-public
+/public/css
+public/css
+public/css/styles.css
+public/apps
+public/wp-content
 /public/hot
 /public/storage
 /storage/*.key
@@ -13,3 +16,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+public/css/styles.css
