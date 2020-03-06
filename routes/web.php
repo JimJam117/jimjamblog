@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/api/posts', 'PostController@index_api');
+Route::get('/api/post/{post}', 'PostController@show_api');
+
 Route::get('/', function () {
     return redirect('/home');
 });
