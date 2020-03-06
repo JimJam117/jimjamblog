@@ -5,7 +5,7 @@ Home
 @endsection
 
 @section('content')
-
+@include('partials.search')
 
 @php
     $rq = request()->post();
