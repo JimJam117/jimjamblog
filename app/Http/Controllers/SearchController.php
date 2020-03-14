@@ -28,5 +28,23 @@ class SearchController extends Controller
 
         return view('search.show', compact('search', 'results_posts', 'results_categories'));
     }
+
+    public function show_api($search = null) {
+        if ($search == null) {
+            return redirect('/home');
+        }
+
+        $results_posts = \App\Post::where('description', 'LIKE', "%{$search}%")
+                                    ->orWhere('body', 'LIKE', "%{$search}%")
+                                    ->orWhere('title', 'LIKE', "%{$search}%")
+                                    ->get();
+        $results_categories = \App\Category::where('description', 'LIKE', "%{$search}%")
+                                    ->orWhere('body', 'LIKE', "%{$search}%")
+                                    ->orWhere('title', 'LIKE', "%{$search}%")
+                                    ->get();
+
+        return (compact('search', 'results_posts', 'results_categories'));
+    }
+
 }
 
