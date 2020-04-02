@@ -84,7 +84,7 @@
     <div class=" form-group row">
         <label for="link_to_site">Link to Live Site</label>
         <input id="link_to_site" class="form-control @error('link_to_site') is-invalid @enderror" name="link_to_site"
-            value="{{ old('link_to_site') ?? $portfolio->link_to_site ?? "" }}" required>
+            value="{{ old('link_to_site') ?? $portfolio->link_to_site ?? "" }}">
 
         @error('link_to_site')
         <span class="invalid-feedback" role="alert">
@@ -97,7 +97,7 @@
     <div class=" form-group row">
         <label for="link_to_source">Link to Source</label>
         <input id="link_to_source" class="form-control @error('link_to_source') is-invalid @enderror" name="link_to_source"
-            value="{{ old('link_to_source') ?? $portfolio->link_to_source ?? "" }}" required>
+            value="{{ old('link_to_source') ?? $portfolio->link_to_source ?? "" }}">
 
         @error('link_to_source')
         <span class="invalid-feedback" role="alert">
@@ -110,7 +110,7 @@
     <div class=" form-group row">
         <label for="link_to_blog">Link to Blog Page</label>
         <input id="link_to_blog" class="form-control @error('link_to_blog') is-invalid @enderror" name="link_to_blog"
-            value="{{ old('link_to_blog') ?? $portfolio->link_to_blog ?? "" }}" required>
+            value="{{ old('link_to_blog') ?? $portfolio->link_to_blog ?? "" }}">
 
         @error('link_to_blog')
         <span class="invalid-feedback" role="alert">

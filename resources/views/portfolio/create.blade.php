@@ -103,7 +103,7 @@
     <div class=" form-group row">
         <label for="link_to_site">Link to Live Site</label>
         <input id="link_to_site" class="form-control @error('link_to_site') is-invalid @enderror" name="link_to_site"
-            value="{{ old('link_to_site') }}" required>
+            value="{{ old('link_to_site') }}">
 
         @error('link_to_site')
         <span class="invalid-feedback" role="alert">
@@ -116,7 +116,7 @@
     <div class=" form-group row">
         <label for="link_to_source">Link to Source</label>
         <input id="link_to_source" class="form-control @error('link_to_source') is-invalid @enderror" name="link_to_source"
-            value="{{ old('link_to_source') }}" required>
+            value="{{ old('link_to_source') }}">
 
         @error('link_to_source')
         <span class="invalid-feedback" role="alert">
@@ -129,7 +129,7 @@
     <div class=" form-group row">
         <label for="link_to_blog">Link to Blog Page</label>
         <input id="link_to_blog" class="form-control @error('link_to_blog') is-invalid @enderror" name="link_to_blog"
-            value="{{ old('link_to_blog') }}" required>
+            value="{{ old('link_to_blog') }}">
 
         @error('link_to_blog')
         <span class="invalid-feedback" role="alert">
@@ -155,10 +155,10 @@
     </div>
 
     <div class="row form-group">
-        <label for="image" class="col-md-4 col-form-label text-md-right">Revealed Image</label>
+        <label for="revealed_image" class="col-md-4 col-form-label text-md-right">Revealed Image</label>
         <div class="col-md-6">
-            <input type="file" class="form-control-file" id="image" name="image" required>
-            @error('image')
+            <input type="file" class="form-control-file" id="revealed_image" name="revealed_image" required>
+            @error('revealed_image')
             <strong>{{ $message }}</strong>
             @enderror
         </div>
