@@ -36,6 +36,8 @@ Route::get('/search/{search}', 'SearchController@show')->name('search');
 // Portfolio
 Route::get('/portfolio', 'PortfolioController@index');
 
+Route::get('/portfolio-backend', 'PortfolioController@backend')->middleware('auth');
+
 Route::get('/portfolio/create', 'PortfolioController@create')->middleware('auth');
 Route::post('/portfolio', 'PortfolioController@store')->middleware('auth');
 

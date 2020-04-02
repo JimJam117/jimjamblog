@@ -49,6 +49,7 @@
         <a href="/post/create">Create Post</a>
         <a href="/category/create">Create Category</a>
         <a href="/portfolio/create">Create Portfolio</a>
+        <a href="/portfolio-backend">Portfolio Backend</a>
         <button class="login" onclick="document.getElementById('logout-form').submit();">{{Auth::user()->name}}:
             logout</button>
 

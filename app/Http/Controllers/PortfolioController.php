@@ -16,6 +16,11 @@ class PortfolioController extends Controller
         return view('portfolio.index', compact('portfolios'));
      }
 
+    public function backend() {
+        $portfolios = Portfolio::all();
+        return view('portfolio.backend', compact('portfolios'));
+    }
+
 
     /***
      * Create portfolio item

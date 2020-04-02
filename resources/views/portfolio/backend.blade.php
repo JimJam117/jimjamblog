@@ -5,94 +5,19 @@ Portfolio
 @endsection
 
 @section('content')
-<h1 class="portfolio-title" style="font-size: 3rem;">Portfolio</h1>
-
+<h1 class="portfolio-title" style="font-size: 3rem;">Portfolio Backend</h1>
 
 @foreach ($portfolios as $portfolio)
-    <a class="portfolio-link" href="#{{$portfolio->id}}">
-        <div class="portfolio-link-image">
-            <img src="{{$portfolio->image}}" alt="{{$portfolio->title}}">
-        </div>
-        
-        <div class="portfolio-link-text">
-            <h3>{{$portfolio->title}}</h3>
-            <br>
-            <p>{{$portfolio->body}}</p>
-        </div>
-
-    </a>
-    <!-- expand -->
-    <div class="expandable" id="{{$portfolio->id}}">
-        <div class="expandable-top">
-            <img src="{{$portfolio->revealed_image}}" alt="{{$portfolio->title}}">
-            <div class="expandable-text">
-                <h3>{{$portfolio->revealed_title}}</h3>
-                <p>{{$portfolio->revealed_body}}</p>
-            </div>
-        </div>
-        <div class="expandable-middle">
-            @if (in_array("html", $portfolio->features))
-            <div><i class="fab fa-html5"></i> <small>HTML5</small></div>
-            @endif
-
-            @if (in_array("css", $portfolio->features))
-                <div><i class="fab fa-css3-alt"></i> <small>CSS3</small></div>
-            @endif
-
-            @if (in_array("wordpress", $portfolio->features))
-                <div><i class="fab fa-wordpress"></i> <small>Wordpress</small></div>
-            @endif
-
-            @if (in_array("php", $portfolio->features))
-                <div><i class="fab fa-php"></i> <small>PHP</small></div>
-            @endif
-
-            @if (in_array("responsive", $portfolio->features))
-                <div><i class="fab fa-mobile-alt"></i> <small>Responsive Design</small></div>
-            @endif
-
-            @if (in_array("laravel", $portfolio->features))
-                <div><i class="fab fa-laravel"></i> <small>Laravel</small></div>
-            @endif
-
-            @if (in_array("js", $portfolio->features))
-                <div><i class="fab fa-js"></i> <small>JavaScript</small></div>
-            @endif
-
-            @if (in_array("react", $portfolio->features))
-                <div><i class="fab fa-react"></i> <small>React</small></div>
-            @endif
-
-            @if (in_array("unity", $portfolio->features))
-                <div><i class="fab fa-unity"></i> <small>Unity</small></div>
-            @endif
-            
-            @if (in_array("python", $portfolio->features))
-                <div><i class="fab fa-python"></i> <small>Python</small></div>
-            @endif
-
-        </div>
-        <div class="expandable-bottom">
-
-            @isset($portfolio->link_to_site)
-                <a class="btn" href="{{$portfolio->link_to_site}}">Live Demo</a>
-            @endisset 
-
-            
-            @isset($portfolio->link_to_source)
-                <a class="btn" href="{{$portfolio->link_to_source}}">Source</a>
-            @else
-                <p style="color:#a1a1a1; margin: auto 0;">
-                    <i class="fas fa-lock"></i> Source Private
-                </p>
-            @endisset 
-
-            @isset($portfolio->link_to_blog)
-                <a class="btn" href="{{$portfolio->link_to_blog}}">Blog Page</a>
-            @endisset 
-             
-        </div>
+<div class="backend-portfolio">
+    <div class="endSection">
+        <button onclick="location.href='/portfolio/{{$portfolio->id}}/delete-confirm';"
+            class="social-button" style="background-color:#a00;">X</button>
+        <button onclick="location.href='/portfolio/{{$portfolio->id}}/edit';" class="social-button"><i
+                class="fas fa-pen"></i></button>
     </div>
+    <h1>{{$portfolio->title}}</h1>
+    <p>{{$portfolio->body}}</p>
+</div>
 @endforeach
 
 @endsection
@@ -101,6 +26,12 @@ Portfolio
 @section('extra-scripts')
 
 <style>
+    .backend-portfolio{
+        margin: 1em;
+        padding: 1em;
+        background-color: #ddd;
+    }
+
     html {
         scroll-behavior: smooth;
     }
