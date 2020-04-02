@@ -33,6 +33,20 @@ Auth::routes();
 Route::post('/search', 'SearchController@fetch');
 Route::get('/search/{search}', 'SearchController@show')->name('search');
 
+// Portfolio
+Route::get('/portfolio', 'PortfolioController@index');
+
+Route::get('/portfolio/create', 'PortfolioController@create')->middleware('auth');
+Route::post('/portfolio', 'PortfolioController@store')->middleware('auth');
+
+
+Route::get('/portfolio/{portfolio}/edit', 'PortfolioController@edit')->middleware('auth');
+Route::put('/portfolio/{portfolio}', 'PortfolioController@update')->middleware('auth');
+
+Route::get('/portfolio/{portfolio}/delete-confirm', 'PortfolioController@delete_confirm')->middleware('auth');
+Route::delete('/portfolio/{portfolio}', 'PortfolioController@destroy')->middleware('auth');
+
+
 // Post
 Route::get('/post/create', 'PostController@create')->middleware('auth');
 Route::get('/posts', 'PostController@index');
@@ -72,5 +86,5 @@ Route::get('/email', function() {
     return view('email');
 });
 
-Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
+//Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
 
