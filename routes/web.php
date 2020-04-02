@@ -40,11 +40,11 @@ Route::get('/portfolio/create', 'PortfolioController@create')->middleware('auth'
 Route::post('/portfolio', 'PortfolioController@store')->middleware('auth');
 
 
-Route::get('/portfolio/{portfolio}/edit', 'PortfolioController@edit')->middleware('auth');
-Route::put('/portfolio/{portfolio}', 'PortfolioController@update')->middleware('auth');
+Route::get('/portfolio/{id}/edit', 'PortfolioController@edit')->middleware('auth');
+Route::put('/portfolio/{id}', 'PortfolioController@update')->middleware('auth');
 
-Route::get('/portfolio/{portfolio}/delete-confirm', 'PortfolioController@delete_confirm')->middleware('auth');
-Route::delete('/portfolio/{portfolio}', 'PortfolioController@destroy')->middleware('auth');
+Route::get('/portfolio/{id}/delete-confirm', 'PortfolioController@delete_confirm')->middleware('auth');
+Route::delete('/portfolio/{id}', 'PortfolioController@destroy')->middleware('auth');
 
 
 // Post

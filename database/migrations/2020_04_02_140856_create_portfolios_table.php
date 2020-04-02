@@ -25,6 +25,8 @@ class CreatePortfoliosTable extends Migration
             $table->string('link_to_site')->nullable();
             $table->string('link_to_source')->nullable();
             $table->string('link_to_blog')->nullable();
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }
