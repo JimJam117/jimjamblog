@@ -75,12 +75,12 @@ Portfolio
         <div class="expandable-bottom">
 
             @isset($portfolio->link_to_site)
-                <a class="btn" href="{{$portfolio->link_to_site}}">Live Demo</a>
+                <a class="btn" href="{{$portfolio->link_to_site}}"><i class="far fa-window-maximize"></i> Live Demo</a>
             @endisset 
 
             
             @isset($portfolio->link_to_source)
-                <a class="btn" href="{{$portfolio->link_to_source}}">Source</a>
+                <a class="btn" href="{{$portfolio->link_to_source}}"><i class="fas fa-code"></i> Source</a>
             @else
                 <p style="color:#a1a1a1; margin: auto 0;">
                     <i class="fas fa-lock"></i> Source Private
@@ -88,7 +88,7 @@ Portfolio
             @endisset 
 
             @isset($portfolio->link_to_blog)
-                <a class="btn" href="{{$portfolio->link_to_blog}}">Blog Page</a>
+                <a class="btn" href="{{$portfolio->link_to_blog}}"><i class="fas fa-pen"></i> Blog Page</a>
             @endisset 
              
         </div>
