@@ -12,9 +12,9 @@ class PortfolioController extends Controller
     public $purifierAllowedElements = 'div,h1,h2,h3,h4,h5,h6,code,b,strong,i,em,u,a[href|title],ul,ol,li,p[style],br,span[style],img[width|height|alt|src]';
 
     public function index() {
-        dd(\App\Portfolio::all());
-    }
-
+       $portfolios = Portfolio::all();
+        return view('portfolio.index', compact('portfolios'));
+     }
 
 
     /***
