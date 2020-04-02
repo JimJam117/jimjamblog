@@ -28,5 +28,16 @@
 </form>
 @endisset
 
+@isset($portfolio)
+<form action="/portfolio/{{$portfolio->id}}" method="POST">
+    @csrf
+    @method('DELETE')
+
+    <h1>Confrim deleting {{$portfolio->title}}</h1>
+    <p>Are you sure you want to delete this portfolio?</p>
+    <button type="submit">Confirm</button>
+</form>
+@endisset
+
     
 @endsection

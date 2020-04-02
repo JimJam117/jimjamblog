@@ -161,12 +161,15 @@ class PortfolioController extends Controller
         return redirect("/portfolio");
     }
 
-    public function delete_confirm() {
-        dd(\App\Portfolio::all());
+    public function delete_confirm($id) {
+        $portfolio = Portfolio::where('id', $id)->whereNull('deleted_at')->firstOrFail();
+        return view('confirm-delete', compact('portfolio'));
     }
     
-    public function destroy() {
-        dd(\App\Portfolio::all());
+    public function destroy($id) {
+        $portfolio = Portfolio::where('id', $id)->whereNull('deleted_at')->firstOrFail();
+        $portfolio->delete();
+        return redirect('/portfolio');
     }
 }
 
