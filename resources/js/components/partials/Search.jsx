@@ -16,7 +16,7 @@ const Search = (props) => {
 
 
 
-    const fetchItems = async (apiUrl = `https://www.jsparrow.uk/api/posts`) =>  {
+    const fetchItems = async (apiUrl = `/api/posts`) =>  {
         console.log("load");
                 await fetch(apiUrl, signal)
                     .then(async (response) => {

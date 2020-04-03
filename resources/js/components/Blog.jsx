@@ -32,9 +32,9 @@ const Blog = () => {
     }
 
 
-    const fetchItems = async (apiUrl = `https://www.jsparrow.uk/api/posts?page=${currentPage}`) =>  {
+    const fetchItems = async (apiUrl = `/api/posts?page=${currentPage}`) =>  {
         console.log("load");
-                await fetch(apiUrl)
+                await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         
                         //throw errors if issues
@@ -82,7 +82,7 @@ const Blog = () => {
                             return (
                                 <Link key={post.id} to={"/post/" + post.slug} className="unlinkStyle">
                                     <article className="section post_link">
-                                        <img className="post_thumbnail" src={"https://jsparrow.uk/" + post.image} alt={post.title} />
+                                        <img className="post_thumbnail" src={post.image} alt={post.title} />
 
                                         <div className="post_container">
                                             <p className="timestamp">{post.created_at}</p>

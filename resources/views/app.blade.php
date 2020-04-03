@@ -8,7 +8,7 @@
     <meta name="description" content="James Sparrow - Web Developer">
     <title>James Sparrow</title>
     <link rel="icon" href="/img/jimjam.ico">
-    <link rel="stylesheet" href="/css/app.css">
+    
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">

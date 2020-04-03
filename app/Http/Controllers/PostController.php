@@ -36,17 +36,6 @@ class PostController extends Controller
         return view('post.index', compact('posts', 'recent_category', 'recent_post'));
     }
 
-    public function index_api() {
-        $posts = self::paginatePosts(5);
-        $recent_post = $posts->first();
-
-        $categories = self::allCategories();
-        $recent_category = $categories->first();
-
-        return (compact('posts', 'recent_category', 'recent_post'));
-    }
-
-
     public function show($post = null) {
         // if the post is null return a redirect
         if ($post == null) {
@@ -75,33 +64,6 @@ class PostController extends Controller
         return view('post.show', compact('post', 'recent_post', 'category'));
     }
 
-    public function show_api($post = null) {
-        // if the post is null return a redirect
-        if ($post == null) {
-            return redirect("/posts");
-        }
-
-        //grab the post
-        $post = \App\Post::where("slug", $post)->whereNull('deleted_at')->firstOrFail();
-
-        // grab the most recent post, if it is the same as the $post then find the next most recent one
-        $posts = self::allPosts();
-        $recent_post = $posts->first();
-        foreach ($posts as $item) {
-            if($item->slug != $post->slug) {
-                $recent_post = $item;
-                break;
-            }
-        }
-
-
-        $category = null;
-        if($post->category != null) {
-            $category = $post->category;
-        }
-
-        return (compact('post', 'recent_post', 'category'));
-    }
 
     public function create() {
         $categories = self::allCategories();
