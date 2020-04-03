@@ -1,47 +1,41 @@
-
- import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+//import './App.css';
 
-export default App = (props) => {
-    
-        return (
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-            <div style={{'backgroundColor' : 'blue',}}>
-                <div className="topbar">
-                    <div className="topbar-section">
-                    <div className="title">
-                        <h1>James Sparrow</h1>
-                        <h3>Web Developer</h3>
-                    </div>
-                    <nav className="navbar">
-                        <a href="/home">Home</a>
-                        <a href="/posts">Blog</a>
-                        <a href="/portfolio">Portfolio</a>
-                    </nav>    
-                </div>
-                </div>
+
+import Home from './Home';
+import Blog from './Blog';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
+import Single from './Single';
 
 
 
-                <div className="main">
-                    {/* @yield('content') */}
-                    {props.content}
-                    <hr />
-                    <footer> 
-                        <button aria-label="Github" onclick="location.href='/github';" type="button" className="social-button social-button-github">
-                            <i className="fab fa-github"></i>
-                        </button>
-                        <button aria-label="Contact" onclick="location.href='/contact';" type="button" className="social-button" name="button">
-                            <i className="fas fa-envelope"></i>
-                        </button>
-                            jamessparrow101@googlemail.com</footer>
-                </div>
-            </div>
+function App() {
 
-        );
-    
+ 
+
+  return (
+    <div className="App">
+        <Router basename="/">
+        <Switch>
+          <Route path="(/|/home)/" exact component={Home}/>
+          <Route path="/portfolio" exact component={Portfolio}/>
+          <Route path="/posts" exact component={Blog}/>
+          <Route path="/contact" exact component={Contact}/>
+
+          {/* <Route path="/search/:query" component={SearchResults}/> */}
+
+          <Route path="/post/:id" component={Single}/>
+         </Switch>
+        </Router>
+    </div>
+  );
 }
 
-if (document.getElementById('root')) {
-    ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
+if (document.getElementById('app')) {
+    ReactDOM.render(<App />, document.getElementById('app'));
 }

@@ -29,6 +29,7 @@ Route::get('/register', function () {
 
 Auth::routes();
 
+/*
 // Search
 Route::post('/search', 'SearchController@fetch');
 Route::get('/search/{search}', 'SearchController@show')->name('search');
@@ -86,7 +87,11 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact', 'ContactController@send');
 Route::get('/email', function() {
     return view('email');
-});
+});*/
+
+Route::get('/{path?}', function () {
+    return view('app');
+})->where('path', '.*');
 
 //Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
 
