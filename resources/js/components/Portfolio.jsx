@@ -14,6 +14,7 @@ const Portfolio = () => {
 
 
     const [loading, setLoading] = useState(true);
+    const [revealedPortfolio, setRevealedPortfolio] = useState(0);
     const [portfolios, setPortfolios] = useState([]);
 
   
@@ -48,6 +49,15 @@ const Portfolio = () => {
         };
     }, [loading])
     
+    const expand = (id) => {
+        if (id === revealedPortfolio) {
+            setRevealedPortfolio(0);
+        }
+        else {
+            setRevealedPortfolio(id);
+        }
+        console.log(revealedPortfolio, id);
+    }
 
     return (
         <div className="main-container">
@@ -59,98 +69,96 @@ const Portfolio = () => {
                         
                         portfolios.map((portfolio) => {
                             return (
-                                <div className="portfolio-item">
+                                <div className="portfolio-item" key={portfolio.id}>
 
                                 
-                                <div key={portfolio.id} className="portfolio-link">
+                                <div className="portfolio-link" onClick={() => expand(portfolio.id)}>
                                             <div className="portfolio-link-image">
                                                 <img src={portfolio.image} alt={portfolio.title} />
                                             </div>
-                                            <div class="portfolio-link-text">
+                                            <div className="portfolio-link-text">
                                                 <h3>{portfolio.title}</h3>
                                                 <br/>
                                                 <p>{portfolio.body}</p>
-                                            </div>
-                                                                
+                                            </div>                          
                                 </div>
-                                    <div class="expandable" id="{{$portfolio->id}}">
-                                        <div class="expandable-top">
+                                    {revealedPortfolio === portfolio.id ?
+                                    <div className="expandable expanded" id={portfolio.id}>
+                                        <div className="expandable-top">
                                             <img src={portfolio.revealed_image} alt={portfolio.title} />
-                                            <div class="expandable-text">
+                                            <div className="expandable-text">
                                                 <h3>{portfolio.revealed_title}</h3>
                                                 <p>{portfolio.revealed_body}</p>
                                             </div>
                                         </div>
-                                        <div class="expandable-middle">
+                                        <div className="expandable-middle">
                                             {portfolio.features.map((feature) => {
                                                 switch(feature){
                                                     case "html":
                                                         return (
-                                                            <div><i class="fab fa-html5"></i> <small>HTML5</small></div>
+                                                            <div key={`${portfolio.id}html`}><i className="fab fa-html5"></i> <small>HTML5</small></div>
                                                         )
                                                     case "css":
                                                         return (
-                                                            <div><i class="fab fa-css3-alt"></i> <small>CSS3</small></div>
+                                                            <div key={`${portfolio.id}css`}><i className="fab fa-css3-alt"></i> <small>CSS3</small></div>
                                                         )
                                                     case "js":
                                                         return (
-                                                            <div><i class="fab fa-js"></i> <small>JavaScript</small></div>
+                                                            <div key={`${portfolio.id}js`}><i className="fab fa-js"></i> <small>JavaScript</small></div>
                                                         )
                                                     case "php":
                                                         return (
-                                                            <div><i class="fab fa-php"></i> <small>PHP</small></div>
+                                                            <div key={`${portfolio.id}php`}><i className="fab fa-php"></i> <small>PHP</small></div>
                                                         )
                                                     case "laravel":
                                                         return (
-                                                            <div><i class="fab fa-laravel"></i> <small>Laravel</small></div>
+                                                            <div key={`${portfolio.id}laravel`}><i className="fab fa-laravel"></i> <small>Laravel</small></div>
                                                         )
                                                     case "react":
                                                         return (
-                                                            <div><i class="fab fa-react"></i> <small>React</small></div>
+                                                            <div key={`${portfolio.id}react`}><i className="fab fa-react"></i> <small>React</small></div>
                                                         )
                                                     case "wordpress":
                                                         return (
-                                                            <div><i class="fab fa-wordpress"></i> <small>Wordpress</small></div>
+                                                            <div key={`${portfolio.id}wordpress`}><i className="fab fa-wordpress"></i> <small>Wordpress</small></div>
                                                         )
                                                     case "responsive":
                                                         return (
-                                                            <div><i class="fab fa-mobile-alt"></i> <small>Responsive Design</small></div>
+                                                            <div key={`${portfolio.id}responsive`}><i className="fab fa-mobile-alt"></i> <small>Responsive Design</small></div>
                                                         )
                                                     case "unity":
                                                         return (
-                                                            <div><i class="fab fa-unity"></i> <small>Unity</small></div>
+                                                            <div key={`${portfolio.id}unity`}><i className="fab fa-unity"></i> <small>Unity</small></div>
                                                         )
-                                                    case "unity":
+                                                    case "python":
                                                         return (
-                                                            <div><i class="fab fa-python"></i> <small>Python</small></div>
+                                                            <div key={`${portfolio.id}python`}><i className="fab fa-python"></i> <small>Python</small></div>
                                                         )
                                                 }
                                             })}
-                                            {portfolio.features.indexOf("html") !== -1 ?? <div><i class="fab fa-html5"></i> <small>HTML5</small></div>}
-
-
                                         </div>
-                                        <div class="expandable-bottom">
+                                        <div className="expandable-bottom">
 
                                             {portfolio.link_to_site  ? 
-                                                <a class="btn" href={portfolio.link_to_site}><i class="far fa-window-maximize"></i> Live Demo</a> : null
+                                                <a className="btn" href={portfolio.link_to_site}><i className="far fa-window-maximize"></i> Live Demo</a> : null
                                             }
 
                                             {portfolio.link_to_source ?
-                                                <a class="btn" href={portfolio.link_to_source}><i class="far fa-window-maximize"></i> Live sss</a> :
+                                                <a className="btn" href={portfolio.link_to_source}><i className="far fa-window-maximize"></i> Live sss</a> :
                                                 // <p > style="color:#a1a1a1; margin: auto 0;"
                                                 <p>
-                                                    <i class="fas fa-lock"></i> Source Private
+                                                    <i className="fas fa-lock"></i> Source Private
                                                 </p>
                                             }
 
                                             {portfolio.link_to_blog ? 
-                                                <a class="btn" href={portfolio.link_to_site}><i class="fas fa-pen"></i> Blog Page</a> : null
+                                                <a className="btn" href={portfolio.link_to_site}><i className="fas fa-pen"></i> Blog Page</a> : null
                                             }
 
                                             
                                         </div>
                                     </div>
+                                    : null }
                                 </div>
                             )
                         })}

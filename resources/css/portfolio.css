@@ -6,12 +6,13 @@ html {
     background: #595959;
     overflow: hidden;
     transition: all .5s ease-in-out;
-    /* height: 0; */
+    height: 0;
     padding: 0 1em;
     color: #fff;
 }
 
-.expandable:target {
+
+.expanded {
     line-height: 1.5;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -20,7 +21,7 @@ html {
     height: initial;
 }
 
-.expandable:target .expandable-image {
+.expanded .expandable-image {
     display: block;
 }
 
@@ -84,6 +85,7 @@ flex-wrap: wrap;
     color: #595959;
     text-decoration: none;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .portfolio-link:hover {
