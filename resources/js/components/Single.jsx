@@ -1,14 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import Header from './partials/Header';
 import Footer from './partials/Footer';
+import Search from './partials/Search';
 import Sidebar from './partials/Sidebar';
 import ReactHtmlParser from 'react-html-parser'; 
 
 export default function Single(props) {
 
+    // search state
+    const [searchDisplay, setSearchDisplay] = useState(false);
+    const setDisplay = (input) => setSearchDisplay(input);
+
+    // abort controller
     var controller = new AbortController();
     var signal = controller.signal;
 
+    // post state
     const [state, setState] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -40,6 +47,9 @@ export default function Single(props) {
             <Header />
 
             <main>
+            <Search currentId={props.match.params.id} display={searchDisplay} setDisplay={setDisplay}/>
+            
+            {searchDisplay ? null : 
                 <div className="container">
                 {loading ? "loading" :
                         <div className="post">
@@ -57,6 +67,7 @@ export default function Single(props) {
                     } 
                     {loading ? < Sidebar /> : <Sidebar recent={state.recent_post}/>}
                 </div>
+                 }
                 <Footer />
             </main>
         </div>

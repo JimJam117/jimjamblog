@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
- 
+import {Link} from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 
 
 const Search = (props) => {
@@ -11,8 +12,8 @@ const Search = (props) => {
     const [loading, setLoading] = useState(true)
 
     const [search, setSearch] = useState("");
-    const [allPosts, setAllPosts] = useState({})
-    const [results, setResults] = useState({})
+    const [allPosts, setAllPosts] = useState([])
+    const [results, setResults] = useState([])
 
 
 
@@ -46,7 +47,17 @@ const Search = (props) => {
         };
     }, [loading])
 
+    useEffect(() => {
+        if (!loading) {
+            setSearchResults(search);
+        }
+    }, [search, loading])
 
+    const reset = (e) => {
+        console.log("reset");
+        setSearch("");
+        props.setDisplay(false);
+    }
     
     const handleChange = (e) => {
 
@@ -59,7 +70,9 @@ const Search = (props) => {
         else if (inputValue === "" && props.display === true) {
             props.setDisplay(false);
         }
+    }
 
+    const setSearchResults = (inputValue) => {
         // search stuff
         setResults(allPosts.filter((post) => {
             // the words in the title
@@ -90,15 +103,14 @@ const Search = (props) => {
             // returns this post if true
             return containsString;
         }));
-    
     }
 
 
 
 
 
-
     return (
+
         <div>
             <div className="form-group search">
                 <form method="POST" action="/search" style={{'display': 'flex', 'justifyContent': 'end'}}>
@@ -109,7 +121,7 @@ const Search = (props) => {
                     <label style={{'display' : 'none' }} htmlFor="search">Search</label>
                 </form>
             </div>
-            {search ?
+            {search !== "" ?
 
 
             <main>
@@ -118,9 +130,32 @@ const Search = (props) => {
                         <div>
                             {results == 0 ? "No results found ;(" : 
                                 results.map((post) => {
-                                    return <div key={post.id}>
-                                        <h2>{post.title}</h2>
-                                        </div>
+
+                                    let isCurrentPost = false;
+                                    if(typeof(props.currentId) !== 'undefined') {
+                                        //console.log("is currednt!", props.currentId, post.slug);
+                                        if (props.currentId == post.slug) {
+                                            isCurrentPost = true;
+                                            //console.log("is current!");
+                                        }
+                                        
+                                        
+                                    }
+
+                                    return (
+                                        <Link key={post.id} to={"/post/" + post.slug} onClick={isCurrentPost ? () => reset() : null} className="unlinkStyle">
+                                            <article className="section post_link">
+                                                <img className="post_thumbnail" src={post.image} alt={post.title} />
+
+                                                <div className="post_container">
+                                                    <p className="timestamp">{post.created_at}</p>
+                                                    <h2 className="post_title">{post.title}</h2>
+                                                        {/* Strip the body of tags and get the first 200 characters */}
+                                                    <p>{(post.body.replace(/(<([^>]+)>)/ig,"").substring(0,200) + "...")}</p>
+                                                </div>
+                                            </article>
+                                        </Link>
+                                    )
                                 })
                             }
                         </div>

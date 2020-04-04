@@ -182,6 +182,7 @@
   
   .search {
     text-align: right;
+    float: right;
     display: block;
     transition: all .2s;
   }

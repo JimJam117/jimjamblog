@@ -3,9 +3,15 @@ import {Link} from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
+import Search from './partials/Search';
 import Sidebar from './partials/Sidebar';
 
 const Blog = () => {
+
+
+    const [searchDisplay, setSearchDisplay] = useState(false);
+    const setDisplay = (input) => setSearchDisplay(input);
+
 
     // abort controller
     var controller = new AbortController();
@@ -73,8 +79,11 @@ const Blog = () => {
         <div className="main-container">
             <Header />
 
-        <main>
-                {loading ? "loading" : 
+        <main> 
+            <Search display={searchDisplay} setDisplay={setDisplay}/>
+            
+            {searchDisplay ? null : 
+                loading ? "loading" : 
                 <div className="container">
                     <div className="posts_container">
                     <p className="page-num">Page {currentPage}</p>
