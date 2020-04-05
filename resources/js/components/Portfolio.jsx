@@ -159,7 +159,7 @@ const Portfolio = () => {
                                             }
 
                                             {portfolio.link_to_source ?
-                                                <a className="btn" href={portfolio.link_to_source}><i className="far fa-window-maximize"></i> Live sss</a> :
+                                                <a className="btn" href={portfolio.link_to_source}><i className="fas fa-code"></i> Source</a> :
                                                 // <p > style="color:#a1a1a1; margin: auto 0;"
                                                 <p>
                                                     <i className="fas fa-lock"></i> Source Private
