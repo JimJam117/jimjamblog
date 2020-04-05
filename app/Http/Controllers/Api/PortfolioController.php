@@ -9,6 +9,7 @@ class PortfolioController extends Controller
 {
     public function index() {
         $portfolios = \App\Portfolio::all();
+        //dd($portfolios);
          return (compact('portfolios'));
       }
 }

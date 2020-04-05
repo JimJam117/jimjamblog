@@ -39,7 +39,15 @@ const Portfolio = () => {
         
                         const data = await response.json();
 
-                        setPortfolios(data.portfolios);
+                        
+
+                        let sorted_portfolios = data.portfolios.sort((a,b) => {
+                            return new Date(a.updated_at).getTime() - 
+                                new Date(b.updated_at).getTime()
+                        }).reverse();
+
+                        setPortfolios(sorted_portfolios);
+
                         console.log(data.portfolios);
                         setLoading(false);
                 })
@@ -61,6 +69,9 @@ const Portfolio = () => {
         }
         console.log(revealedPortfolio, id);
     }
+
+
+    
 
     return (
         <div className="main-container">

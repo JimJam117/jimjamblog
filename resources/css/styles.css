@@ -790,6 +790,7 @@
 
     main {
       border: none;
+      padding: 1em;
     }
   
     .banner {

@@ -37,6 +37,7 @@ html {
 .expandable-top {
     display: flex;
     margin-top: 1em;
+    justify-content: center;
 }
 .expandable-top div{
     width: 50%;
@@ -89,7 +90,8 @@ flex-wrap: wrap;
 
 .portfolio-title {
     text-align: center;
-    margin-bottom: 1em;
+    font-size: 2.5rem;
+    margin: 1em;
 }
 
 
@@ -140,6 +142,15 @@ flex-wrap: wrap;
     font-size: 2rem;
 }
 
+@media only screen and (min-width: 2560px){
+    .expandable-text{
+        font-size: 1.25rem;
+    }
+    .expandable-top img {
+        width: 40%;
+    }
+}
+
 @media only screen and (max-width: 985px) {
     .portfolio-link-text {
         font-size: 0.8rem;
@@ -161,6 +172,10 @@ flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 650px) {
+    .portfolio-grid-container{
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
     .portfolio-link-text {
         width: 60%;
     }
@@ -170,6 +185,10 @@ flex-wrap: wrap;
     }
     .main{
         padding: 1em 0;
+    }
+    .expandable-top img {
+        width: 100%;
+        padding-bottom: 1em;
     }
 }
 
