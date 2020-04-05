@@ -9,9 +9,9 @@ const Footer = () => {
     return (
         <footer>
             <div className="footer-buttons">
-            <Link to="/github" aria-label="Github"  type="button" className="social-button social-button-github">
+            <a href="/github" aria-label="Github"  type="button" className="social-button social-button-github">
                 <i className="fab fa-github"></i>
-            </Link>
+            </a>
             <Link to="contact" aria-label="Contact" type="button" className="social-button" name="button">
                 <i className="fas fa-envelope"></i>
             </Link>

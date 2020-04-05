@@ -65,7 +65,7 @@ export default function Single(props) {
                             </div>
                         </div>
                     } 
-                    {loading ? < Sidebar /> : <Sidebar recent={state.recent_post}/>}
+                    {loading ? null : <Sidebar recent={state.recent_post}/>}
                 </div>
                  }
                 <Footer />

@@ -19,7 +19,7 @@ const Search = (props) => {
 
     const fetchItems = async (apiUrl = `/api/posts`) =>  {
         console.log("load");
-                await fetch(apiUrl, signal)
+                await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         
                         //throw errors if issues

@@ -52,7 +52,7 @@
     transform: translateX(-50%);
     border-left: 1px solid rgb(194, 194, 194);
     border-right: 1px solid rgb(194, 194, 194);
-  
+    min-height: 100vh;
   
   }
   
@@ -185,6 +185,7 @@
     float: right;
     display: block;
     transition: all .2s;
+    margin-bottom: 1em;
   }
   
   .searchInput {
@@ -343,7 +344,7 @@
   /*BANNER*/
   .banner {
     padding: 30px 10px 0 10px;
-    margin-top: 1em;
+    margin-top: 2em;
     font-size: 1.2rem;
     text-align: center;
   }
@@ -678,7 +679,9 @@
   
   @media only screen and (max-width: 985px) {
   
-    
+    .sidebar{
+      display: none;
+    }
   
     .banner {
         font-size: 1.8vw;
@@ -771,6 +774,10 @@
   
     body {
         margin: 0;
+    }
+
+    main {
+      border: none;
     }
   
     .banner {
