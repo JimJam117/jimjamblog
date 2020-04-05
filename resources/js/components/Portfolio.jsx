@@ -139,7 +139,7 @@ const Portfolio = () => {
                                                         )
                                                     case "responsive":
                                                         return (
-                                                            <div key={`${portfolio.id}responsive`}><i className="fab fa-mobile-alt"></i> <small>Responsive Design</small></div>
+                                                            <div key={`${portfolio.id}responsive`}><i className="fas fa-mobile-alt"></i> <small>Responsive Design</small></div>
                                                         )
                                                     case "unity":
                                                         return (
