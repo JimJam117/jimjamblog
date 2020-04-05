@@ -69,13 +69,13 @@ const Portfolio = () => {
         <main>
                 {loading ? null : <h1 className="portfolio-title">Portfolio</h1>}
                 {loading ? <div className="spinner"><ClipLoader /></div> : 
-                        
-                        portfolios.map((portfolio) => {
-                            return (
-                                <div className="portfolio-item" key={portfolio.id}>
+                        <div className="portfolio-grid-container">
+                        { portfolios.map((portfolio) => {
+                            return ([
+                                
 
                                 
-                                <div className="portfolio-link" onClick={() => expand(portfolio.id)}>
+                                <div className="portfolio-link" onClick={() => expand(portfolio.id)} key={portfolio.id}>
                                             <div className="portfolio-link-image">
                                                 <img src={portfolio.image} alt={portfolio.title} />
                                             </div>
@@ -84,9 +84,10 @@ const Portfolio = () => {
                                                 <br/>
                                                 <p>{portfolio.body}</p>
                                             </div>                          
-                                </div>
-                                    {revealedPortfolio === portfolio.id ?
-                                    <div className="expandable expanded" id={portfolio.id}>
+                                </div>,
+                                
+                                    
+                                    <div key={portfolio.id + "expandable"} className={revealedPortfolio === portfolio.id ? "expandable expanded" : "expandable"} id={portfolio.id}>
                                         <div className="expandable-top">
                                             <img src={portfolio.revealed_image} alt={portfolio.title} />
                                             <div className="expandable-text">
@@ -160,11 +161,13 @@ const Portfolio = () => {
 
                                             
                                         </div>
-                                    </div>
-                                    : null }
-                                </div>
+                                
+                                   
+                                    </div>]
                             )
-                        })}
+                        }
+                        
+                )}</div>}
 
             <Footer />
         </main>
