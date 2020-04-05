@@ -5,12 +5,18 @@ import {Link} from 'react-router-dom';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 const Contact = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [body, setBody] = useState("");
+    const [captcha, setCaptcha] = useState();
 
+    function onChange(value) {
+        setCaptcha(value);
+    }
 
     return (
         <div className="main-container">
@@ -36,6 +42,11 @@ const Contact = () => {
         <textarea placeholder="Message" className="form-control" type="text"
             name="body" rows="8" onChange={(e) => setBody(e.target.value)} value={body}></textarea>
     </div>
+
+    <ReCAPTCHA
+        sitekey="6LdGg9EUAAAAANGjZHn3zF5fnSJ6qjQrqFYep5_1"
+        onChange={onChange}
+    />
 
     <div className="form-group row mb-0">
         <button aria-label="Send" className="submit-button" type="submit" name="button">Send</button>

@@ -81,7 +81,7 @@ Route::get('/backend', 'BackendController@index')->name('backend')->middleware('
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/contact', 'ContactController@index')->name('contact');
-// Route::post('/contact', 'ContactController@send');
+Route::post('/contact', 'ContactController@send');
 Route::get('/email', function() {
     return view('email');
 });
