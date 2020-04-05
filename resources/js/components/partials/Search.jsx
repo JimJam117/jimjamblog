@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Search = (props) => {
 
@@ -126,7 +128,7 @@ const Search = (props) => {
 
             <main>
                     <h1>Search Results for "{search}"</h1>
-                    {loading ? "loading..." : 
+                    {loading ? <div className="spinner"><ClipLoader /></div> : 
                         <div>
                             {results == 0 ? "No results found ;(" : 
                                 results.map((post) => {

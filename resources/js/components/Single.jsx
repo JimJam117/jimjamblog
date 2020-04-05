@@ -5,6 +5,9 @@ import Search from './partials/Search';
 import Sidebar from './partials/Sidebar';
 import ReactHtmlParser from 'react-html-parser'; 
 
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
+
 export default function Single(props) {
 
     // search state
@@ -51,7 +54,7 @@ export default function Single(props) {
             
             {searchDisplay ? null : 
                 <div className="container">
-                {loading ? "loading" :
+                {loading ? <div className="spinner"><ClipLoader /></div> :
                         <div className="post">
                             <img className="post_thumbnail" src={state.post.image} alt={state.post.title}></img>
                             <div className="post_container">

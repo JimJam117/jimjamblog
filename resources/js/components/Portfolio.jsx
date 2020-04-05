@@ -6,6 +6,9 @@ import Footer from './partials/Footer';
 import Sidebar from './partials/Sidebar';
 import '../../css/portfolio.css';
 
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
+
 const Portfolio = () => {
 
     // abort controller
@@ -65,7 +68,7 @@ const Portfolio = () => {
 
         <main>
                 {loading ? null : <h1 className="portfolio-title">Portfolio</h1>}
-                {loading ? "loading" : 
+                {loading ? <div className="spinner"><ClipLoader /></div> : 
                         
                         portfolios.map((portfolio) => {
                             return (

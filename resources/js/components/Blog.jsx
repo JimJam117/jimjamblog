@@ -6,6 +6,9 @@ import Footer from './partials/Footer';
 import Search from './partials/Search';
 import Sidebar from './partials/Sidebar';
 
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
+
 const Blog = () => {
 
 
@@ -83,7 +86,7 @@ const Blog = () => {
             <Search display={searchDisplay} setDisplay={setDisplay}/>
             
             {searchDisplay ? null : 
-                loading ? "loading" : 
+                loading ? <div className="spinner"><ClipLoader /></div> : 
                 <div className="container">
                     <div className="posts_container">
                     <p className="page-num">Page {currentPage}</p>
