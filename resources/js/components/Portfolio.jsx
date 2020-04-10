@@ -90,7 +90,7 @@ const Portfolio = () => {
             if (feature == null) {
                 return null;
             }
-            
+
             let output = feature;
             output = output.replace(/^[A-Za-z]/, output.charAt(0).toUpperCase());
 
@@ -212,7 +212,7 @@ const Portfolio = () => {
                                             }
 
                                             {portfolio.link_to_blog ? 
-                                                <a className="btn" href={portfolio.link_to_site}><i className="fas fa-pen"></i> Blog Page</a> : null
+                                                <a className="btn" href={portfolio.link_to_blog}><i className="fas fa-pen"></i> Blog Page</a> : null
                                             }
 
                                             
