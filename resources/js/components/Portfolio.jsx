@@ -70,8 +70,49 @@ const Portfolio = () => {
         console.log(revealedPortfolio, id);
     }
 
+    const getMiniFeatureListContent = (input, max) => {
+        let newArray = input.features.filter((feature) => {
+                                                
+            if(!(miniFeatureListCount >= max ||
+                feature == "html" ||
+                feature == "css" ||
+                feature == "js" ||
+                feature == "php")) {
 
-    
+                miniFeatureListCount++;
+
+                return feature;
+            }
+
+        });
+        console.log("w9w", newArray)
+        newArray = newArray.map((feature, i) => {
+            if (feature == null) {
+                return null;
+            }
+            
+            let output = feature;
+            output = output.replace(/^[A-Za-z]/, output.charAt(0).toUpperCase());
+
+            if(newArray.indexOf(feature) == newArray.length - 1) {
+                return <div key={`${input.id}-mini-list-${feature}-${i}`}>{`${output}...`}</div>;
+            } 
+            else {
+                return <div key={`${input.id}-mini-list-${feature}-${i}`}>{`${output},`}</div>;
+            }
+        });
+        return newArray;
+
+        /*            else if(miniFeatureListCount == max - 1) {
+                miniFeatureListCount++;
+                let output = feature;
+                output = output.replace(/^[A-Za-z]/, output.charAt(0).toUpperCase()); 
+                return <div key={`${input.id}-mini-list-${feature}-${i}`}>{output}...</div>
+            }*/
+    }
+
+    let miniFeatureListCount = 0;
+
 
     return (
         <div className="main-container">
@@ -81,7 +122,8 @@ const Portfolio = () => {
                 {loading ? null : <h1 className="portfolio-title">Portfolio</h1>}
                 {loading ? <div className="spinner"><ClipLoader /></div> : 
                         <div className="portfolio-grid-container">
-                        { portfolios.map((portfolio) => {
+                        {portfolios.map((portfolio) => {
+                            miniFeatureListCount = 0;
                             return ([
                                 
 
@@ -94,7 +136,10 @@ const Portfolio = () => {
                                                 <h3>{portfolio.title}</h3>
                                                 <br/>
                                                 <p>{portfolio.body}</p>
-                                            </div>                          
+                                            </div>  
+                                            <div className="mini-feature-list">
+                                            {getMiniFeatureListContent(portfolio, 2).map((lad) => lad)}
+                                            </div>                        
                                 </div>,
                                 
                                     
