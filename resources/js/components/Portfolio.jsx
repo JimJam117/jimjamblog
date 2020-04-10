@@ -194,6 +194,15 @@ const Portfolio = () => {
                                                         return (
                                                             <div key={`${portfolio.id}python`}><i className="fab fa-python"></i> <small>Python</small></div>
                                                         )
+                                                    default:
+                                                        if(feature.length <= 0) {
+                                                            return null;
+                                                        }
+                                                        let output = feature;
+                                                        output = output.replace(/^[A-Za-z]/, output.charAt(0).toUpperCase());
+                                                        return (
+                                                            <div key={`${portfolio.id}${feature}`}><small>{output}</small></div>
+                                                        )
                                                 }
                                             })}
                                         </div>
