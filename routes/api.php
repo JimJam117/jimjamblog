@@ -14,7 +14,9 @@ use Illuminate\Http\Request;
 */
 Route::get('/portfolio', 'Api\PortfolioController@index');
 
+Route::get('/posts_all', 'Api\PostController@posts_all');
 Route::get('/posts', 'Api\PostController@index');
+
 Route::get('/post/{post}', 'Api\PostController@show');
 
 Route::get('/search/{search}', 'Api\SearchController@show');

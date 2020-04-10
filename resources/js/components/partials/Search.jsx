@@ -19,7 +19,7 @@ const Search = (props) => {
 
 
 
-    const fetchItems = async (apiUrl = `/api/posts`) =>  {
+    const fetchItems = async (apiUrl = `/api/posts_all`) =>  {
         console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
@@ -37,7 +37,7 @@ const Search = (props) => {
         
                         const data = await response.json();
 
-                        setAllPosts(data.posts.data);
+                        setAllPosts(data.posts);
                         setLoading(false);
                 })
             }

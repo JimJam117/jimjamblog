@@ -34,6 +34,13 @@ class PostController extends Controller
         return (compact('posts', 'recent_category', 'recent_post'));
     }
 
+    public function posts_all() {
+        
+        $posts = self::allPosts();
+        $categories = self::allCategories();
+        return (compact('posts', 'categories'));
+    }
+
     public function show($post = null) {
         // if the post is null return a redirect
         if ($post == null) {
