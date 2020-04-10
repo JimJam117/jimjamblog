@@ -35,7 +35,7 @@ const Home = () => {
                             </p>
                             <ul className="homepage-quick-links">
                                 <li><Link to="/blog"><i className="fas fa-pen"></i> Blog</Link></li>
-                                <li><Link to="/blog/projects"><i className="fas fa-project-diagram"></i> Projects</Link></li>
+                                {/* <li><Link to="/blog/projects"><i className="fas fa-project-diagram"></i> Projects</Link></li> */}
                                 <li><Link to="/portfolio"><i className="far fa-gem"></i> Portfolio</Link></li>
                                 <li><Link to="/github"><i className="fab fa-github"></i> Github</Link></li>
                                 <li><Link to="/contact"><i className="fas fa-envelope"></i> Contact</Link></li>
