@@ -26,7 +26,6 @@ Route::get('/register', function () {
 
 Auth::routes();
 
-
 Route::get('/portfolio-backend', 'PortfolioController@backend')->middleware('auth');
 
 Route::get('/portfolio/create', 'PortfolioController@create')->middleware('auth');
@@ -71,5 +70,4 @@ Route::get('/{path?}', function () {
     return view('app');
 })->where('path', '.*');
 
-//Route::get('/portfolio', function () { return view('portfolio');})->name('portfolio');
 
