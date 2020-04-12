@@ -21,6 +21,11 @@ Route::get('/post/{post}', 'Api\PostController@show');
 
 Route::get('/search/{search}', 'Api\SearchController@show');
 
+Route::post('/contact', 'ContactController@send');
+Route::get('/email', function() {
+    return view('email');
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

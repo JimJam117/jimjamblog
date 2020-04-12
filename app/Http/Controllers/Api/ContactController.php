@@ -12,7 +12,7 @@ class ContactController extends Controller
     }
 
     public function send() {
-        
+        dd("This is a test");
         $data = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -34,7 +34,6 @@ class ContactController extends Controller
 
         $mailSent = $data['name'];
 
-        //return redirect()->route('home', ['mailSent' => $mailSent]);
-        return redirect('/home');
+        return redirect()->route('home', ['mailSent' => $mailSent]);
     }
 }

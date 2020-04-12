@@ -25,7 +25,7 @@ const Contact = () => {
         <main>
             <div className="banner"><h1>Contact</h1></div>
 
-            <form action="/contact" method="post" className="contact-form" encType="multipart/form-data">
+            <form action="/api/contact" method="post" className="contact-form" encType="multipart/form-data">
 
     <div className=" form-group row">
         <input id="name" placeholder="Name" type="name" className="form-control"
