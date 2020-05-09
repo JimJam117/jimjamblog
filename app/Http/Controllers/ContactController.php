@@ -34,6 +34,7 @@ class ContactController extends Controller
 
         $mailSent = $data['name'];
 
-        return redirect()->route('home', ['mailSent' => $mailSent]);
+        return redirect('/');
+        //return redirect()->route('home', ['mailSent' => $mailSent]);
     }
 }
