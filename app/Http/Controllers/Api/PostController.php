@@ -26,7 +26,8 @@ class PostController extends Controller
 
     public function index() {
         $posts = self::paginatePosts(5);
-        $recent_post = $posts->first();
+        $all_posts = self::allPosts();
+        $recent_post = $all_posts->first();
 
         $categories = self::allCategories();
         $recent_category = $categories->first();

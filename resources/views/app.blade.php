@@ -23,6 +23,7 @@
 
     <title>React App</title>
   </head>
+
 <body>
     
 <div id="app"></div>
