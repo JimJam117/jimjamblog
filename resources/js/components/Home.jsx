@@ -28,7 +28,7 @@ const Home = () => {
                     
                         
                             {/* <img className="homepage-profile-pic-top" src="/img/jimjam3.png" alt="Me" /> */}
-                            <p>
+                            <p className="homepage-content-title">
                                 {/* <img className="homepage-profile-pic" src="/img/jimjam3.png" alt="Me" /> */}
                                 Hi, I'm James (commonly known as Jimjam). 
                             </p>

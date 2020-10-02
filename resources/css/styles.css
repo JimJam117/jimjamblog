@@ -247,7 +247,7 @@
   }
   
   .sidebar_post{
-    padding: 1em;
+    padding: 0.25em;
     text-decoration: none;
     transition: 0.2s;
     display: flex;
@@ -256,7 +256,7 @@
     color: #222;
   }
   .sidebar_post_content{
-    padding: 1em;
+    padding: 1em 0;
   }
   
   .sidebar-btn{
@@ -519,6 +519,7 @@
     /*HOMEPAGE*/
     .homepage-content {
         display: flex;
+        flex-direction: column;
         margin: 2em;
         font-size: 1.15rem;
         justify-content: space-between;
@@ -530,6 +531,12 @@
         max-width: 1000px;
         text-align: initial;
         margin-top: 2em;
+    }
+    .homepage-content p {
+      margin-top: 20px;
+    }
+    .homepage-content-title{
+      margin-top: 75px;
     }
     .homepage-profile-pic {
         width: 7em;
