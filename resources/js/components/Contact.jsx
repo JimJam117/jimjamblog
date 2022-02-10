@@ -25,35 +25,32 @@ const Contact = () => {
         <main>
             <div className="banner"><h1>Contact</h1></div>
 
-            <form action="/api/contact" method="post" className="contact-form" encType="multipart/form-data">
+            <div className="homepage-content">
+                        <div>
+                        <div className="homepage-email-msg">
+                        <h4>For serious business, please email:</h4>
+                        <strong>jamessparrow101@googlemail.com</strong>
+                        </div>
+                        
+                        <h4>Other Socials:</h4>
+                        <ul className="homepage-quick-links">
+                        <li><a href="/github"><i className="fab fa-github"></i> Github</a></li>
+                        <li><a href="https://www.instagram.com/jimjamleman/"><i className="fab fa-instagram"></i> Instagram</a></li>
+                                <li><a href="https://steamcommunity.com/id/JimJam117"><i className="fab fa-steam"></i> Steam</a></li>
+                                <li><a href="https://discordapp.com/users/252471185864916992"><i className="fab fa-discord"></i> Discord</a></li>
+                                
+                                
+                                <li><a href="https://twitter.com/jimjamethon"><i className="fab fa-twitter"></i> Twitter</a></li>
+                            </ul>
 
-    <div className=" form-group row">
-        <input id="name" placeholder="Name" type="name" className="form-control"
-            name="name" onChange={(e) => setName(e.target.value)} value={name} required />
-    </div>
-
-    <div className=" form-group row">
-        <input id="email" type="email" placeholder="Email" className="form-control"
-            name="email" onChange={(e) => setEmail(e.target.value)} value={email} required />
-    </div>
 
 
-    <div className=" form-group row">
-        <textarea placeholder="Message" className="form-control" type="text"
-            name="body" rows="8" onChange={(e) => setBody(e.target.value)} value={body}></textarea>
-    </div>
 
-    <ReCAPTCHA
-        sitekey="6LdGg9EUAAAAANGjZHn3zF5fnSJ6qjQrqFYep5_1"
-        onChange={onChange}
-    />
 
-    <div className="form-group row mb-0">
-        <button aria-label="Send" className="submit-button" type="submit" name="button">Send</button>
-    </div>
-</form>
+                           
+                        </div></div>
 
-{/* {!! NoCaptcha::renderJs() !!} */}
+            <br /><br /><br />
 
             <Footer />
         </main>

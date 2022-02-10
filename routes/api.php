@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('/home', 'Api\HomeController@index');
 Route::get('/portfolio', 'Api\PortfolioController@index');
 
 Route::get('/posts_all', 'Api\PostController@posts_all');

@@ -16,6 +16,19 @@ const Footer = () => {
                 <i className="fas fa-envelope"></i>
             </Link>
             </div>
+            <hr />
+            <div className="bottom-links">
+                   
+                        <ul className="homepage-quick-links bottom-links">
+                                <li><Link to="/posts"><i className="fas fa-pen"></i> Blog</Link></li>
+                                {/* <li><Link to="/blog/projects"><i className="fas fa-project-diagram"></i> Projects</Link></li> */}
+                                <li><Link to="/portfolio"><i className="far fa-gem"></i> Portfolio</Link></li>
+                                <li><Link to="/contact"><i className="fas fa-envelope-square"></i> Contact</Link></li>
+                                <li><a href="/github"><i className="fab fa-github"></i> Github</a></li>
+                            </ul>
+                        </div>
+
+                    
 
             <div className="footer-email">jamessparrow101@googlemail.com</div>
         </footer>

@@ -84,7 +84,7 @@
   
   header {
     display: inline-block;
-    background-color: rgb(69, 77, 90);
+    background-color: rgb(48, 63, 91);
     position: relative;
     width: 75vw;
     left: 50%;
@@ -186,6 +186,25 @@
     font-weight: 100;
   }
   
+
+/* CUSTOM ICONS */
+.icon {
+height: 1.25em;
+width: 1.25em;
+display: inline-block;
+vertical-align: sub;
+}
+.hk47-icon {
+  background: url('/symbol.png');
+  background-size: auto;
+  background-size: cover;
+}
+.hanzibase-icon {
+  background: url('/hanzibase-icon.png');
+  background-size: auto;
+  background-size: cover;
+}
+
   /*SEARCHBAR*/
   
   .search {
@@ -247,7 +266,7 @@
   }
   
   .sidebar_post{
-    padding: 0.25em;
+    padding: 1em;
     text-decoration: none;
     transition: 0.2s;
     display: flex;
@@ -256,7 +275,7 @@
     color: #222;
   }
   .sidebar_post_content{
-    padding: 1em 0;
+    padding: 1em;
   }
   
   .sidebar-btn{
@@ -352,7 +371,7 @@
   /*BANNER*/
   .banner {
     padding: 30px 10px 0 10px;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     font-size: 1.2rem;
     text-align: center;
   }
@@ -519,38 +538,36 @@
     /*HOMEPAGE*/
     .homepage-content {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: row-reverse; */
         margin: 2em;
         font-size: 1.15rem;
         justify-content: space-between;
         font-family: "Public Sans";
         color: #151515;
     }
+    .homepage-content p{
+      margin-bottom: 0.5em;
+      text-align: justify;
+    }
     .homepage-content div {
-        width: 45%;
+        /* width: 45%; */
         max-width: 1000px;
         text-align: initial;
-        margin-top: 2em;
-    }
-    .homepage-content p {
-      margin-top: 20px;
-    }
-    .homepage-content-title{
-      margin-top: 75px;
+        margin-top: 1em;
+        padding: 1em;
     }
     .homepage-profile-pic {
-        width: 7em;
-        float: left;
-        padding: 1em;
-        border-radius: 100%;
+        width: 100%;
+        border-radius: 25%;
     }
     .homepage-profile-pic-top {
         display: none;
     }
     .homepage-quick-links {
-        display: grid;
+        display: flex;
         list-style: none;
-        margin-top: 3em;
+        /* margin-top: 3em; */
+        flex-direction: column;
     }
     .homepage-quick-links a {
         text-decoration: none;
@@ -564,14 +581,58 @@
     .homepage-quick-links a:hover {
         color: rgba(0, 0, 0, 0.4);
     }
+
+    /* topic links */
+    .homepage-topic-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .homepage-topic-links a {
+      text-decoration: none;
+      color: white;
+      transition: 0.2s;
+      font-size: 1.25rem;
+  }
+  .homepage-topic-links li {
+      padding: 0.5em;
+      margin: 0.25em;
+      background-color: rgb(69, 75, 89);
+  }
+  .homepage-topic-links li:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+  }
+
+
+    .bottom-links {
+      flex-direction: row;
+justify-content: space-evenly;
+text-align: center;
+    }
     .homepage-gallery {
         display: grid;
         grid-template-columns: 50% 50%;
+        list-style: none;
+        background-color: #1fc1c1;
+        padding: 1em;
     }
     .homepage-gallery img {
         width: 100%;
     }
-  
+    .homepage-right {
+      display: flex;
+      flex-direction: column;
+    }
+    .homepage-left {
+      margin-top: 2em;
+    }
+    .homepage-email-msg {
+      margin: 1em 0 2em !important;
+      padding: 0 !important;
+    }
+    
+
+
     /* contact Page */
   
     .captchaStyle{
@@ -589,6 +650,7 @@
   
   .banner h1 {
       text-align: center;
+      /* display: none; */
   }
   
   .contact-form {
