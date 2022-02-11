@@ -20,6 +20,12 @@ Route::get('/posts', 'Api\PostController@index');
 
 Route::get('/post/{post}', 'Api\PostController@show');
 
+
+Route::get('/categories_all', 'Api\CategoryController@categories_all');
+Route::get('/categories', 'Api\CategoryController@index');
+
+Route::get('/category/{category}', 'Api\CategoryController@show');
+
 Route::get('/search/{search}', 'Api\SearchController@show');
 
 Route::post('/contact', 'ContactController@send');

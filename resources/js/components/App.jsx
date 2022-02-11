@@ -10,6 +10,8 @@ import Blog from './Blog';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Single from './Single';
+import Category from './Category';
+import Categories from './Categories';
 
 
 
@@ -24,10 +26,12 @@ function App() {
           <Route path="(/|/home)/" exact component={Home}/>
           <Route path="/portfolio" exact component={Portfolio}/>
           <Route path="/posts" exact component={Blog}/>
+          <Route path="/categories" exact component={Categories}/>
           <Route path="/contact" exact component={Contact}/>
 
           {/* <Route path="/search/:query" component={SearchResults}/> */}
 
+          <Route path="/category/:id" exact component={Category}/>
           <Route path="/post/:id" component={Single}/>
          </Switch>
         </Router>
