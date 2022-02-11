@@ -23,25 +23,10 @@ const Categories = () => {
 
     const [loading, setLoading] = useState(true);
     const [results, setResults] = useState([]);
-    const [posts, setPosts] = useState([]);
-
-    // pagination state
-    const [currentPage, setCurrentPage] = useState();
-    const [lastPage, setLastPage] = useState();
-
-    // pagination function
-    const changePage = (pageToChangeTo) => {
-        if(pageToChangeTo < 1 || pageToChangeTo > lastPage){
-            console.log("Page to change to: " + pageToChangeTo + " is not within boundries");
-        }
-        else {
-            setCurrentPage(pageToChangeTo);
-            setLoading(true);
-        }
-    }
+    const [categories, setCategories] = useState([]);
 
 
-    const fetchItems = async (apiUrl = `/api/posts?page=${currentPage}`) =>  {
+    const fetchItems = async (apiUrl = `/api/categories`) =>  {
         console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
@@ -59,13 +44,9 @@ const Categories = () => {
         
                         const data = await response.json();
 
-                        console.log(currentPage);
                         setResults(data);
 
-                        setCurrentPage(data.posts.current_page);
-                        setLastPage(data.posts.last_page);
-
-                        setPosts(data.posts.data);
+                        setCategories(data.categories);
                         setLoading(false);
                 })
             }
@@ -93,15 +74,20 @@ const Categories = () => {
                    <div>
                         <h2>Topics (placeholder, will become a list of categories)</h2>
                         <ul className="homepage-quick-links">
-                                <li><Link to="/blog/projects"><i className="icon hk47-icon"></i> Hong Kong 47</Link></li>
-                                <li><Link to="/blog/projects"><i className="icon hanzibase-icon"></i> Hanzibase</Link></li>
-                                <li><Link to="/blog/projects">🍴 Yummies</Link></li>
-                                <li><Link to="/blog/projects">❤️ Personal Life</Link></li>
-                                <li><Link to="/blog/projects">🐧 Linux</Link></li>
-                                <li><Link to="/blog/projects">🤖 Jimjambot</Link></li>
-                                <li><Link to="/blog/projects">📖 Library</Link></li>
-                                <li><Link to="/blog/projects">🤔 Interesting Things</Link></li>
-                                <li><Link to="/blog/projects">🌐 Web Programming</Link></li>
+
+
+                        {categories.map((category) => {
+                            return (
+                                <li key={category.id} >
+                                <Link to={"/category/" + category.title} dangerouslySetInnerHTML={{__html: category.emoji_name}}>
+                                   
+                                </Link>
+                                </li>
+                            )
+                        })}
+
+
+                                
 
 
                             </ul>

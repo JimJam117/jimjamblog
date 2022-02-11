@@ -21,6 +21,18 @@
     </div>
 
     <div class=" form-group row">
+        <label for="emoji_name">Emoji Name</label>
+        <input id="emoji_name" type="emoji_name" class="form-control @error('emoji_name') is-invalid @enderror" name="emoji_name"
+            value="{{ old('emoji_name') ?? $category->emoji_name ?? "" }}" required>
+
+        @error('emoji_name')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+
+    <div class=" form-group row">
         <label for="body">Body</label>
         <br><br>
         <textarea class="form-control @error('body') is-invalid @enderror" type="text"

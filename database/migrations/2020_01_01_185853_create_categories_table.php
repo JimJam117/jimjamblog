@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->unique();
+            $table->string('emoji_name')->nullable();
             $table->text('body')->nullable();
             $table->string('image')->nullable();
             $table->softDeletes();

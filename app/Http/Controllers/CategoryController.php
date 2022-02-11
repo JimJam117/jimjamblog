@@ -73,6 +73,7 @@ class CategoryController extends Controller
     public function store(){
         $data = request()->validate([
             'title' => 'required|unique:categories',
+            'emoji_name' => 'required',
             'body' => 'required',
             'image' => 'nullable|image',
 
@@ -87,6 +88,7 @@ class CategoryController extends Controller
 
             \App\Category::create([
                 'title' => $data['title'],
+                'emoji_name' => $data['emoji_name'],
                 'body' => Purifier::clean($data['body']),
 
                 'image' => $imgPathWithStorage,
@@ -97,6 +99,7 @@ class CategoryController extends Controller
         // uses validated $data var items and also the image path
         \App\Category::create([
             'title' => $data['title'],
+            'emoji_name' => $data['emoji_name'],
             'body' => Purifier::clean($data['body']),
 
             'image' => null,
@@ -121,6 +124,7 @@ class CategoryController extends Controller
 
         $data = request()->validate([
             'title' => 'required',
+            'emoji_name' => 'required',
             'body' => 'required',
             'image' => 'nullable|image',
 
@@ -135,6 +139,7 @@ class CategoryController extends Controller
 
             $category->update([
                 'title' => $data['title'],
+                'emoji_name' => $data['emoji_name'],
                 'body' => Purifier::clean($data['body']),
 
                 'image' => $imgPathWithStorage,
@@ -145,6 +150,7 @@ class CategoryController extends Controller
         // uses validated $data var items and also the image path
         $category->update([
             'title' => $data['title'],
+            'emoji_name' => $data['emoji_name'],
             'body' => Purifier::clean($data['body']),
 
         ]);
