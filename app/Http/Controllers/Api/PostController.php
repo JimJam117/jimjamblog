@@ -42,6 +42,8 @@ class PostController extends Controller
         return (compact('posts', 'categories'));
     }
 
+
+
     public function show($post = null) {
         // if the post is null return a redirect
         if ($post == null) {

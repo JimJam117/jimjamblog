@@ -520,6 +520,20 @@ vertical-align: sub;
     box-shadow: inset 0px 1px 3px 0px black;
   }
   
+  /* backend */
+.backend-button {
+  background-color: #011627;
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+}
+.backend-list-item{
+  margin: 1em;
+  padding: 1em;
+  background-color: #ddd;
+}
+
+
   /* homepage */
   
   
@@ -685,6 +699,7 @@ text-align: center;
     padding: 1em;
     margin: 1em 0;
     font-family: Public Sans;
+    border: 1px solid #9d9d9d;
   }
   
   

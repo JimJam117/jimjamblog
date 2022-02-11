@@ -17,17 +17,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
-  </head>
-  <head>
-    <meta charset="utf-8" />
+  <style>
+.toBackend {
+    position: fixed;
+    z-index: 99;
+    background-color: #478247;
+    padding: 10px;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    font-size: 1.25rem;
+    color: white !important;
+    font-family: sans;
+  }
 
-    <title>React App</title>
+  </style>
+
   </head>
+
 
 <body>
     
+  @auth
+    <a class="toBackend" href="/backend">Go To Backend</a>
+  @endauth
+
 <div id="app"></div>
 
 <script src="/js/app.js"></script>
+
+
 </body>
 </html>

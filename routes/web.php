@@ -24,6 +24,11 @@ Route::get('/register', function () {
     return redirect('/home');
 });
 
+
+Route::get('/blog', function () {
+    return redirect('/posts');
+});
+
 Auth::routes();
 
 Route::get('/portfolio-backend', 'PortfolioController@backend')->middleware('auth');
@@ -40,6 +45,8 @@ Route::delete('/portfolio/{id}', 'PortfolioController@destroy')->middleware('aut
 
 
 // Post
+Route::get('/posts-backend', 'PostController@backend')->middleware('auth');
+
 Route::get('/post/create', 'PostController@create')->middleware('auth');
 Route::post('/post', 'PostController@store')->middleware('auth');
 
@@ -51,6 +58,8 @@ Route::delete('/post/{post}', 'PostController@destroy')->middleware('auth');
 
 
 // Category
+Route::get('/categories-backend', 'CategoryController@backend')->middleware('auth');
+
 Route::get('/category/create', 'CategoryController@create')->middleware('auth');
 Route::post('/category', 'CategoryController@store')->middleware('auth');
 

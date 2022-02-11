@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.backend')
 
 @section('title')
 Portfolio
@@ -11,8 +11,8 @@ Portfolio
 <div class="backend-portfolio">
     <div class="endSection">
         <button onclick="location.href='/portfolio/{{$portfolio->id}}/delete-confirm';"
-            class="social-button" style="background-color:#a00;">X</button>
-        <button onclick="location.href='/portfolio/{{$portfolio->id}}/edit';" class="social-button"><i
+            class="backend-button" style="background-color:#a00;">X</button>
+        <button onclick="location.href='/portfolio/{{$portfolio->id}}/edit';" class="backend-button"><i
                 class="fas fa-pen"></i></button>
     </div>
     <h1>{{$portfolio->title}}</h1>

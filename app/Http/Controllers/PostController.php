@@ -22,6 +22,10 @@ class PostController extends Controller
         return \App\Category::orderBy('created_at', 'DESC')->where("deleted_at", null)->get();
     }
     
+    public function backend() {
+        $posts = \App\Post::all();
+        return view('post.backend', compact('posts'));
+    }
 
 
     public function index()

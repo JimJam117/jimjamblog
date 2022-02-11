@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.backend')
 
 @section('title')
     Confirm Delete
@@ -40,4 +40,15 @@
 @endisset
 
     
+@endsection
+
+@section('extra-scripts')
+   <style>
+    button{
+        background-color: #bf3737;
+color: white;
+padding: 1em;
+margin: 1em;
+    }   
+    </style> 
 @endsection

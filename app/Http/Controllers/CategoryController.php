@@ -20,6 +20,10 @@ class CategoryController extends Controller
         return \App\Category::orderBy('updated_at', 'DESC')->where("deleted_at", null)->get();
     }
 
+    public function backend() {
+        $categories = \App\Category::all();
+        return view('category.backend', compact('categories'));
+    }
 
     //
     public function index() {

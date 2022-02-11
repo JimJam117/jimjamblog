@@ -5,39 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <meta name="description" content="James Sparrow - Web Developer">
+    <title>Jspakrrow | @yield('title')</title>
+    <link rel="icon" href="/img/jimjam.ico">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans:300S&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <style>
-        .topbar {
-            background-color: darkred;
-            color: white;
-            display: flex;
-            flex-direction: row;
-            padding: 5px;
-            width: 100%;
-        }
-        .topbar div a{
-            color:white;
-        }
-        .topbar div a:visited{
-            color:white;
-        }
+        
+        
 
     </style>
 </head>
 
-<body>
-    <div class="topbar">
-        <div>
-            <a href="/home">frontend</a>
-            <a href="/post/create">create post</a>
-            <a href="/category/create">create category</a>
-        </div>
-        <div>
-            {{Auth::user()->username}}
-        </div>
+<body
+    style="background-image: linear-gradient(rgba(19, 19, 24, 0.81), rgba(37, 44, 71, 0.83)), url('/img/background.jpeg');">
 
+
+    <header class="topbar">
+        <div class="topbar-section">
+            <div class="title">
+                <h1>James Sparrow</h1>
+                <h3>Backend</h3>
+            </div>
+
+            <nav class="navbar">
+                <a href="/home">Home</a>
+                <a href="/posts">Blog</a>
+                <a href="/portfolio">Portfolio</a>
+            </nav>    
+        </div>
+    </header>
+
+    @auth
+    <div class="control-nav">
+        <a href="/backend">Battlestation</a>
+        <a href="/post/create">Create Post</a>
+        <a href="/category/create">Create Category</a>
+        <a href="/portfolio/create">Create Portfolio</a>
+        <a href="/portfolio-backend">Portfolio Backend</a>
+        <button class="login" onclick="document.getElementById('logout-form').submit();">{{Auth::user()->name}}:
+            logout</button>
+
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </div>
-    @yield('content')
+    @endauth
+
+    <main>
+        <!-- <div id="example"></div> example component -->
+        @yield('content')
+        <br>
+        <hr>
+        <div class="endSection"> 
+           
+            <button aria-label="Github" onclick="location.href='/github';" type="button" class="social-button social-button-github">
+                <i class="fab fa-github"></i>
+            </button>
+            <button aria-label="Contact" onclick="location.href='/contact';" type="button" class="social-button" name="button">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </div>
+        <br>
+        <br>
+        <footer>jamessparrow101@googlemail.com</footer>
+    </main>
 </body>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" media="all" rel="stylesheet" defer="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    @yield('extra-scripts')
 
 </html>
