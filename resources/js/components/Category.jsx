@@ -7,6 +7,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
+import { Link } from 'react-router-dom';
 
 export default function Category(props) {
 
@@ -43,6 +44,8 @@ export default function Category(props) {
             }
         }
     });
+
+
     
 
     return (
@@ -61,6 +64,27 @@ export default function Category(props) {
                                 <div className="timestamp">{state.category.created_at}</div>
                                 <h1>{state.category.title}</h1>
                                 {ReactHtmlParser(state.category.body)}
+
+                                <br /><br />
+                                <hr />
+
+                                {/* if there are no posts in this category, display an empty div */}
+                                {/* Else, we print out a list of posts with links to them */}
+                                {state.posts_in_category && state.posts_in_category.length === 0 ? <div></div> 
+                                : <div>
+                                    <br />
+                                    <em>List of related posts:</em>
+                                    <ul>
+                                    {state.posts_in_category.map((post) => {
+                                        return ( <li key={post.id}><Link to={"/post/" + post.slug}>{post.title}</Link></li> )
+                                    })}
+                                    </ul>
+                                    <br />
+                                    <hr />
+                                    </div> }
+      
+                                    
+                                
 
                                 <button className="btn readMore" onClick={props.history.goBack}>
                                     <i className="fas fa-arrow-left"></i> Go Back

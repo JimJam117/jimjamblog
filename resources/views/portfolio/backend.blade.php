@@ -26,7 +26,7 @@ Portfolio
 @section('extra-scripts')
 
 <style>
-    .backend-portfolio{
+    .backend-list-item{
         margin: 1em;
         padding: 1em;
         background-color: #ddd;

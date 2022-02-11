@@ -22,6 +22,9 @@ class CategoryController extends Controller
     private function allCategories() {
         return \App\Category::orderBy('created_at', 'DESC')->where("deleted_at", null)->get();
     }
+    private function allCategoriesAsc() {
+        return \App\Category::orderBy('created_at', 'ASC')->where("deleted_at", null)->get();
+    }
 
 
     public function index() {
@@ -29,7 +32,7 @@ class CategoryController extends Controller
         $all_posts = self::allPosts();
         $recent_post = $all_posts->first();
 
-        $categories = self::allCategories();
+        $categories = self::allCategoriesAsc();
         $recent_category = $categories->first();
 
         return (compact('categories', 'recent_category', 'recent_post'));
@@ -50,6 +53,7 @@ class CategoryController extends Controller
         }
         $category = \App\Category::where("title", $category)->whereNull('deleted_at')->firstOrFail();
 
+        $posts_in_category = \App\Post::where("category_id", $category->id)->whereNull('deleted_at')->get();
         
         $recent_posts = self::allPosts();
         $posts = self::allPosts();
@@ -71,7 +75,7 @@ class CategoryController extends Controller
         $categories = self::allCategories();
         $recent_category = $categories->first();        
 
-        return compact('category', 'recent_posts', 'recent_post', 'recent_category');
+        return compact('category', 'recent_posts', 'recent_post', 'recent_category', 'posts_in_category');
     }
 
 

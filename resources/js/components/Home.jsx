@@ -1,4 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import {Link} from 'react-router-dom';
 
@@ -10,6 +13,49 @@ const Home = () => {
 
     const [searchDisplay, setSearchDisplay] = useState(false);
     const setDisplay = (input) => setSearchDisplay(input);
+
+
+    // abort controller
+    var controller = new AbortController();
+    var signal = controller.signal;
+
+
+    const [loading, setLoading] = useState(true);
+    const [results, setResults] = useState([]);
+    const [categories, setCategories] = useState([]);
+
+
+    const fetchItems = async (apiUrl = `/api/categories`) =>  {
+        console.log("load");
+                await fetch(apiUrl, {signal})
+                    .then(async (response) => {
+                        
+                        //throw errors if issues
+                        if (response.status === 500) {
+                            console.log("500");
+                        }
+                        else if(response.status === 404) {
+                            console.log("404");
+                        }
+                        else if(response.status === 419) {
+                            console.log("419");
+                        }
+        
+                        const data = await response.json();
+
+                        setResults(data);
+
+                        setCategories(data.categories);
+                        setLoading(false);
+                })
+            }
+
+    useEffect(() => {
+        if (loading) {fetchItems()}
+        return () => {
+            controller.abort();
+        };
+    }, [loading])
 
     return (
         <div className="main-container">
@@ -72,14 +118,28 @@ As of September 2020, I study Computer Science at Aston University, Birmingham.
                                 
                                 <li><a href="https://twitter.com/jimjamethon"><i className="fab fa-twitter"></i> Twitter</a></li>
                             </ul>
-
-
-
-
-
-                           
                         </div>
 
+
+                        <div>
+                        <h2>Topics (placeholder, will become a list of categories)</h2>
+                        <ul className="homepage-topic-links">
+                            {loading ? <div className="spinner"><ClipLoader /></div> : 
+                            categories.map((category) => {
+                                return (
+                                    <li key={category.id} >
+                                    <Link to={"/category/" + category.title} dangerouslySetInnerHTML={{__html: category.emoji_name}}>
+                                       
+                                    </Link>
+                                    </li>
+                                )
+                            })
+                            }
+                            </ul>
+                        </div>
+
+                        {/* 
+                        // Old topics placeholder
                         <div>
                         <h2>Topics (placeholder, will become a list of categories)</h2>
                         <ul className="homepage-topic-links">
@@ -96,7 +156,7 @@ As of September 2020, I study Computer Science at Aston University, Birmingham.
 
                             </ul>
                         </div>
-
+ */}
 
 
                     </div>

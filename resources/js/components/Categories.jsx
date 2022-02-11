@@ -87,9 +87,6 @@ const Categories = () => {
                         })}
 
 
-                                
-
-
                             </ul>
                         </div>
                 
