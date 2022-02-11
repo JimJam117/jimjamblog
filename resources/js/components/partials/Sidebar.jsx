@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 export default function Sidebar(props) {
 
-    console.log(props.recent);
+    // console.log(props.recent);
 
     const recentPost = () => {
         return props.recent 

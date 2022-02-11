@@ -29,7 +29,11 @@ Route::get('/blog', function () {
     return redirect('/posts');
 });
 
+Route::get('/feed', 'RSSFeedController@main_feed');
+
+
 Auth::routes();
+
 
 Route::get('/portfolio-backend', 'PortfolioController@backend')->middleware('auth');
 

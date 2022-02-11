@@ -26,7 +26,7 @@ const Home = () => {
 
 
     const fetchItems = async (apiUrl = `/api/categories`) =>  {
-        console.log("load");
+        // console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         
@@ -82,7 +82,7 @@ const Home = () => {
                             <small className="homepage-small-msg"><em>That's french for hello</em></small>
                             
                             <p>
-                                Hi, I'm James (commonly known as Jimjam).
+                                I'm James (commonly known as Jimjam).
                                 </p>
                                 <p>
 I'm into web programming (with PHP and JS), making games in Unity (with C#), non-machine people languages (specifically Russian and Mandarin) and Linux/Unix nerd stuff. I mostly post about programming projects here as a record of what I've worked on.
@@ -93,7 +93,7 @@ As of September 2020, I study Computer Science at Aston University, Birmingham.
                       
                         </div>
                         <div className="homepage-right">
-                            <img className="homepage-profile-pic" src="/img/james4.jpg" alt="" />
+                            <img className="homepage-profile-pic" src="/portrait.png" alt="It's me" />
 
                             
                         </div>
@@ -122,7 +122,7 @@ As of September 2020, I study Computer Science at Aston University, Birmingham.
 
 
                         <div>
-                        <h2>Topics (placeholder, will become a list of categories)</h2>
+                        <h2>Topics</h2>
                         <ul className="homepage-topic-links">
                             {loading ? <div className="spinner"><ClipLoader /></div> : 
                             categories.map((category) => {

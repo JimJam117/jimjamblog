@@ -22,7 +22,7 @@ const Portfolio = () => {
 
   
     const fetchItems = async (apiUrl = `/api/portfolio`) =>  {
-        console.log("load");
+        // console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         
@@ -48,7 +48,7 @@ const Portfolio = () => {
 
                         setPortfolios(sorted_portfolios);
 
-                        console.log(data.portfolios);
+                        // console.log(data.portfolios);
                         setLoading(false);
                 })
             }
@@ -67,7 +67,7 @@ const Portfolio = () => {
         else {
             setRevealedPortfolio(id);
         }
-        console.log(revealedPortfolio, id);
+        // console.log(revealedPortfolio, id);
     }
 
     const getMiniFeatureListContent = (input, max) => {
@@ -85,7 +85,7 @@ const Portfolio = () => {
             }
 
         });
-        console.log("w9w", newArray)
+        // console.log("w9w", newArray)
         newArray = newArray.map((feature, i) => {
             if (feature == null) {
                 return null;

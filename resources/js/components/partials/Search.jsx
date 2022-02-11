@@ -20,7 +20,7 @@ const Search = (props) => {
 
 
     const fetchItems = async (apiUrl = `/api/posts_all`) =>  {
-        console.log("load");
+        // console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         
@@ -56,7 +56,7 @@ const Search = (props) => {
     }, [search, loading])
 
     const reset = (e) => {
-        console.log("reset");
+        // console.log("reset");
         setSearch("");
         props.setDisplay(false);
     }

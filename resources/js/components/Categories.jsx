@@ -27,7 +27,7 @@ const Categories = () => {
 
 
     const fetchItems = async (apiUrl = `/api/categories`) =>  {
-        console.log("load");
+        // console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         

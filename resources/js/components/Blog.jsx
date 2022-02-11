@@ -32,7 +32,7 @@ const Blog = () => {
     // pagination function
     const changePage = (pageToChangeTo) => {
         if(pageToChangeTo < 1 || pageToChangeTo > lastPage){
-            console.log("Page to change to: " + pageToChangeTo + " is not within boundries");
+            // console.log("Page to change to: " + pageToChangeTo + " is not within boundries");
         }
         else {
             setCurrentPage(pageToChangeTo);
@@ -42,7 +42,7 @@ const Blog = () => {
 
 
     const fetchItems = async (apiUrl = `/api/posts?page=${currentPage}`) =>  {
-        console.log("load");
+        // console.log("load");
                 await fetch(apiUrl, {signal})
                     .then(async (response) => {
                         
@@ -59,7 +59,7 @@ const Blog = () => {
         
                         const data = await response.json();
 
-                        console.log(currentPage);
+                        // console.log(currentPage);
                         setResults(data);
 
                         setCurrentPage(data.posts.current_page);
