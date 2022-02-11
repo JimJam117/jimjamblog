@@ -7,6 +7,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
+import { Link } from 'react-router-dom';
 
 export default function Single(props) {
 
@@ -59,7 +60,9 @@ export default function Single(props) {
                             <img className="post_thumbnail" src={state.post.image} alt={state.post.title}></img>
                             <div className="post_container">
                                 <div className="timestamp">{state.post.created_at}</div>
+                                {state.category && <Link to={"/category/" + state.category.title}>This post is in the category: <em>{state.category.title}</em></Link>}
                                 <h1>{state.post.title}</h1>
+
                                 {ReactHtmlParser(state.post.body)}
 
                                 <button className="btn readMore" onClick={props.history.goBack}>
