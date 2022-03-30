@@ -23,11 +23,23 @@ export default function Single(props) {
     const [state, setState] = useState({});
     const [loading, setLoading] = useState(true);
 
-    const fetchItem = async () => { await fetch('/api/post/' + props.match.params.id, signal).then(async(response) => {
+    const fetchItem = async () => { await fetch('/api/post/' + props.match.params.id, {
+        method: "GET",
+        signal: signal,
+        headers : { 
+          'Content-Type': 'text/html',
+          'Accept': 'text/html'
+       }}).then(async(response) => {
         const data = await response.json();    
         await setState(data);
         setLoading(false);
-        })
+        }).catch(err => {
+            if (err.name === 'AbortError') {
+                // console.log('Promise Aborted');
+            } else {
+                // console.log('Promise Rejected');
+            }
+        });
     }
 
     useEffect(() => {

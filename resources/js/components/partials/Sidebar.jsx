@@ -11,7 +11,7 @@ export default function Sidebar(props) {
                 <div style={{'marginTop': 30}}>
                     <h3>Recent Post</h3>
                     <Link to={"/post/" + props.recent.slug} className="sidebar_post">
-                        <img className="sidebar_post_image" src={props.recent.image} alt={props.recent.title}/>
+                        {/* <img className="sidebar_post_image" src={props.recent.image} alt={props.recent.title}/> */}
                         <div className="sidebar_post_content">
                             <h4>{(props.recent.title.replace(/(<([^>]+)>)/ig,"").substring(0,40) + "...")}</h4>
                             <p>{(props.recent.body.replace(/(<([^>]+)>)/ig,"").substring(0,60) + "...")}</p>

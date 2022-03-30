@@ -7,6 +7,9 @@ use Purifier;
 
 class CategoryController extends Controller
 {
+    public $purifierAllowedElements = 'div,h1,h2,h3,h4,h5,h6,code,b,strong,i,em,u,a[href|title],ul,ol,li,p[style],br,span[style],img[width|height|alt|src]';
+
+
     function paginatePosts($paginate) {
         return \App\Post::orderBy('updated_at', 'DESC')->where("deleted_at", null)->paginate($paginate);
     }
@@ -89,7 +92,7 @@ class CategoryController extends Controller
             \App\Category::create([
                 'title' => $data['title'],
                 'emoji_name' => $data['emoji_name'],
-                'body' => Purifier::clean($data['body']),
+                'body' => Purifier::clean($data['body'], array('HTML.Allowed' => $this->purifierAllowedElements)),
 
                 'image' => $imgPathWithStorage,
             ]);
@@ -100,7 +103,7 @@ class CategoryController extends Controller
         \App\Category::create([
             'title' => $data['title'],
             'emoji_name' => $data['emoji_name'],
-            'body' => Purifier::clean($data['body']),
+            'body' => Purifier::clean($data['body'], array('HTML.Allowed' => $this->purifierAllowedElements)),
 
             'image' => null,
         ]);
@@ -140,7 +143,7 @@ class CategoryController extends Controller
             $category->update([
                 'title' => $data['title'],
                 'emoji_name' => $data['emoji_name'],
-                'body' => Purifier::clean($data['body']),
+                'body' => Purifier::clean($data['body'], array('HTML.Allowed' => $this->purifierAllowedElements)),
 
                 'image' => $imgPathWithStorage,
             ]);
@@ -151,7 +154,7 @@ class CategoryController extends Controller
         $category->update([
             'title' => $data['title'],
             'emoji_name' => $data['emoji_name'],
-            'body' => Purifier::clean($data['body']),
+            'body' => Purifier::clean($data['body'], array('HTML.Allowed' => $this->purifierAllowedElements)),
 
         ]);
 

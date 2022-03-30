@@ -23,6 +23,7 @@ const Footer = () => {
                                 <li><Link to="/posts"><i className="fas fa-pen"></i> Blog</Link></li>
                                 {/* <li><Link to="/blog/projects"><i className="fas fa-project-diagram"></i> Projects</Link></li> */}
                                 <li><Link to="/portfolio"><i className="far fa-gem"></i> Portfolio</Link></li>
+                                <li><a href="/feed"><i className="fas fa-rss"></i> RSS</a></li>
                                 <li><Link to="/contact"><i className="fas fa-envelope-square"></i> Contact</Link></li>
                                 <li><a href="/github"><i className="fab fa-github"></i> Github</a></li>
                             </ul>

@@ -53,7 +53,7 @@ class CategoryController extends Controller
         }
         $category = \App\Category::where("title", $category)->whereNull('deleted_at')->firstOrFail();
 
-        $posts_in_category = \App\Post::where("category_id", $category->id)->whereNull('deleted_at')->get();
+        $posts_in_category = \App\Post::orderBy('created_at', 'DESC')->where("category_id", $category->id)->whereNull('deleted_at')->get();
         
         $recent_posts = self::allPosts();
         $posts = self::allPosts();

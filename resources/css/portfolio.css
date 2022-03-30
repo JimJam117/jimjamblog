@@ -69,6 +69,13 @@ flex-wrap: wrap;
 
 }
 
+.expandable-bottom .btn{
+    color: #262626;
+}
+.expandable-bottom .btn:hover{
+    color: white;
+}
+
 .expandable-bottom a {
     text-decoration: none;
     border: none;
@@ -123,7 +130,7 @@ flex-wrap: wrap;
 }
 
 .portfolio-link:hover {
-    background-color: rgb(69, 77, 90);
+    background-color: rgb(74, 90, 69);;
     color: #fff;
 }
 

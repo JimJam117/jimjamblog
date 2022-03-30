@@ -23,10 +23,10 @@ const Contact = () => {
             <Header />
 
         <main>
-            <div className="banner"><h1>Contact</h1></div>
-
+            
             <div className="homepage-content">
                         <div>
+                            <h2>Contact</h2>
                         <div className="homepage-email-msg">
                         <h4>For serious business, please email:</h4>
                         <strong>jamessparrow101@googlemail.com</strong>
@@ -40,7 +40,7 @@ const Contact = () => {
                                 <li><a href="https://discordapp.com/users/252471185864916992"><i className="fab fa-discord"></i> Discord</a></li>
                                 
                                 
-                                <li><a href="https://twitter.com/jimjamethon"><i className="fab fa-twitter"></i> Twitter</a></li>
+                                {/* <li><a href="https://twitter.com/jimjamethon"><i className="fab fa-twitter"></i> Twitter</a></li> */}
                             </ul>
 
 
