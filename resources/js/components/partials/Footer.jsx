@@ -8,14 +8,7 @@ const Footer = () => {
 
     return (
         <footer>
-            <div className="footer-buttons">
-            <a href="/github" aria-label="Github"  type="button" className="social-button social-button-github">
-                <i className="fab fa-github"></i>
-            </a>
-            <Link to="contact" aria-label="Contact" type="button" className="social-button" name="button">
-                <i className="fas fa-envelope"></i>
-            </Link>
-            </div>
+
             <hr />
             <div className="bottom-links">
                    

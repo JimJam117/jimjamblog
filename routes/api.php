@@ -17,6 +17,7 @@ Route::get('/portfolio', 'Api\PortfolioController@index');
 
 Route::get('/posts_all', 'Api\PostController@posts_all');
 Route::get('/posts', 'Api\PostController@index');
+Route::get('/post_latest', 'Api\PostController@latestPost');
 
 Route::get('/post/{post}', 'Api\PostController@show');
 

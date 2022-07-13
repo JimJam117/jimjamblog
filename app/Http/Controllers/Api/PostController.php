@@ -23,6 +23,10 @@ class PostController extends Controller
         return \App\Category::orderBy('created_at', 'DESC')->where("deleted_at", null)->get();
     }
 
+    public function latestPost() {
+        $post = \App\Post::orderBy('created_at', 'DESC')->where("deleted_at", null)->first();
+        return (compact('post'));
+    }
 
     public function index() {
         $posts = self::paginatePosts(5);

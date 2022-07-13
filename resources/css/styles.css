@@ -52,7 +52,7 @@
   main {
     margin: 0;
     background: #fff;
-    width: 75vw;
+    width: 58vw;
     padding: 1em 2em;
     position: relative;
     left: 50%;
@@ -86,7 +86,7 @@
     display: inline-block;
     background-color: rgb(53, 111, 42);
     position: relative;
-    width: 75vw;
+    width: 58vw;
     left: 50%;
     transform: translateX(-50%);
     padding: 1vw;
@@ -103,7 +103,7 @@
   
   .control-nav {
     background-color: #222;
-    width: 75vw;
+    width: 58vw;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -554,7 +554,6 @@ vertical-align: sub;
         /* flex-direction: row-reverse; */
         margin: 2em;
         font-size: 1.15rem;
-        justify-content: space-between;
         font-family: "Public Sans";
         color: #151515;
     }
@@ -563,24 +562,25 @@ vertical-align: sub;
       text-align: justify;
     }
     .homepage-content div {
-        /* width: 45%; */
+        width: 100%;
         max-width: 1000px;
         text-align: initial;
         margin-top: 1em;
         padding: 1em;
     }
     .homepage-profile-pic {
-        width: 100%;
+        width: 75%;
+        align-self: flex-end;
         border-radius: 25%;
     }
     .homepage-profile-pic-top {
         display: none;
     }
     .homepage-quick-links {
-        display: flex;
-        list-style: none;
-        /* margin-top: 3em; */
-        flex-direction: column;
+      display: flex;
+      list-style: square;
+      flex-direction: column;
+      list-style-position: inside;
     }
     .homepage-quick-links a {
         text-decoration: none;
@@ -596,6 +596,12 @@ vertical-align: sub;
     }
 
     /* topic links */
+    .homepage-topic-container{
+      margin: 2em;
+      font-size: 1.15rem;
+      font-family: "Public Sans";
+      color: #151515;
+    }
     .homepage-topic-links {
       list-style: none;
       display: flex;
@@ -604,15 +610,17 @@ vertical-align: sub;
     .homepage-topic-links a {
       text-decoration: none;
       color: black;
-      transition: 0.2s;
+      transition: 0s;
       font-size: 1.25rem;
+      padding: 0.3em 1em;
+      background-color: rgb(213, 213, 213);
+      border: #80808042 1px solid;
   }
   .homepage-topic-links li {
-      padding: 0.5em;
-      margin: 0.25em;
-      background-color: rgb(234, 234, 234);
+    margin: 1em 1em 0 0;
+      
   }
-  .homepage-topic-links li:hover {
+  .homepage-topic-links a:hover {
       background-color: rgba(0, 0, 0, 0.4);
   }
 
@@ -621,6 +629,7 @@ vertical-align: sub;
       flex-direction: row;
 justify-content: space-evenly;
 text-align: center;
+list-style: none;
     }
     .homepage-gallery {
         display: grid;
@@ -636,6 +645,7 @@ text-align: center;
       display: flex;
       flex-direction: column;
       text-align: center !important;
+      justify-content: center;
     }
     .homepage-left {
       margin-top: 2em;

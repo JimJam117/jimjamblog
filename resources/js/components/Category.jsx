@@ -65,7 +65,8 @@ export default function Category(props) {
                 <div className="container">
                 {loading ? <div className="spinner"><ClipLoader /></div> :
                         <div className="post">
-                            <img className="post_thumbnail" src={state.category.image} alt={state.category.title}></img>
+                           {
+                            state.category.image !== null ? <img className="post_thumbnail" src={state.category.image} alt={state.category.title}></img> : <></>}
                             <div className="post_container">
                                 <div className="timestamp">{state.category.created_at}</div>
                                 <h1>{state.category.title}</h1>

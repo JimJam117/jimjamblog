@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom';
 import Header from './partials/Header';
 import Search from './partials/Search';
 import Footer from './partials/Footer';
+import LatestPost from './partials/LatestPost';
+import LatestPosts from './partials/LatestPosts';
 
 const Home = () => {
 
@@ -88,7 +90,7 @@ const Home = () => {
                             
                             {/* </p> */}
 
-                            <h2>Bonjour</h2>
+                            <h1>Bonjour</h1>
                              
 
 
@@ -110,29 +112,49 @@ const Home = () => {
                     </div>
 
 
+           
                     <div className="homepage-content">
-                        <div className="homepage-contact">
-                        <h2>Contact</h2>
-                        <div className="homepage-email-msg">
-                        <h4>For serious business, please email:</h4>
-                        <strong>jamessparrow101@googlemail.com</strong>
-                        </div>
-                        
-                        <h4>Other Socials:</h4>
-                        <ul className="homepage-quick-links">
-                        <li><a href="/github"><i className="fab fa-github"></i> Github</a></li>
-                        <li><a href="https://www.instagram.com/jimjamleman/"><i className="fab fa-instagram"></i> Instagram</a></li>
-                                <li><a href="https://steamcommunity.com/id/JimJam117"><i className="fab fa-steam"></i> Steam</a></li>
-                                <li><a href="https://discordapp.com/users/252471185864916992"><i className="fab fa-discord"></i> Discord</a></li>
-                                
-                                
-                                {/* <li><a href="https://twitter.com/jimjamethon"><i className="fab fa-twitter"></i> Twitter</a></li> */}
-                            </ul>
-                        </div>
 
+
+                    <div>
+                            <h2>Projects</h2>
+                            <hr />
+                            <br />
+                            <ul className="homepage-quick-links">
+                                <li><a href="https://hanzibase.net"><i className="icon hanzibase-icon"></i> Hanzibase: </a>
+                                 <span> </span> A web application database of Chinese characters, made with Laravel and React.</li>
+                                <li><a href="/category/Uni Projects">🎓 Uni Projects: </a>
+                                 <span> </span> See all the projects I have done at Uni.</li>
+                                {/* <li><a href="/category/Hong Kong 47"><i className="icon hk47-icon"></i> Hong Kong 47</a><strong>:</strong> <span>
+                                Doom/Wolfenstien style first person shooter, developed in Unity.
+                                    </span></li> */}
+                                
+                            </ul>
+                            
+                            <br />
+                            <p>... and more to come!</p>
+
+                        </div>
 
                         <div>
+                        <h2>Blog Posts</h2>
+                        <hr />
+                        <br />
+                            <LatestPosts></LatestPosts>
+                            
+                        
+
+                        
+                   
+                            
+                        </div>
+                        <hr />
+
+                    </div>
+                    <div className='homepage-content'>
+                        <div>
                         <h2>Topics</h2>
+                        <hr />
                         <ul className="homepage-topic-links">
                             {loading ? <div className="spinner"><ClipLoader /></div> : 
                             categories.map((category) => {
@@ -148,29 +170,8 @@ const Home = () => {
                             </ul>
                         </div>
 
-                        {/* 
-                        // Old topics placeholder
-                        <div>
-                        <h2>Topics (placeholder, will become a list of categories)</h2>
-                        <ul className="homepage-topic-links">
-                                <li><Link to="/blog/projects"><i className="icon hk47-icon"></i> Hong Kong 47</Link></li>
-                                <li><Link to="/blog/projects"><i className="icon hanzibase-icon"></i> Hanzibase</Link></li>
-                                <li><Link to="/blog/projects">🍴 Yummies</Link></li>
-                                <li><Link to="/blog/projects">❤️ Personal Life</Link></li>
-                                <li><Link to="/blog/projects">🐧 Linux</Link></li>
-                                <li><Link to="/blog/projects">🤖 Jimjambot</Link></li>
-                                <li><Link to="/blog/projects">📖 Library</Link></li>
-                                <li><Link to="/blog/projects">🤔 Interesting Things</Link></li>
-                                <li><Link to="/blog/projects">🌐 Web Programming</Link></li>
-
-
-                            </ul>
                         </div>
- */}
-
-
-                    </div>
-
+                 
 
                     
                    
