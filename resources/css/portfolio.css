@@ -2,6 +2,12 @@ html {
     scroll-behavior: smooth;
 }
 
+.cv-text {
+    padding: 2em 2em 0 2em;
+    font-size: 1.2em;
+    text-align: center;
+}
+
 .expandable {
     background: #595959;
     overflow: hidden;

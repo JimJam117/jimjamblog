@@ -119,7 +119,15 @@ const Portfolio = () => {
             <Header />
 
         <main>
-                {loading ? null : <h1 className="portfolio-title">Portfolio</h1>}
+                {loading ? null : <div> 
+                    <div className="homepage-quick-links cv-text">
+                            <p>You can find my latest CV <a href="/Curriculum_Vitae.pdf">here</a>.</p>
+                    </div>
+                    <br />
+                    <hr />
+                    <h1 className="portfolio-title">Portfolio</h1> 
+
+                    </div>}
                 {loading ? <div className="spinner"><ClipLoader /></div> : 
                         <div className="portfolio-grid-container">
                         {portfolios.map((portfolio) => {

@@ -24,7 +24,11 @@ const Footer = () => {
 
                     
 
-            <div className="footer-email">jamessparrow101@googlemail.com</div>
+            <div className="footer-email">
+                <p>jamessparrow101@googlemail.com</p>
+                <br />
+                <small><em>Built with Laravel and React</em></small>
+            </div>
         </footer>
    
     );

@@ -79,7 +79,7 @@ const Home = () => {
             
             {searchDisplay ? null : 
             
-            <div>
+            <>
                     <div className="banner"></div>
     
                     <div className="homepage-content">
@@ -90,16 +90,10 @@ const Home = () => {
                             
                             {/* </p> */}
 
-                            <h1>Bonjour</h1>
-                             
-
-
-                            <p>I'm James (commonly known as Jimjam).</p>
-
- <p>I’m a Computer Science student currently studying at UEA (University of East Anglia), although I have previously attended Aston University in Birmingham.  </p>
- <p>Here you’ll find a record of projects I’ve worked on, as well as any other ramblings I decide are acceptable enough to make public.  </p>
-
-
+                            <h1>Bonjour!</h1>
+                            <p>I'm James, a Computer Science student currently studying at UEA (University of East Anglia) for my BSc. </p>
+                            <p>As well as uni work, here you’ll find posts on topics I’m interested in (such as language learning and game development) plus any other personal updates or ramblings I decide are acceptable enough to make public.</p>
+ 
 
 
                       
@@ -175,7 +169,7 @@ const Home = () => {
 
                     
                    
-            </div>
+            </>
 
 
             }
