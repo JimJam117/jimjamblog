@@ -24,6 +24,10 @@
     justify-content: center;
     align-items: center;
   }
+
+  .spinner div {
+    width: 35px !important;
+  }
   
   .main-container {
     
